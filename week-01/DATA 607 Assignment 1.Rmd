@@ -1,0 +1,210 @@
+---
+title: "DATA 607 Assignment 1"
+author: "Catherine Dube"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(zoo) 
+```
+
+```{r github-upload, include=FALSE}
+command1 <- r"(cd /c/Users/cdube/Grad\ School)"
+command2 <- r"(git clone https://github.com/cdube89128/DATA-607.git)"
+command3 <- r"(cd DATA-607)"
+command4 <- r"(mkdir week-01)"
+command5 <- r"(cp "C:\Users\cdube\Downloads\US_Unemployment_Rates\df_sex_unemployment_rates.csv" week-01/)"
+command6 <- r"(cp "C:\Users\cdube\Downloads\US_Unemployment_Rates\df_unemployment_rates.csv" week-01/)"
+command7 <- r"(cp "C:/Users/cdube/Downloads/US_Unemployment_Rates/df_sex_unemployment_rates.csv" week-01/)"
+command8 <- r"(cp "C:/Users/cdube/Downloads/US_Unemployment_Rates/df_unemployment_rates.csv" week-01/)"
+command9 <- r"(git add week-01/)"
+command10 <- r"(git commit -m "Add unemployment rate CSV files to week-01 folder")"
+command11 <- r"(git push origin main)"
+```
+
+## Introduction
+This assignment looked at the [U.S. Unemployment Rates analysis](https://www.kaggle.com/code/rajatraj0502/u-s-unemployment-rates) located on Kaggle and written by Rajat Raj. This utilized the [U.S. Unemployment data set](https://www.kaggle.com/datasets/guillemservera/us-unemployment-rates) also located on Kaggle and authored by Guillem Servera.
+
+This analysis looks at U.S. unemployment rates through a wide variety of different lenses (data visualization and analysis methods) showing how different groups of people are affected in different ways. It ends by suggesting that men's and women's unemployment rates often move in tandem, but there *are* periods of divergence that can highlight unique circumstances each gender may experience in the workplace.
+
+The original analysis produced over a dozen visualizations in Python that necessitated different feature engineering. I will explore a few that I found the most interesting.
+
+## Load (Raw) Data
+U.S. Unemployment data originally sourced from [kaggle](https://www.kaggle.com/datasets/guillemservera/us-unemployment-rates). A copy has been stored in via github.
+```{r load-data}
+unemployment_sex_url <- 
+  "https://raw.githubusercontent.com/cdube89128/DATA-607/main/week-01/df_sex_unemployment_rates.csv"
+df_unemployed_sex <- read.csv(unemployment_sex_url)
+```
+
+## Exploratory Analysis 
+I'm starting here by exploring the structure of the data. I want to know what data types need clean up, and get an idea of what feature engineering might be applicable later. I would also check for errors in reading the csv, but there were none with this source data.
+```{r explore}
+summary(df_unemployed_sex)
+glimpse(df_unemployed_sex)
+
+#Seeing a lot of NAs in women_55plus_rate, so double checking that there is data present
+df_unemployed_sex %>%
+  summarise_all(list(
+    count = ~sum(is.na(.))
+  ))
+
+#Comparing to the total number of lines in the data frame
+nrow(df_unemployed_sex)
+```
+
+## Clean Up
+Only the date column was read in as a character vector instead of date. Altering that here. Additionally, I am doing some minor feature engineering and separating the year and month into their own columns to allow for grouping by those values.
+```{r clean-variable-types}
+df_unemployed_sex <- df_unemployed_sex %>%
+    mutate(date = as.Date(date),
+           year = year(date),
+           month = month(date)
+           )
+```
+
+## Unemployment Rate Over Time
+These are fairly straightforward plots for the audience to get their bearings on the data segmented by gender and by age group. They are based on the ones present in the original analysis.
+```{r unemployment_rate_over_time}
+# Plot for men and women
+ggplot(df_unemployed_sex, aes(x = date)) +
+  geom_line(aes(y = overall_rate, color = "Overall")) +
+  geom_line(aes(y = men_rate, color = "Men")) +
+  geom_line(aes(y = women_rate, color = "Women")) +
+  labs(title = "Unemployment Rates Over Time",
+       x = "Date",
+       y = "Unemployment Rate (%)",
+       color = "Rate Type") +
+  scale_color_manual(values = c("Overall" = "black", 
+                               "Men" = "blue", 
+                               "Women" = "red")) +
+  ylim(0, 40) +
+  theme_minimal()
+
+# Plot for youth age groups (16-19)
+ggplot(df_unemployed_sex, aes(x = date)) +
+  geom_line(aes(y = men_16_17_rate, color = "Men 16-17")) +
+  geom_line(aes(y = women_16_17_rate, color = "Women 16-17")) +
+  geom_line(aes(y = men_18_19_rate, color = "Men 18-19")) +
+  geom_line(aes(y = women_18_19_rate, color = "Women 18-19")) +
+  labs(title = "Youth Unemployment Rates by Age Group and Gender",
+       x = "Date", 
+       y = "Unemployment Rate (%)",
+       color = "Age Group") +
+  ylim(0, 40) +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+
+# Plot for adult age groups (20+)
+ggplot(df_unemployed_sex, aes(x = date)) +
+  geom_line(aes(y = men_20_24_rate, color = "Men 20-24")) +
+  geom_line(aes(y = women_20_24_rate, color = "Women 20-24")) +
+  geom_line(aes(y = men_25_34_rate, color = "Men 25-34")) +
+  geom_line(aes(y = women_25_34_rate, color = "Women 25-34")) +
+  geom_line(aes(y = men_35_44_rate, color = "Men 35-44")) +
+  geom_line(aes(y = women_35_44_rate, color = "Women 35-44")) +
+  geom_line(aes(y = men_45_54_rate, color = "Men 45-54")) +
+  geom_line(aes(y = women_45_54_rate, color = "Women 45-54")) +
+  geom_line(aes(y = men_55plus_rate, color = "Men 55+")) +
+  # Note: women_55plus_rate appears to have mostly NA values
+  labs(title = "Adult Unemployment Rates by Age Group and Gender",
+       x = "Date",
+       y = "Unemployment Rate (%)",
+       color = "Age Group") +
+  ylim(0, 40) +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+## Unemployment Rates Heatmap
+This is one of the author's original visualizations that I found interesting. The author of the original analysis also opted to single out the columns that they wanted to visualize. Because this assignment said "You should finish with a data frame that contains a subset of the columns in your selected dataset", I am opting to remove many of the now unnecessary columns altogether. 
+```{r heatmap}
+# Reduce columns down to just the ones the original author wanted to visualize
+df_unemployed_sex <- df_unemployed_sex[,
+                    c('date', 'year', 'month', 'overall_rate', 'men_rate', 
+                      'women_rate', 'men_16_17_rate', 'women_16_17_rate',
+                     'men_25_34_rate', 'women_25_34_rate', 'men_55plus_rate', 'women_55plus_rate')]
+columns_to_visualize <- c('men_rate', 'women_rate', 'men_16_17_rate', 'women_16_17_rate',
+                         'men_25_34_rate', 'women_25_34_rate', 'men_55plus_rate', 'women_55plus_rate')
+
+# Group by year and calculate mean for each category
+heatmap_data <- df_unemployed_sex %>%
+  group_by(year) %>%
+  summarise(
+    men_rate = mean(men_rate, na.rm = TRUE),
+    women_rate = mean(women_rate, na.rm = TRUE),
+    men_16_17_rate = mean(men_16_17_rate, na.rm = TRUE),
+    women_16_17_rate = mean(women_16_17_rate, na.rm = TRUE),
+    men_25_34_rate = mean(men_25_34_rate, na.rm = TRUE),
+    women_25_34_rate = mean(women_25_34_rate, na.rm = TRUE),
+    men_55plus_rate = mean(men_55plus_rate, na.rm = TRUE),
+    women_55plus_rate = mean(women_55plus_rate, na.rm = TRUE)
+  ) %>%
+  ungroup()
+
+# Convert to long format for ggplot2
+heatmap_long <- heatmap_data %>%
+  pivot_longer(cols = -year, 
+               names_to = "category", 
+               values_to = "unemployment_rate")
+
+# Create the heatmap
+ggplot(heatmap_long, aes(x = year, y = category, fill = unemployment_rate)) +
+  geom_tile() +
+  scale_fill_gradientn(colors = hcl.colors(20, "YlGnBu"),
+                       name = "Unemployment Rate (%)") +
+  labs(title = "Unemployment Rates Heatmap: Gender & Age Groups Over Years",
+       x = "Year",
+       y = "Category") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        plot.title = element_text(hjust = 0.5))
+```
+
+## 12-Month Moving Average
+This is another visualization that I had found very interesting. Implementing it meant calculating and storing the 12-month moving averages on the data frame as well.
+```{r rolling-mean, warning=FALSE}
+# Calculate 12-month moving averages
+df_unemployed_sex <- df_unemployed_sex %>%
+  arrange(date) %>%  
+  mutate(
+    overall_moving_avg = rollmean(overall_rate, k = 12, fill = NA, align = "right"),
+    men_moving_avg = rollmean(men_rate, k = 12, fill = NA, align = "right"),
+    women_moving_avg = rollmean(women_rate, k = 12, fill = NA, align = "right")
+  )
+
+# Plot
+ggplot(df_unemployed_sex, aes(x = date)) +
+  geom_line(aes(y = overall_moving_avg, color = "Overall", linetype = "Overall"), linewidth = 1) +
+  geom_line(aes(y = men_moving_avg, color = "Men", linetype = "Men"), linewidth = 1) +
+  geom_line(aes(y = women_moving_avg, color = "Women", linetype = "Women"), linewidth = 1) +
+  labs(title = "12-Month Moving Average of Unemployment Rates Over Time",
+       x = "Date",
+       y = "Unemployment Rate (%)",
+       color = "Category",
+       linetype = "Category") +
+  scale_color_manual(values = c("Overall" = "black", 
+                               "Men" = "blue", 
+                               "Women" = "orange")) +
+  scale_linetype_manual(values = c("Overall" = "solid",
+                                  "Men" = "dashed",
+                                  "Women" = "dashed")) +
+  theme_minimal() +
+  theme(
+    panel.grid.major = element_line(linewidth = 0.5, linetype = "dashed"),
+    panel.grid.minor = element_blank(),
+    legend.position = "bottom"
+  )
+```
+
+## Conclusions
+This was just a snippet of what Rajat Raj originally did in their analysis. I really enjoyed how many perspectives the original took to the data. However, I am slightly confused by the age range choice that they opted to focus on. While I understand that including all of the age ranges made for more visually overwhelming graphs, neglecting the middle-aged U.S. unemployment rate felt odd, and I did not get a clear reasoning for why it was done.
+
+As an aside, this source data didn't require much cleaning, so I leaned slightly more into trimming the dataset down to only what was needed, and feature engineering. 
+
+
+
+
+
