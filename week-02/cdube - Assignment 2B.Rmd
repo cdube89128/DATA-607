@@ -1,0 +1,173 @@
+---
+title: "DATA 607 Week 2B Assignment"
+author: "Catherine Dube"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+# Load required libraries
+library(DBI)
+library(RMySQL)
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+```
+
+## Introduction
+
+In this assignment, I analyzed binary classification model performance data, specifically related to penguins!
+ 
+## Null Error Rate and Data Distribution
+
+In this section, I calculated the null error rate for the penguin sex prediction dataset, visualized the actual sex distribution, and explained why the null error rate is important.
+
+```{r load-data}
+penguins <- read_csv("https://raw.githubusercontent.com/acatlin/data/master/penguin_predictions.csv")
+head(penguins)
+```
+
+## 1. The Null Error Rate
+
+The null error rate is the proportion of observations that do not belong to the majority class.I'm calcualting that here.
+
+```{r null-error-calc}
+# Frequency of each class
+table(penguins$sex)
+
+# Getting majority class
+majority_class <- names(which.max(table(penguins$sex)))
+
+# Calculate null error rate
+null_error_rate <- 1 - max(prop.table(table(penguins$sex)))
+null_error_rate
+```
+
+```{r null-error-visual}
+penguins %>%
+  count(sex) %>%
+  mutate(pct_total = n / sum(n) * 100) %>%   # Calculate percent of total
+  ggplot(aes(x = sex, y = n, fill = sex)) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label = paste0(round(pct_total, 1), "% of total")), vjust = -0.5) +  # Show % on top
+  labs(title = "Distribution of Actual Penguin Sex",
+       x = "Sex",
+       y = "Count of Penguins") +
+  theme_minimal() +
+  scale_fill_manual(values = c("female" = "#FF69B4", "male" = "#1E90FF"))
+
+```
+
+The null error rate represents the error we would incur if we always predicted the most common class. In this dataset, if the majority of penguins are male, then always predicting "male" would result in a null error rate equal to the proportion of females. Knowing this rate is important because any predictive model should perform better than simply guessing the majority class, otherwise it is not adding value.
+
+## 2. Confusion Matrices at Different Thresholds
+
+In this section I evaluated how well the model predicts penguin sex at three thresholds for `.pred_female`: 0.2, 0.5, and 0.8. For each threshold, I have computed the **True Positives (TP), False Positives (FP), True Negatives (TN), and False Negatives (FN)**.
+```{r confusion-matrices}
+# To put together the confusion matrix, I decided to use a self-defined function
+
+# Function to calculate confusion matrix components
+conf_matrix_counts <- function(data, threshold) {
+  # Predict class based on threshold
+  data <- data %>%
+    mutate(pred_class_threshold = if_else(.pred_female > threshold, "1", "0"))
+  
+  # Convert actual sex to numeric: female = 1, male = 0
+  data <- data %>%
+    mutate(actual_class = if_else(sex == "female", "1", "0"))
+  
+  # Calculate confusion matrix counts
+  TP <- sum(data$pred_class_threshold == "1" & data$actual_class == "1")
+  FP <- sum(data$pred_class_threshold == "1" & data$actual_class == "0")
+  TN <- sum(data$pred_class_threshold == "0" & data$actual_class == "0")
+  FN <- sum(data$pred_class_threshold == "0" & data$actual_class == "1")
+  
+  tibble(
+    Threshold = threshold,
+    TP = TP,
+    FP = FP,
+    TN = TN,
+    FN = FN
+  )
+}
+
+# Calculate confusion matrices for each threshold
+cm_02 <- conf_matrix_counts(penguins, 0.2)
+cm_05 <- conf_matrix_counts(penguins, 0.5)
+cm_08 <- conf_matrix_counts(penguins, 0.8)
+```
+
+```{r confusion-matrix-display}
+# Function: make nice confusion matrix display
+make_conf_matrix_kable <- function(counts, threshold) {
+  mat <- tibble(
+    " " = c("Actual Positive", "Actual Negative"),
+    "Predicted Positive" = c(counts$TP, counts$FP),
+    "Predicted Negative" = c(counts$FN, counts$TN)
+  )
+  
+  kabel_label <- paste0("\nConfusion Matrix (Threshold =", threshold, ")\n")
+  kable(mat, escape = FALSE) %>%
+  add_header_above(setNames(ncol(mat), kabel_label),
+                   bold = TRUE, align = "c")
+}
+
+# Confusion matrices at different thresholds
+cm_02 <- conf_matrix_counts(penguins, 0.2)
+cm_05 <- conf_matrix_counts(penguins, 0.5)
+cm_08 <- conf_matrix_counts(penguins, 0.8)
+
+# Display them nicely in R Markdown
+make_conf_matrix_kable(cm_02, 0.2)
+make_conf_matrix_kable(cm_05, 0.5)
+make_conf_matrix_kable(cm_08, 0.8)
+```
+
+
+## 3. Model Performance Metrics at Different Thresholds
+
+Below, I computed four common evaluation metrics—**Accuracy, Precision, Recall, and F1 score**—for thresholds of 0.2, 0.5, and 0.8.
+```{r perf-metrics}
+# Function to calculate metrics from confusion matrix counts
+calc_metrics <- function(counts) {
+  TP <- counts$TP; FP <- counts$FP; TN <- counts$TN; FN <- counts$FN
+  
+  accuracy  <- (TP + TN) / (TP + TN + FP + FN)
+  precision <- ifelse(TP + FP == 0, NA, TP / (TP + FP))
+  recall    <- ifelse(TP + FN == 0, NA, TP / (TP + FN))  # also called sensitivity
+  f1        <- ifelse(is.na(precision) | is.na(recall) | (precision + recall == 0),
+                      NA,
+                      2 * (precision * recall) / (precision + recall))
+  
+  tibble(
+    Accuracy = round(accuracy, 3),
+    Precision = round(precision, 3),
+    Recall = round(recall, 3),
+    F1 = round(f1, 3)
+  )
+}
+
+# Compute metrics for each threshold
+metrics_table <- bind_rows(
+  calc_metrics(conf_matrix_counts(penguins, 0.2)) %>% mutate(Threshold = 0.2),
+  calc_metrics(conf_matrix_counts(penguins, 0.5)) %>% mutate(Threshold = 0.5),
+  calc_metrics(conf_matrix_counts(penguins, 0.8)) %>% mutate(Threshold = 0.8)
+) %>%
+  relocate(Threshold)
+
+# Display nicely
+kable(metrics_table, caption = "Model performance metrics at thresholds 0.2, 0.5, and 0.8")
+
+```
+## 4. When to Use Different Probability Thresholds
+
+I think that threshold choice depends on the problem context and the costs of false positives versus false negatives. Here are two example scenarios where (a) an 0.2 scored probability threshold would be preferable, and (b) an 0.8 scored  probability threshold would be preferable.  
+
+- **a) Threshold = 0.2 (Lower Threshold):**  
+  A lower threshold is preferable when **missing a positive case (false negative) is more costly than predicting extra positives**.  
+  *Example:* In a medical screening context (e.g., detecting a disease like COVID), it might be more important to catch as many potential positive cases as possible—even if that means some false alarms. At 0.2, the model flags more individuals as “positive” (female in the penguins dataset), reducing the chance of missing a true case.
+
+- **b) Threshold = 0.8 (Higher Threshold):**  
+  A higher threshold is preferable when **false positives are very costly or undesirable**.  
+  *Example:* In fraud detection, flagging too many legitimate transactions as fraudulent creates issues - such as customer dissatisfaction or extra workload for investigators. Using 0.8 ensures that only cases with high certainty are flagged, reducing false positives even though some true cases may be missed.
+
+In practice, I think the choice of threshold should be aligned with the **real-world trade-offs**.
