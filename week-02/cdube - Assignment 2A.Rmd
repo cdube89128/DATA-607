@@ -1,0 +1,192 @@
+---
+title: "DATA 607 Week 2A Assignment"
+author: "Catherine Dube"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+# Load required libraries
+library(DBI)
+library(RMySQL)
+library(tidyverse)
+```
+
+## Introduction
+
+In this assignment, I am exploring the movie ratings of my friends. I created data and stored it in a local MySQL database. Then I imported data from that MySQL database into R, joined it from its normalized form to a form more usable for data analysis, and then I created visualizations to better understand which movies were most liked by my friends.
+
+## SQL
+
+For the sake of keeping everything in as few documents as possible, I have included a copy of the way I set up my SQL tables here. I opted to normalize the data because I felt it was cleaner, and because I find it easiest to handle "missing" entries this way when certain friends have not reviewed certain movies.
+```{sql sql-recap, echo=TRUE, eval=FALSE}
+-- Movies 
+DROP TABLE IF EXISTS movies;
+CREATE TABLE movies (
+    movie_id INT AUTO_INCREMENT PRIMARY KEY,
+    movie_name VARCHAR(255) NOT NULL,
+    release_year INT NOT NULL
+);
+
+-- Insert movies
+INSERT INTO movies (movie_name, release_year) VALUES
+('The Princess Bride', 1987),
+('Batman v Superman: Dawn of Justice', 2016),
+('Suicide Squad', 2016),
+('Spider-Man: No Way Home', 2021),
+('Clueless', 1995),
+('Spirited Away', 2001);
+
+-- Friends 
+DROP TABLE IF EXISTS friends;
+CREATE TABLE friends (
+    friend_id INT AUTO_INCREMENT PRIMARY KEY,
+    friend_name VARCHAR(255) NOT NULL
+);
+
+-- Insert friends
+INSERT INTO friends (friend_name) VALUES
+('Stephen'),
+('Mikaella'),
+('Aishwarya'),
+('Brett'),
+('Jennifer');
+
+-- Friend movie ratings table
+DROP TABLE IF EXISTS friend_movie_ratings;
+CREATE TABLE friend_movie_ratings (
+    rating_id INT AUTO_INCREMENT PRIMARY KEY,
+    friend_id INT NOT NULL,
+    movie_id INT NOT NULL,
+    rating INT NOT NULL
+    -- not actually enforcing foreign keys here 
+    -- bc I find that very few real world datawarehouses actually do
+);
+
+-- Insert ratings
+-- This is pretty manual but it's such a small set that I didn't want to load from csv
+INSERT INTO friend_movie_ratings (friend_id, movie_id, rating) VALUES
+-- The Princess Bride (movie_id = 1)
+(1, 1, 5),
+(2, 1, 5),
+(3, 1, 4),
+-- friend didn't see this movie
+(5, 1, 5),
+-- Batman v Superman (movie_id = 2)
+(1, 2, 2),
+-- friend didn't see this movie
+(3, 2, 2),
+(4, 2, 3),
+(5, 2, 2),
+-- Suicide Squad (movie_id = 3)
+(1, 3, 3),
+(2, 3, 3),
+(3, 3, 2),
+(4, 3, 3),
+(5, 3, 2),
+-- Spider-Man: No Way Home (movie_id = 4)
+(1, 4, 5),
+(2, 4, 5),
+(3, 4, 4),
+(4, 4, 5),
+(5, 4, 5),
+-- Clueless (movie_id = 5)
+(1, 5, 4),
+(2, 5, 5),
+-- many friends didn't see this movie
+-- Spirited Away (movie_id = 6)
+(1, 6, 5),
+(2, 6, 5),
+(3, 6, 5),
+(4, 6, 4),
+(5, 6, 5);
+```
+
+
+## Connecting to MySQL and Importing Data
+I connected to my local MySQL server and imported three tables: movies, friends, and friend_movie_ratings.
+```{r credentials}
+# I didn't want to put my password directly in the file, so I looked up using .Renviron
+readRenviron("C:/Users/cdube/.Renviron")  
+password <- Sys.getenv("MYSQL_PWD")
+user <- Sys.getenv("MYSQL_USER") 
+```
+
+```{r load-sql}
+# Connect to the MySQL server
+con <- dbConnect(
+  RMySQL::MySQL(),
+  dbname = "tb",
+  host = "localhost",
+  port = 3306,
+  user = user,
+  password = password
+)
+
+# List tables in the database
+dbListTables(con)
+
+# Import tables into dataframes
+movies_df <- dbReadTable(con, "movies")
+friends_df <- dbReadTable(con, "friends")
+friend_movie_ratings_df <- dbReadTable(con, "friend_movie_ratings")
+
+# Check the data
+head(movies_df)
+head(friends_df)
+head(friend_movie_ratings_df)
+
+# Closing the connection now that the data is imported
+dbDisconnect(con)
+```
+
+## Data Preparation
+
+I created a single, more usable dataframe that combines all the information about friends, movies, and ratings.
+
+```{r joining-data}
+ratings_df <- friend_movie_ratings_df %>%
+  left_join(friends_df, by = c("friend_id" = "friend_id")) %>%
+  left_join(movies_df, by = c("movie_id" = "movie_id")) %>%
+  select(friend_name, movie_name, release_year, rating)
+
+head(ratings_df)
+```
+
+## Visualizations
+
+I was interested in what movies my friends liked the most, so I decided to try out a few visualizations.
+
+### Average Rating per Movie (Bar Chart)
+```{r bar-chart}
+ratings_df %>%
+  group_by(movie_name) %>%
+  summarize(avg_rating = mean(rating)) %>%
+  ggplot(aes(x = reorder(movie_name, avg_rating), y = avg_rating, fill = avg_rating)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  scale_fill_gradient(low = "lightblue", high = "darkblue") +
+  labs(title = "Average Rating per Movie", x = "Movie", y = "Average Rating") +
+  theme_minimal()
+```
+
+I like the bar chart, but it doesn’t show which movies only a few of my friends have seen, and I want to be aware of those movies. So I'm going to try another visualization.
+
+### Friend Ratings of Movies (Heatmap)
+
+```{r heatmap}
+ggplot(ratings_df, aes(x = friend_name, y = movie_name, fill = rating)) +
+  geom_tile(color = "white") +
+  scale_fill_gradient(low = "yellow", high = "red") +
+  labs(title = "Friend Ratings of Movies", x = "Friend", y = "Movie", fill = "Rating") +
+  theme_minimal()
+
+```
+
+
+The heatmap shows which friends rated which movies. This allows me to see both the ratings and where a movie may not have been seen by a friend. I like the heatmap because it shows where a movie was never seen at all. If I were polling more people, I might prefer the bar chart for overall averages.
+
+## Conclusions
+
+From the visualizations, I can see that Spirited Away and Spider-Man: No Way Home were equally ranked by my friends. The Princess Bride is also highly rated (and my personal favorite), but it's just below these two. The heatmap shows that it actually received only one 4 star rating, just like the other two movies, but because one of my friends hadn't seen it before, its average was pulled down a little bit. Also, even though Clueless is well-liked, only 2 of my friends had seen it, so I'll take that with a grain of salt.
+
+
