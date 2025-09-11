@@ -1,0 +1,219 @@
+---
+title: "DATA 607 Week 3B Assignment"
+author: "Catherine Dube"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+# Load required libraries
+library(DBI)
+library(RMySQL)
+library(tidyverse)
+```
+
+## Intro
+In this assignment, we are asked to find a dataset that includes time series for two or more separate items. Below, I have imported Nvidia Stock Data and will be taking a looks at stock prices and traded stock volume. 
+
+I downloaded this data as a csv and saved it to my local device.
+
+Original Data Source: https://www.kaggle.com/datasets/kalilurrahman/nvidia-stock-data-latest-and-updated/data?select=NVidia_stock_history.csv
+
+(I also wrote this before this past week's meetup, so I did a decent amount of this locally. I'll try to keep in mind to do that less going forward!)
+```{r credentials}
+# I didn't want to put my password directly in the file, so I looked up using .Renviron
+readRenviron("C:/Users/cdube/.Renviron")  
+password <- Sys.getenv("MYSQL_PWD")
+user <- Sys.getenv("MYSQL_USER") 
+```
+
+```{r load-sql-data}
+# Connect to the MySQL server
+con <- dbConnect(
+  RMySQL::MySQL(),
+  dbname = "tb",
+  host = "localhost",
+  port = 3306,
+  user = user,
+  password = password
+)
+```
+
+```{sql sql-drop, connection=con}
+DROP TABLE IF EXISTS nvidia_stock_hist;
+```
+
+```{sql sql-create, connection=con}
+CREATE TABLE nvidia_stock_hist (
+    trade_date DATE,
+    open_price double DEFAULT NULL,
+    high_price double DEFAULT NULL,
+    low_price double DEFAULT NULL,
+    close_price double DEFAULT NULL,
+    volume BIGINT,
+    dividends double DEFAULT NULL,
+    stock_splits double DEFAULT NULL
+);
+```
+
+```{sql sql-load, connection=con}
+LOAD DATA LOCAL INFILE 'C:/Users/cdube/Grad School/DATA 607 - Data Acquisition and Management/Week 3/NVidia_stock_history.csv'
+INTO TABLE nvidia_stock_hist
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"' 
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+```
+
+I want to confirm that the data loaded.
+```{sql sql-validate, connection=con}
+SELECT * FROM tb.nvidia_stock_hist limit 10; 
+```
+
+I want to confirm the date range of this data really quickly, and the size of the data table.
+```{sql sql-generic-summaries, connection=con}
+SELECT MIN(trade_date) as min_date,
+    MAX(trade_date) as max_date,
+	COUNT(1) as num_records
+FROM tb.nvidia_stock_hist;
+```
+
+Cool! My metrics of interest are the following:
+
+* NVidia's stock price at market open
+* NVidia's high price of the day
+* NVidia's low price of the day
+* NVidia's stock price at market close
+* The volume of shares that were traded
+
+
+I am **not** interested in 
+
+* The dividends
+* The stock splits
+
+Because we are looking at rolling averages, these metrics really wouldn't make sense to aggregate that way in my opinion.
+
+I am going to get an idea of the range of values that I can expect of each of my metrics of interest.
+```{sql sql-metric-summaries, connection=con}
+SELECT 
+  'minimums' AS label,
+  ROUND(MIN(close_price),2) as close, 
+  ROUND(MIN(high_price),2) as high,
+  ROUND(MIN(low_price),2) as low, 
+  ROUND(MIN(open_price),2) as open, 
+  MIN(volume) as volume
+FROM tb.nvidia_stock_hist
+UNION ALL
+SELECT 
+  'maximums' AS label,
+  ROUND(MAX(close_price),2) as close, 
+  ROUND(MAX(high_price),2) as high,
+  ROUND(MAX(low_price),2) as low, 
+  ROUND(MAX(open_price),2) as open, 
+  MAX(volume) as volume
+FROM tb.nvidia_stock_hist
+UNION ALL
+SELECT 
+  'averages' AS label,
+  ROUND(AVG(close_price),2) as close, 
+  ROUND(AVG(high_price),2) as high,
+  ROUND(AVG(low_price),2) as low, 
+  ROUND(AVG(open_price),2) as open, 
+  AVG(volume) as volume
+FROM tb.nvidia_stock_hist;
+```
+
+
+Everything looks dandy! Now I'll use window functions to calculate the year-to-date average and the six-day moving averages for each of the metrics of interest.
+(I will do this in a couple of separate code chunks to improve readability.)
+```{sql sql-high-low, connection=con}
+SELECT 
+    trade_date,
+    
+    high_price,
+    AVG(high_price) OVER (
+        PARTITION BY YEAR(trade_date)
+        ORDER BY trade_date
+        ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+    ) AS ytd_avg_high,
+    AVG(high_price) OVER (
+        ORDER BY trade_date
+        ROWS BETWEEN 5 PRECEDING AND CURRENT ROW
+    ) AS six_day_ma_high,
+    
+    low_price,
+    AVG(low_price) OVER (
+        PARTITION BY YEAR(trade_date)
+        ORDER BY trade_date
+        ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+    ) AS ytd_avg_low,
+    AVG(low_price) OVER (
+        ORDER BY trade_date
+        ROWS BETWEEN 5 PRECEDING AND CURRENT ROW
+    ) AS six_day_ma_low
+FROM tb.nvidia_stock_hist
+ORDER BY trade_date
+LIMIT 10;
+```
+
+```{sql sql-close-open, connection=con}
+SELECT 
+    trade_date,
+    
+    close_price,
+    AVG(close_price) OVER (
+        PARTITION BY YEAR(trade_date)
+        ORDER BY trade_date
+        ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+    ) AS ytd_avg_close,
+    AVG(close_price) OVER (
+        ORDER BY trade_date
+        ROWS BETWEEN 5 PRECEDING AND CURRENT ROW
+    ) AS six_day_ma_close,
+    
+    open_price,
+    AVG(open_price) OVER (
+        PARTITION BY YEAR(trade_date)
+        ORDER BY trade_date
+        ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+    ) AS ytd_avg_open,
+    AVG(open_price) OVER (
+        ORDER BY trade_date
+        ROWS BETWEEN 5 PRECEDING AND CURRENT ROW
+    ) AS six_day_ma_open
+FROM tb.nvidia_stock_hist
+ORDER BY trade_date
+LIMIT 10;
+```
+
+```{sql sql-volume, connection=con}
+SELECT 
+    trade_date,
+    
+    volume,
+    AVG(volume) OVER (
+        PARTITION BY YEAR(trade_date)
+        ORDER BY trade_date
+        ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+    ) AS ytd_avg_volume,
+    AVG(volume) OVER (
+        ORDER BY trade_date
+        ROWS BETWEEN 5 PRECEDING AND CURRENT ROW
+    ) AS six_day_moving_avg_volume
+FROM tb.nvidia_stock_hist
+ORDER BY trade_date
+LIMIT 10;
+```
+
+```{r close-sql}
+# Closing the connection now that the data is imported
+dbDisconnect(con)
+```
+## Conclusion
+We have successfully looked at the following metrics through the lenses of year to date average, and average over the last 6 days.
+
+* NVidia's stock price at market open
+* NVidia's high price of the day
+* NVidia's low price of the day
+* NVidia's stock price at market close
+* The volume of shares that were traded

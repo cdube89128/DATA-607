@@ -1,0 +1,159 @@
+---
+title: "DATA 607 Week 3A Assignment"
+author: "Catherine Dube"
+output: html_document
+---
+
+# Intro
+In this assignment, I will use my friend's movie ratings and the suggested recommendation algorithm to write a program that predicts a friend's movie rating for a given movie. (I also wrote this before this past week's meetup, so I did a decent amount of this locally. I'll try to keep in mind to do that less going forward!)
+
+# Getting Into It
+
+```{r setup, include=FALSE}
+# Load required libraries
+library(DBI)
+library(RMySQL)
+library(tidyverse)
+```
+
+```{r credentials}
+# I didn't want to put my password directly in the file, so I looked up using .Renviron
+readRenviron("C:/Users/cdube/.Renviron")  
+password <- Sys.getenv("MYSQL_PWD")
+user <- Sys.getenv("MYSQL_USER") 
+```
+
+```{r connect-sql}
+# Connect to the MySQL server
+con <- dbConnect(
+  RMySQL::MySQL(),
+  dbname = "tb",
+  host = "localhost",
+  port = 3306,
+  user = user,
+  password = password
+)
+```
+
+```{r load-sql}
+# List tables in the database
+dbListTables(con)
+
+# Import tables into dataframes
+movies_df <- dbReadTable(con, "movies")
+friends_df <- dbReadTable(con, "friends")
+friend_movie_ratings_df <- dbReadTable(con, "friend_movie_ratings")
+
+# Check the data
+head(movies_df)
+head(friends_df)
+head(friend_movie_ratings_df)
+```
+
+```{r close-sql}
+# Closing the connection now that the data is imported
+dbDisconnect(con)
+```
+
+I created a single, more usable dataframe that combines all the information about friends, movies, and ratings. (Up until this point this is the same as last week's assignment)
+
+```{r joining-data}
+ratings_df <- friend_movie_ratings_df %>%
+  left_join(friends_df, by = c("friend_id" = "friend_id")) %>%
+  left_join(movies_df, by = c("movie_id" = "movie_id")) %>%
+  select(friend_name, movie_name, release_year, rating)
+
+head(ratings_df)
+```
+
+Now I am loading in the sample data provided for this assignment.
+```{r load-given-movie-ratings}
+MovieRatings <- read.csv("C:/Users/cdube/Grad School/DATA 607 - Data Acquisition and Management/Week 3/MovieRatings.csv")
+head(MovieRatings, 20)
+```
+
+I would like to put my data in the same format as the sample data, so I will re-arrange it.
+```{r rearrange-data}
+my_movie_ratings_clean <- ratings_df %>%
+  pivot_wider(
+    id_cols = friend_name,
+    names_from = movie_name,
+    values_from = rating
+  ) %>%
+  rename(Critic = friend_name)
+```
+
+Now I am going to define a function that applies the global baseline recommendation algorithm given my dataframe (or the sample dataframe we were provided), a person who we want to recommend a movie to, and the movie we want to recommend. It will return what we predict that person would rate the given movie. 
+(I didn't add any exceptions for if the person had already rated the movie.)
+```{r define-fxn}
+get_global_baseline_est <- function(df, my_critic, my_movie) {
+
+  # Get movie columns / Exclude critic
+  movie_cols <- setdiff(names(df), "Critic")
+  
+  # Adding Some Error Handling
+  if (!my_critic %in% df$Critic) stop("Critic not found in dataframe")
+  if (!my_movie %in% movie_cols) stop("Movie not found in dataframe")
+  
+  # Calculate total average  
+  total_avg <- df %>%
+    select(all_of(movie_cols)) %>%
+    unlist() %>% # flattening all the movie scores into one vector so that I can use mean
+    mean(na.rm = TRUE)
+  
+  # Calculate critic score average
+  critic_avgs <- df %>%
+    rowwise() %>% # wanted mean function to only happen row by row
+    mutate(critic_avg = mean(c_across(all_of(movie_cols)), na.rm = TRUE)) %>%
+    select(Critic, critic_avg)
+  
+  # critic_intermediate = total_avg - critic_avg
+  critic_intermediate <- critic_avgs %>%
+    filter(Critic == my_critic) %>%
+    mutate(critic_intermediate = critic_avg - total_avg) %>%
+    select(critic_intermediate) %>%
+    as.numeric()
+  
+  # Calculate movie score average
+  movie_avgs <- df %>%
+    select(all_of(movie_cols)) %>%
+    summarise(across(everything(), ~ mean(.x, na.rm = TRUE)))
+  
+  # movie_intermediate = total_avg - movie_avg
+  movie_intermediate <- movie_avgs[[my_movie]] - total_avg
+  
+  # Final estimate
+  estimate_score <- total_avg + critic_intermediate + movie_intermediate
+  
+  return(estimate_score)
+}
+```
+
+Now I want to see what I think Param would have rated Pitch Perfect 2.
+```{r estimate-param}
+get_global_baseline_est(MovieRatings, "Param", "PitchPerfect2")
+```
+That's what I expected! So now I'm curious what my friend Brett might rate The Princess Bride if he saw it.
+```{r estimate-brett}
+get_global_baseline_est(my_movie_ratings_clean, "Brett", "The Princess Bride")
+```
+# Conclusion
+Now I can estimate what my friends would think of certain movies! And potentially I can use the estimates to convince them to watch some more of the movies I like.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
