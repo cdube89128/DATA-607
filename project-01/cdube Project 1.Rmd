@@ -1,0 +1,159 @@
+---
+title: "DATA 607 Project 1"
+author: "Catherine Dube"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+# Load required libraries
+library(DBI)
+library(RMySQL)
+library(tidyverse)
+library(knitr)
+```
+
+## Intro
+In this project, my goal is to generate a csv file with the chess player information: 
+
+* Player’s Name
+* Player’s State
+* Total Number of Points
+* Player’s Pre-Rating
+* Average Pre Chess Rating of Opponents 
+
+
+I have placed the given text file in my github repo. Exploring it below:
+```{r read-in-data}
+data_src <- "https://raw.githubusercontent.com/cdube89128/DATA-607/refs/heads/main/project-01/tournamentinfo.txt"
+
+# Read file lines
+lines <- readLines(data_src)
+```
+It looks like there was a warning from reading in the file, but my rudimentary Google suggests that this is due to the lack of a newline character at the end of my text file, so I'm continuing onward as normal.
+
+```{r addressed-warning}
+head(lines, 10)
+```
+
+There are 4 lines of header/misc text. Each entry takes up two lines, and different pieces of information that are needed are distinguished in different ways within this text file. I.e. there is nothing perfectly standard like comma delimiters here.
+
+I am going to clean up these lines to get the data for each entry consolidated together.
+```{r explore-data}
+# Remove header lines in file
+lines <- lines[-c(1:4)]
+
+# Each entry is 2 lines, followed by a divider line (---)
+
+# Remove those divider lines
+lines <- lines[!grepl("^-", lines)]
+
+# Checking in again
+head(lines, 10)
+
+# Group into chunks of 2 lines per player
+player_lines <- split(lines, ceiling(seq_along(lines)/2))
+
+# Combine each pair into one string
+combined <- sapply(player_lines, paste, collapse = "")
+
+# The whitespace is messy, cleaning that up
+combined <- gsub("\\s+", " ", combined)   
+combined <- trimws(combined)
+
+# Checking in again
+head(combined, 5)
+```
+
+The data looks much more easily parsable now. Next I will focus on pulling out the individual pieces of data per entry (e.g. Player's Number, Player Name, Player's Rating etc.)
+```{r parsing}
+# This looks more easily parsable. Almost all of the distinct values are separated by pipes (|).
+split_data <- str_split(combined, "\\|")
+
+# Checking in again
+head(split_data, 2)
+class(split_data)
+class(split_data[[1]])
+
+# It looks like split_data is a list of character vectors
+# Create a function to parse each entry
+parse_player <- function(x) {
+  x <- str_trim(x)   # trim whitespace because it was still slightly irregular
+
+  tibble(
+    Pair = as.numeric(x[1]),
+    Name = x[2],
+    Total = as.numeric(x[3]),
+    Round_1 = as.numeric(str_extract(x[4], "\\d+")),
+    Round_2 = as.numeric(str_extract(x[5], "\\d+")),
+    Round_3 = as.numeric(str_extract(x[6], "\\d+")),
+    Round_4 = as.numeric(str_extract(x[7], "\\d+")),
+    Round_5 = as.numeric(str_extract(x[8], "\\d+")),
+    Round_6 = as.numeric(str_extract(x[9], "\\d+")),
+    Round_7 = as.numeric(str_extract(x[10], "\\d+")),
+    State = x[11],
+    #After this, more complicated parsing is needed
+    ID = str_extract(x[12], "\\d+"),                          # get 1st group of digits
+    Pre_Rating = as.numeric(str_extract(x[12], "(?<=R: )\\d+")),     # get group of digits after R:
+    Post_Rating = as.numeric(str_extract(x[12], "(?<=->)\\d+"))      # get group of digits after ->
+  )
+}
+
+# Apply my function to each element of split_data
+# Bind the resulting rows together into a new dataframe
+my_df <- bind_rows(lapply(split_data, parse_player))
+
+# Checking in
+head(my_df, 5)
+```
+
+
+I have almost everything I wanted from this data now. Next I will calculate the average pre chess rating of opponents for each entry/player. (I was struggling to find a really clean way to do this, so I ultimately have opted to use another self-defined function to help the process.)
+```{r avg-pre-chess-ratings}
+# Get the columns names for the rounds
+round_cols <- paste0("Round_", 1:7) 
+
+# Adding in the Average Pre Chess Rating of Opponents
+my_df <- my_df %>%
+  rowwise() %>%
+  mutate(
+    Avg_Opp_Rating = round(
+      mean(
+        sapply(c_across(all_of(round_cols)), function(opponent_pair) {
+          if (!is.na(opponent_pair)) {
+            my_df$Pre_Rating[my_df$Pair == opponent_pair]
+          } else {
+            NA_real_  # handling NAs from rounds without opponents
+          }
+        }),
+        na.rm = TRUE  # ignore NAs in the mean calculation
+      ),
+      0  # round to 0 decimal places
+    )
+  ) %>%
+  ungroup()
+```
+
+Lastly, I am selecting only the columns of information that I wanted from this data. 
+```{r final-selection}
+# Reduce this to only get the columns on interest
+my_df <- my_df %>%
+  select(Name, State, Total, Pre_Rating, Avg_Opp_Rating)
+
+# Checking in
+head(my_df, 5)
+
+```
+
+The cleaned data (that will go into the csv file) is prepared.
+```{r print-final}
+kable(my_df)
+```
+
+It is time to create a csv of this information.
+```{r write-csv}
+write.csv(my_df, "chess_tournament_player_info.csv", row.names = TRUE)
+```
+
+# Conclusion
+From the given text file, we now have a csv with each Player’s Name, Player’s State, Total Number of Points,  Player’s Pre-Rating, and Average Pre Chess Rating of Opponents from this tournament
+
