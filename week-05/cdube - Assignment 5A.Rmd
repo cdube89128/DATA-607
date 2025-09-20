@@ -92,9 +92,22 @@ From this look at the data, I am seeing a higher delay rate on average from  Ala
 kable(transformed_flights, caption = "Flights by Airline & Destination With Calculated Delay Rate")
 ```
 
-However, on a city by city basis, it is AM West that tends to show a higher delay rate. This surprising result may stem from the fact that AM West has almost double the number of total flights that Alaska Airlines does. In particular, it has over 20x as many flights going to Phoenix specifically.
+However, on a city by city basis, it is AM West that tends to show a higher delay rate. This surprising result may stem from the fact that AM West has almost double the number of total flights that Alaska Airlines does. In particular, it has over 20x as many flights going to Phoenix specifically. I am going to look into this really quickly by viewing the average delay rate excluding Phoenix.
 
-I want to take a more visual look at this city-by-city basis.
+```{r exclude-phoenix}
+summary_wo_phoenix <- transformed_flights[transformed_flights$destination != "Phoenix",1:4] %>%
+  group_by(airline) %>%
+  summarise(
+    total = sum(on_time + delayed),
+    pct_delayed = round(sum(delayed) / total, 2)
+  )
+
+kable(summary_wo_phoenix, caption = "Flights by Airline With Calculated Delay Rate, Excluding Phoenix")
+```
+
+Yes, now I can see that the high number of flights by AM West to Phoenix in comparison to Alaska Airlines is what drives its overall average delay rate down. When I remove Phoenix, I am seeing a higher delay rate on average from AM West at 19%, whereas Alaska Airlines is at 14% (close to what they were before).
+
+I want to take one quick visual look at this city-by-city basis.
 
 ```{r visual}
 # Re-order data for the bar chart
@@ -116,7 +129,7 @@ ggplot(transformed_flights, aes(x = destination, y = pct_delayed, fill = airline
   theme_minimal()
 ```
 
-This makes it abundantly clear that when segmented by destination, AM West experiences a higher rate of delays than Alaska Airlines. This is despite the fact that when averaging all flights, it is Alaska Airlines that has the higher rate of delay.
+This makes it abundantly clear that when segmented by destination, AM West experiences a higher rate of delays than Alaska Airlines. This is despite the fact that when averaging all flights, it was Alaska Airlines that has the higher rate of delay.
 
 
 
