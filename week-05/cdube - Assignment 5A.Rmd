@@ -1,0 +1,137 @@
+---
+title: "DATA 607 Assignment 5A"
+author: "Catherine Dube"
+output: html_document
+---
+
+## Intro
+In this assignment, I will be tidying airline data and then analyzing to compare the arrival delays for the two airlines.
+
+
+```{r setup, include=FALSE}
+# Load required libraries
+#library(DBI)
+#library(RMySQL)
+library(tidyverse)
+library(knitr)
+```
+
+## 1. Loading Source Data
+I created a .CSV file that includes all of the given information. It has been stored in my personal Github Repo, and I will be loading it from there.
+
+```{r load-data}
+flights <- read.csv("https://raw.githubusercontent.com/cdube89128/DATA-607/refs/heads/main/week-05/DATA607_Assignment5A_airline_delays.csv")
+
+# Taking a look at the data
+head(flights, 10)
+```
+## 2. Tidying & Transforming the data
+```{r tidying}
+# Renaming Columns
+colnames(flights) <- c("airline", "flight_status", "Los_Angeles", "Phoenix", "San_Diego", "San_Francisco", "Seattle")
+
+# Removing blank rows
+flights <- flights[-3,]
+
+# Filling in Blank Airlines 
+flights$airline[c(2,4)] <- c("ALASKA", "AM WEST")
+
+#Restructuring destinations
+tidy_flights <- flights %>%
+    pivot_longer(
+      cols = !(airline:flight_status),
+      names_to = "destination",
+      values_to = "num"
+    )
+
+kable(tidy_flights, caption = "Flights Data After Tidying")
+```
+
+This is a lot tidier, but I think that with our goal for analysis, I would prefer to have the number of on time flights and the number of delayed flights as columns. Then I will use these for calculations.
+
+```{r transform}
+transformed_flights <- tidy_flights %>%
+  pivot_wider(
+    id_cols = c("airline", "destination"),
+    names_from = "flight_status",
+    values_from = "num"
+  )
+
+colnames(transformed_flights)[3:4] <- c("on_time", "delayed")
+
+kable(transformed_flights, caption = "Flights Data After Transforming for Analysis")
+```
+
+## 3. Analysis
+
+With the data in its present state, I can more easily compute the numbers I need for analysis.
+
+```{r calc-columns}
+summary_flights <- transformed_flights %>%
+  group_by(airline) %>%
+  summarise(
+    total = sum(on_time + delayed),
+    pct_delayed = round(sum(delayed) / total, 2)
+  )
+
+transformed_flights <- transformed_flights %>%
+  mutate(
+    total = on_time + delayed,
+    pct_delayed = round(delayed / total, 2)
+  ) %>%
+  arrange(desc(pct_delayed))
+```
+
+```{r summary}
+kable(summary_flights, caption = "Flights by Airline With Calculated Delay Rate")
+```
+
+From this look at the data, I am seeing a higher delay rate on average from  Alaska Airlines at 13%, compared to AM West at 11%.
+
+```{r sum-by-dest}
+kable(transformed_flights, caption = "Flights by Airline & Destination With Calculated Delay Rate")
+```
+
+However, on a city by city basis, it is AM West that tends to show a higher delay rate. This surprising result may stem from the fact that AM West has almost double the number of total flights that Alaska Airlines does. In particular, it has over 20x as many flights going to Phoenix specifically.
+
+I want to take a more visual look at this city-by-city basis.
+
+```{r visual}
+# Re-order data for the bar chart
+ordered_flights <- transformed_flights %>%
+  group_by(destination) %>%
+  summarise(avg_delay = mean(pct_delayed)) %>%
+  arrange(avg_delay) %>%
+  pull(destination)
+
+transformed_flights <- transformed_flights %>%
+  mutate(destination = factor(destination, levels = ordered_flights))
+
+ggplot(transformed_flights, aes(x = destination, y = pct_delayed, fill = airline)) +
+  geom_col(position = "dodge") +
+  labs(title = "Proportion of Delayed Flights by Airline & Destination",
+       y = "Delay Rate",
+       x = "Destination") +
+  scale_y_continuous(labels = scales::percent_format()) +
+  theme_minimal()
+```
+
+This makes it abundantly clear that when segmented by destination, AM West experiences a higher rate of delays than Alaska Airlines. This is despite the fact that when averaging all flights, it is Alaska Airlines that has the higher rate of delay.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
