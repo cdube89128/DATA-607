@@ -1,0 +1,2058 @@
+NAICS2022_LABEL,EMP,NAME,GEO_ID,NAICS2022,us
+Support activities for agriculture and forestry,246854,United States,0100000US,115,1
+Support Activities for Crop Production,222098,United States,0100000US,1151,1
+Support Activities for Crop Production,222098,United States,0100000US,11511,1
+Cotton ginning,5074,United States,0100000US,115111,1
+"Soil Preparation, Planting, and Cultivating",26087,United States,0100000US,115112,1
+"Crop Harvesting, Primarily by Machine",17420,United States,0100000US,115113,1
+Postharvest Crop Activities (except Cotton Ginning),37012,United States,0100000US,115114,1
+Farm Labor Contractors and Crew Leaders,128254,United States,0100000US,115115,1
+Farm Management Services,8251,United States,0100000US,115116,1
+Support Activities for Animal Production,24756,United States,0100000US,1152,1
+Support Activities for Animal Production,24756,United States,0100000US,11521,1
+Support Activities for Animal Production,24756,United States,0100000US,115210,1
+"Mining, quarrying, and oil and gas extraction",545482,United States,0100000US,21,1
+Oil and Gas Extraction,105987,United States,0100000US,211,1
+Oil and Gas Extraction,105987,United States,0100000US,2111,1
+Crude Petroleum Extraction,73852,United States,0100000US,21112,1
+Crude Petroleum Extraction,73852,United States,0100000US,211120,1
+Natural Gas Extraction,32135,United States,0100000US,21113,1
+Natural Gas Extraction,32135,United States,0100000US,211130,1
+Mining (except Oil and Gas),167334,United States,0100000US,212,1
+Coal Mining,40673,United States,0100000US,2121,1
+Coal Mining,40673,United States,0100000US,21211,1
+Surface Coal Mining,16234,United States,0100000US,212114,1
+Underground Coal Mining,24439,United States,0100000US,212115,1
+Metal ore mining,40573,United States,0100000US,2122,1
+Iron Ore Mining,5175,United States,0100000US,21221,1
+Iron Ore Mining,5175,United States,0100000US,212210,1
+Gold Ore and Silver Ore Mining,15403,United States,0100000US,21222,1
+Gold Ore and Silver Ore Mining,15403,United States,0100000US,212220,1
+"Copper, Nickel, Lead, and Zinc Mining",16532,United States,0100000US,21223,1
+"Copper, Nickel, Lead, and Zinc Mining",16532,United States,0100000US,212230,1
+Other Metal Ore Mining,3463,United States,0100000US,21229,1
+Other Metal Ore Mining,3463,United States,0100000US,212290,1
+Nonmetallic Mineral Mining and Quarrying,86088,United States,0100000US,2123,1
+Stone Mining and Quarrying,41173,United States,0100000US,21231,1
+Dimension Stone Mining and Quarrying,3742,United States,0100000US,212311,1
+Crushed and Broken Limestone Mining and Quarrying,25005,United States,0100000US,212312,1
+Crushed and Broken Granite Mining and Quarrying,5113,United States,0100000US,212313,1
+Other Crushed and Broken Stone Mining and Quarrying,7313,United States,0100000US,212319,1
+"Sand, Gravel, Clay, and Ceramic and Refractory Minerals Mining and Quarrying",34910,United States,0100000US,21232,1
+Construction Sand and Gravel Mining,23957,United States,0100000US,212321,1
+Industrial Sand Mining,6833,United States,0100000US,212322,1
+"Kaolin, Clay, and Ceramic and Refractory Minerals Mining",4120,United States,0100000US,212323,1
+Other Nonmetallic Mineral Mining and Quarrying,10005,United States,0100000US,21239,1
+Other Nonmetallic Mineral Mining and Quarrying,10005,United States,0100000US,212390,1
+Support Activities for Mining,272161,United States,0100000US,213,1
+Support Activities for Mining,272161,United States,0100000US,2131,1
+Support Activities for Mining,272161,United States,0100000US,21311,1
+Drilling Oil and Gas Wells,52715,United States,0100000US,213111,1
+Support Activities for Oil and Gas Operations,206632,United States,0100000US,213112,1
+Support Activities for Coal Mining,3020,United States,0100000US,213113,1
+Support Activities for Metal Mining,5697,United States,0100000US,213114,1
+Support Activities for Nonmetallic Minerals (except Fuels) Mining,4097,United States,0100000US,213115,1
+Utilities,699168,United States,0100000US,22,1
+Utilities,699168,United States,0100000US,221,1
+"Electric power generation, transmission and distribution",536428,United States,0100000US,2211,1
+Electric Power Generation,131171,United States,0100000US,22111,1
+Hydroelectric power generation,4387,United States,0100000US,221111,1
+Fossil fuel electric power generation,66390,United States,0100000US,221112,1
+Nuclear electric power generation,39562,United States,0100000US,221113,1
+Solar Electric Power Generation,7648,United States,0100000US,221114,1
+Wind Electric Power Generation,9548,United States,0100000US,221115,1
+Geothermal Electric Power Generation,1347,United States,0100000US,221116,1
+Biomass Electric Power Generation,2143,United States,0100000US,221117,1
+Other Electric Power Generation,146,United States,0100000US,221118,1
+"Electric Power Transmission, Control, and Distribution",405257,United States,0100000US,22112,1
+Electric Bulk Power Transmission and Control,18710,United States,0100000US,221121,1
+Electric Power Distribution,386547,United States,0100000US,221122,1
+Natural Gas Distribution,106633,United States,0100000US,2212,1
+Natural Gas Distribution,106633,United States,0100000US,22121,1
+Natural Gas Distribution,106633,United States,0100000US,221210,1
+"Water, Sewage and Other Systems",56107,United States,0100000US,2213,1
+Water Supply and Irrigation Systems,47290,United States,0100000US,22131,1
+Water Supply and Irrigation Systems,47290,United States,0100000US,221310,1
+Sewage Treatment Facilities,6837,United States,0100000US,22132,1
+Sewage Treatment Facilities,6837,United States,0100000US,221320,1
+Steam and Air-Conditioning Supply,1980,United States,0100000US,22133,1
+Steam and Air-Conditioning Supply,1980,United States,0100000US,221330,1
+Construction,7485385,United States,0100000US,23,1
+Construction of Buildings,1612709,United States,0100000US,236,1
+Residential Building Construction,878951,United States,0100000US,2361,1
+Residential Building Construction,878951,United States,0100000US,23611,1
+New Single-Family Housing Construction (except For-Sale Builders),228700,United States,0100000US,236115,1
+New Multifamily Housing Construction (except For-Sale Builders),68877,United States,0100000US,236116,1
+New Housing For-Sale Builders,171442,United States,0100000US,236117,1
+Residential Remodelers,409932,United States,0100000US,236118,1
+Nonresidential building construction,733758,United States,0100000US,2362,1
+Industrial Building Construction,77133,United States,0100000US,23621,1
+Industrial Building Construction,77133,United States,0100000US,236210,1
+Commercial and Institutional Building Construction,656625,United States,0100000US,23622,1
+Commercial and Institutional Building Construction,656625,United States,0100000US,236220,1
+Heavy and Civil Engineering Construction,1040299,United States,0100000US,237,1
+Utility system construction,605695,United States,0100000US,2371,1
+Water and Sewer Line and Related Structures Construction,147486,United States,0100000US,23711,1
+Water and Sewer Line and Related Structures Construction,147486,United States,0100000US,237110,1
+Oil and Gas Pipeline and Related Structures Construction,162989,United States,0100000US,23712,1
+Oil and Gas Pipeline and Related Structures Construction,162989,United States,0100000US,237120,1
+Power and Communication Line and Related Structures Construction,295220,United States,0100000US,23713,1
+Power and Communication Line and Related Structures Construction,295220,United States,0100000US,237130,1
+Land Subdivision,25183,United States,0100000US,2372,1
+Land Subdivision,25183,United States,0100000US,23721,1
+Land Subdivision,25183,United States,0100000US,237210,1
+"Highway, Street, and Bridge Construction",331473,United States,0100000US,2373,1
+"Highway, Street, and Bridge Construction",331473,United States,0100000US,23731,1
+"Highway, Street, and Bridge Construction",331473,United States,0100000US,237310,1
+Other Heavy and Civil Engineering Construction,77948,United States,0100000US,2379,1
+Other Heavy and Civil Engineering Construction,77948,United States,0100000US,23799,1
+Other Heavy and Civil Engineering Construction,77948,United States,0100000US,237990,1
+Specialty Trade Contractors,4832377,United States,0100000US,238,1
+"Foundation, structure, and building exterior contractors",960223,United States,0100000US,2381,1
+Poured Concrete Foundation and Structure Contractors,274618,United States,0100000US,23811,1
+Poured Concrete Foundation and Structure Contractors,274618,United States,0100000US,238110,1
+Structural Steel and Precast Concrete Contractors,77724,United States,0100000US,23812,1
+Structural Steel and Precast Concrete Contractors,77724,United States,0100000US,238120,1
+Framing Contractors,103612,United States,0100000US,23813,1
+Framing Contractors,103612,United States,0100000US,238130,1
+Masonry Contractors,130295,United States,0100000US,23814,1
+Masonry Contractors,130295,United States,0100000US,238140,1
+Glass and Glazing Contractors,70256,United States,0100000US,23815,1
+Glass and Glazing Contractors,70256,United States,0100000US,238150,1
+Roofing Contractors,217014,United States,0100000US,23816,1
+Roofing Contractors,217014,United States,0100000US,238160,1
+Siding Contractors,42593,United States,0100000US,23817,1
+Siding Contractors,42593,United States,0100000US,238170,1
+"Other Foundation, Structure, and Building Exterior Contractors",44111,United States,0100000US,23819,1
+"Other Foundation, Structure, and Building Exterior Contractors",44111,United States,0100000US,238190,1
+Building Equipment Contractors,2280334,United States,0100000US,2382,1
+Electrical Contractors and Other Wiring Installation Contractors,968734,United States,0100000US,23821,1
+Electrical Contractors and Other Wiring Installation Contractors,968734,United States,0100000US,238210,1
+"Plumbing, Heating, and Air-Conditioning Contractors",1169692,United States,0100000US,23822,1
+"Plumbing, Heating, and Air-Conditioning Contractors",1169692,United States,0100000US,238220,1
+Other Building Equipment Contractors,141908,United States,0100000US,23829,1
+Other Building Equipment Contractors,141908,United States,0100000US,238290,1
+Building finishing contractors,824843,United States,0100000US,2383,1
+Drywall and Insulation Contractors,238637,United States,0100000US,23831,1
+Drywall and Insulation Contractors,238637,United States,0100000US,238310,1
+Painting and Wall Covering Contractors,191449,United States,0100000US,23832,1
+Painting and Wall Covering Contractors,191449,United States,0100000US,238320,1
+Flooring Contractors,85979,United States,0100000US,23833,1
+Flooring Contractors,85979,United States,0100000US,238330,1
+Tile and Terrazzo Contractors,59168,United States,0100000US,23834,1
+Tile and Terrazzo Contractors,59168,United States,0100000US,238340,1
+Finish Carpentry Contractors,177934,United States,0100000US,23835,1
+Finish Carpentry Contractors,177934,United States,0100000US,238350,1
+Other Building Finishing Contractors,71676,United States,0100000US,23839,1
+Other Building Finishing Contractors,71676,United States,0100000US,238390,1
+Other Specialty Trade Contractors,766977,United States,0100000US,2389,1
+Site Preparation Contractors,482712,United States,0100000US,23891,1
+Site Preparation Contractors,482712,United States,0100000US,238910,1
+All Other Specialty Trade Contractors,284265,United States,0100000US,23899,1
+All Other Specialty Trade Contractors,284265,United States,0100000US,238990,1
+Manufacturing,12171365,United States,0100000US,31-33,1
+Food Manufacturing,1646880,United States,0100000US,311,1
+Animal Food Manufacturing,61902,United States,0100000US,3111,1
+Animal Food Manufacturing,61902,United States,0100000US,31111,1
+Dog and Cat Food Manufacturing,30337,United States,0100000US,311111,1
+Other Animal Food Manufacturing,31565,United States,0100000US,311119,1
+Grain and Oilseed Milling,58358,United States,0100000US,3112,1
+Flour Milling and Malt Manufacturing,21720,United States,0100000US,31121,1
+Flour Milling,15032,United States,0100000US,311211,1
+Rice Milling,5827,United States,0100000US,311212,1
+Malt Manufacturing,861,United States,0100000US,311213,1
+Starch and Vegetable Fats and Oils Manufacturing,24497,United States,0100000US,31122,1
+Wet Corn Milling and Starch Manufacturing,7822,United States,0100000US,311221,1
+Soybean and Other Oilseed Processing,8934,United States,0100000US,311224,1
+Fats and Oils Refining and Blending,7741,United States,0100000US,311225,1
+Breakfast Cereal Manufacturing,12141,United States,0100000US,31123,1
+Breakfast Cereal Manufacturing,12141,United States,0100000US,311230,1
+Sugar and Confectionery Product Manufacturing,85839,United States,0100000US,3113,1
+Sugar Manufacturing,14111,United States,0100000US,31131,1
+Beet Sugar Manufacturing,7067,United States,0100000US,311313,1
+Cane Sugar Manufacturing,7044,United States,0100000US,311314,1
+Nonchocolate Confectionery Manufacturing,28650,United States,0100000US,31134,1
+Nonchocolate Confectionery Manufacturing,28650,United States,0100000US,311340,1
+Chocolate and Confectionery Manufacturing,43078,United States,0100000US,31135,1
+Chocolate and Confectionery Manufacturing from Cacao Beans,9054,United States,0100000US,311351,1
+Confectionery Manufacturing from Purchased Chocolate,34024,United States,0100000US,311352,1
+Fruit and Vegetable Preserving and Specialty Food Manufacturing,168904,United States,0100000US,3114,1
+Frozen Food Manufacturing,95157,United States,0100000US,31141,1
+"Frozen Fruit, Juice, and Vegetable Manufacturing",29073,United States,0100000US,311411,1
+Frozen Specialty Food Manufacturing,66084,United States,0100000US,311412,1
+"Fruit and Vegetable Canning, Pickling, and Drying",73747,United States,0100000US,31142,1
+Fruit and Vegetable Canning,44356,United States,0100000US,311421,1
+Specialty Canning,12146,United States,0100000US,311422,1
+Dried and Dehydrated Food Manufacturing,17245,United States,0100000US,311423,1
+Dairy Product Manufacturing,162368,United States,0100000US,3115,1
+Dairy Product (except Frozen) Manufacturing,139329,United States,0100000US,31151,1
+Fluid Milk Manufacturing,59498,United States,0100000US,311511,1
+Creamery Butter Manufacturing,3656,United States,0100000US,311512,1
+Cheese Manufacturing,58670,United States,0100000US,311513,1
+"Dry, Condensed, and Evaporated Dairy Product Manufacturing",17505,United States,0100000US,311514,1
+Ice Cream and Frozen Dessert Manufacturing,23039,United States,0100000US,31152,1
+Ice Cream and Frozen Dessert Manufacturing,23039,United States,0100000US,311520,1
+Animal Slaughtering and Processing,535134,United States,0100000US,3116,1
+Animal Slaughtering and Processing,535134,United States,0100000US,31161,1
+Animal (except Poultry) Slaughtering,152843,United States,0100000US,311611,1
+Meat Processed from Carcasses,140850,United States,0100000US,311612,1
+Rendering and Meat Byproduct Processing,11201,United States,0100000US,311613,1
+Poultry Processing,230240,United States,0100000US,311615,1
+Seafood Product Preparation and Packaging,31202,United States,0100000US,3117,1
+Seafood Product Preparation and Packaging,31202,United States,0100000US,31171,1
+Seafood Product Preparation and Packaging,31202,United States,0100000US,311710,1
+Bakeries and Tortilla Manufacturing,294416,United States,0100000US,3118,1
+Bread and Bakery Product Manufacturing,219001,United States,0100000US,31181,1
+Retail Bakeries,77170,United States,0100000US,311811,1
+Commercial Bakeries,116608,United States,0100000US,311812,1
+"Frozen Cakes, Pies, and Other Pastries Manufacturing",25223,United States,0100000US,311813,1
+"Cookie, Cracker, and Pasta Manufacturing",55647,United States,0100000US,31182,1
+Cookie and Cracker Manufacturing,32585,United States,0100000US,311821,1
+"Dry Pasta, Dough, and Flour Mixes Manufacturing from Purchased Flour",23062,United States,0100000US,311824,1
+Tortilla Manufacturing,19768,United States,0100000US,31183,1
+Tortilla Manufacturing,19768,United States,0100000US,311830,1
+Other Food Manufacturing,248757,United States,0100000US,3119,1
+Snack Food Manufacturing,62417,United States,0100000US,31191,1
+Roasted Nuts and Peanut Butter Manufacturing,19739,United States,0100000US,311911,1
+Other Snack Food Manufacturing,42678,United States,0100000US,311919,1
+Coffee and Tea Manufacturing,23506,United States,0100000US,31192,1
+Coffee and Tea Manufacturing,23506,United States,0100000US,311920,1
+Flavoring Syrup and Concentrate Manufacturing,8593,United States,0100000US,31193,1
+Flavoring Syrup and Concentrate Manufacturing,8593,United States,0100000US,311930,1
+Seasoning and Dressing Manufacturing,49467,United States,0100000US,31194,1
+"Mayonnaise, Dressing, and Other Prepared Sauce Manufacturing",24050,United States,0100000US,311941,1
+Spice and Extract Manufacturing,25417,United States,0100000US,311942,1
+All Other Food Manufacturing,104774,United States,0100000US,31199,1
+Perishable Prepared Food Manufacturing,74630,United States,0100000US,311991,1
+All Other Miscellaneous Food Manufacturing,30144,United States,0100000US,311999,1
+Beverage and Tobacco Product Manufacturing,268798,United States,0100000US,312,1
+Beverage Manufacturing,257357,United States,0100000US,3121,1
+Soft Drink and Ice Manufacturing,81473,United States,0100000US,31211,1
+Soft Drink Manufacturing,64502,United States,0100000US,312111,1
+Bottled Water Manufacturing,11040,United States,0100000US,312112,1
+Ice Manufacturing,5931,United States,0100000US,312113,1
+Breweries,89823,United States,0100000US,31212,1
+Breweries,89823,United States,0100000US,312120,1
+Wineries,63475,United States,0100000US,31213,1
+Wineries,63475,United States,0100000US,312130,1
+Distilleries,22586,United States,0100000US,31214,1
+Distilleries,22586,United States,0100000US,312140,1
+Tobacco Manufacturing,11441,United States,0100000US,3122,1
+Tobacco Manufacturing,11441,United States,0100000US,31223,1
+Tobacco Manufacturing,11441,United States,0100000US,312230,1
+Textile Mills,80726,United States,0100000US,313,1
+"Fiber, Yarn, and Thread Mills",19117,United States,0100000US,3131,1
+"Fiber, Yarn, and Thread Mills",19117,United States,0100000US,31311,1
+"Fiber, Yarn, and Thread Mills",19117,United States,0100000US,313110,1
+Fabric Mills,40474,United States,0100000US,3132,1
+Broadwoven Fabric Mills,14081,United States,0100000US,31321,1
+Broadwoven Fabric Mills,14081,United States,0100000US,313210,1
+Narrow fabric mills and schiffli machine embroidery,5224,United States,0100000US,31322,1
+Narrow fabric mills and schiffli machine embroidery,5224,United States,0100000US,313220,1
+Nonwoven Fabric Mills,16151,United States,0100000US,31323,1
+Nonwoven Fabric Mills,16151,United States,0100000US,313230,1
+Knit Fabric Mills,5018,United States,0100000US,31324,1
+Knit Fabric Mills,5018,United States,0100000US,313240,1
+Textile and Fabric Finishing and Fabric Coating Mills,21135,United States,0100000US,3133,1
+Textile and Fabric Finishing Mills,14057,United States,0100000US,31331,1
+Textile and Fabric Finishing Mills,14057,United States,0100000US,313310,1
+Fabric Coating Mills,7078,United States,0100000US,31332,1
+Fabric Coating Mills,7078,United States,0100000US,313320,1
+Textile Product Mills,99981,United States,0100000US,314,1
+Textile Furnishings Mills,44674,United States,0100000US,3141,1
+Carpet and rug mills,25955,United States,0100000US,31411,1
+Carpet and rug mills,25955,United States,0100000US,314110,1
+Curtain and Linen Mills,18719,United States,0100000US,31412,1
+Curtain and Linen Mills,18719,United States,0100000US,314120,1
+Other textile product mills,55307,United States,0100000US,3149,1
+Textile Bag and Canvas Mills,23420,United States,0100000US,31491,1
+Textile Bag and Canvas Mills,23420,United States,0100000US,314910,1
+All Other Textile Product Mills,31887,United States,0100000US,31499,1
+"Rope, Cordage, Twine, Tire Cord, and Tire Fabric Mills",6154,United States,0100000US,314994,1
+All Other Miscellaneous Textile Product Mills,25733,United States,0100000US,314999,1
+Apparel Manufacturing,68393,United States,0100000US,315,1
+Apparel Knitting Mills,8786,United States,0100000US,3151,1
+Apparel Knitting Mills,8786,United States,0100000US,31512,1
+Apparel Knitting Mills,8786,United States,0100000US,315120,1
+Cut and Sew Apparel Manufacturing,51651,United States,0100000US,3152,1
+Cut and Sew Apparel Contractors,22468,United States,0100000US,31521,1
+Cut and Sew Apparel Contractors,22468,United States,0100000US,315210,1
+Cut and Sew Apparel Manufacturing (except Contractors),29183,United States,0100000US,31525,1
+Cut and Sew Apparel Manufacturing (except Contractors),29183,United States,0100000US,315250,1
+Apparel Accessories and Other Apparel Manufacturing,7956,United States,0100000US,3159,1
+Apparel Accessories and Other Apparel Manufacturing,7956,United States,0100000US,31599,1
+Apparel Accessories and Other Apparel Manufacturing,7956,United States,0100000US,315990,1
+Leather and Allied Product Manufacturing,24220,United States,0100000US,316,1
+Leather and Hide Tanning and Finishing,2999,United States,0100000US,3161,1
+Leather and hide tanning and finishing,2999,United States,0100000US,31611,1
+Leather and hide tanning and finishing,2999,United States,0100000US,316110,1
+Footwear Manufacturing,8920,United States,0100000US,3162,1
+Footwear Manufacturing,8920,United States,0100000US,31621,1
+Footwear Manufacturing,8920,United States,0100000US,316210,1
+Other Leather and Allied Product Manufacturing,12301,United States,0100000US,3169,1
+Other Leather and Allied Product Manufacturing,12301,United States,0100000US,31699,1
+Other Leather and Allied Product Manufacturing,12301,United States,0100000US,316990,1
+Wood Product Manufacturing,437757,United States,0100000US,321,1
+Sawmills and Wood Preservation,90592,United States,0100000US,3211,1
+Sawmills and Wood Preservation,90592,United States,0100000US,32111,1
+Sawmills,79158,United States,0100000US,321113,1
+Wood Preservation,11434,United States,0100000US,321114,1
+"Veneer, Plywood, and Engineered Wood Product Manufacturing",84314,United States,0100000US,3212,1
+"Veneer, Plywood, and Engineered Wood Product Manufacturing",84314,United States,0100000US,32121,1
+Hardwood Veneer and Plywood Manufacturing,10561,United States,0100000US,321211,1
+Softwood Veneer and Plywood Manufacturing,13371,United States,0100000US,321212,1
+Engineered Wood Member Manufacturing,48456,United States,0100000US,321215,1
+Reconstituted Wood Product Manufacturing,11926,United States,0100000US,321219,1
+Other wood product manufacturing,262851,United States,0100000US,3219,1
+Millwork,117967,United States,0100000US,32191,1
+Wood Window and Door Manufacturing,62363,United States,0100000US,321911,1
+"Cut Stock, Resawing Lumber, and Planing",19617,United States,0100000US,321912,1
+Other Millwork (including Flooring),35987,United States,0100000US,321918,1
+Wood Container and Pallet Manufacturing,64963,United States,0100000US,32192,1
+Wood Container and Pallet Manufacturing,64963,United States,0100000US,321920,1
+All Other Wood Product Manufacturing,79921,United States,0100000US,32199,1
+Manufactured Home (Mobile Home) Manufacturing,24554,United States,0100000US,321991,1
+Prefabricated Wood Building Manufacturing,23896,United States,0100000US,321992,1
+All Other Miscellaneous Wood Product Manufacturing,31471,United States,0100000US,321999,1
+Paper Manufacturing,347651,United States,0100000US,322,1
+"Pulp, paper, and paperboard mills",88907,United States,0100000US,3221,1
+Pulp Mills,9279,United States,0100000US,32211,1
+Pulp Mills,9279,United States,0100000US,322110,1
+Paper Mills,43170,United States,0100000US,32212,1
+Paper Mills,43170,United States,0100000US,322120,1
+Paperboard Mills,36458,United States,0100000US,32213,1
+Paperboard Mills,36458,United States,0100000US,322130,1
+Converted paper product manufacturing,258744,United States,0100000US,3222,1
+Paperboard Container Manufacturing,156182,United States,0100000US,32221,1
+Corrugated and Solid Fiber Box Manufacturing,91382,United States,0100000US,322211,1
+Folding Paperboard Box Manufacturing,45586,United States,0100000US,322212,1
+Other Paperboard Container Manufacturing,19214,United States,0100000US,322219,1
+Paper Bag and Coated and Treated Paper Manufacturing,53869,United States,0100000US,32222,1
+Paper Bag and Coated and Treated Paper Manufacturing,53869,United States,0100000US,322220,1
+Stationery Product Manufacturing,15661,United States,0100000US,32223,1
+Stationery Product Manufacturing,15661,United States,0100000US,322230,1
+Other Converted Paper Product Manufacturing,33032,United States,0100000US,32229,1
+Sanitary paper product manufacturing,18442,United States,0100000US,322291,1
+All Other Converted Paper Product Manufacturing,14590,United States,0100000US,322299,1
+Printing and Related Support Activities,379976,United States,0100000US,323,1
+Printing and Related Support Activities,379976,United States,0100000US,3231,1
+Printing,363932,United States,0100000US,32311,1
+Commercial Printing (except Screen and Books),273019,United States,0100000US,323111,1
+Commercial Screen Printing,71659,United States,0100000US,323113,1
+Books Printing,19254,United States,0100000US,323117,1
+Support Activities for Printing,16044,United States,0100000US,32312,1
+Support Activities for Printing,16044,United States,0100000US,323120,1
+Petroleum and Coal Products Manufacturing,99068,United States,0100000US,324,1
+Petroleum and Coal Products Manufacturing,99068,United States,0100000US,3241,1
+Petroleum Refineries,57192,United States,0100000US,32411,1
+Petroleum Refineries,57192,United States,0100000US,324110,1
+"Asphalt Paving, Roofing, and Saturated Materials Manufacturing",26168,United States,0100000US,32412,1
+Asphalt Paving Mixture and Block Manufacturing,15810,United States,0100000US,324121,1
+Asphalt Shingle and Coating Materials Manufacturing,10358,United States,0100000US,324122,1
+Other Petroleum and Coal Products Manufacturing,15708,United States,0100000US,32419,1
+Petroleum Lubricating Oil and Grease Manufacturing,12451,United States,0100000US,324191,1
+All Other Petroleum and Coal Products Manufacturing,3257,United States,0100000US,324199,1
+Chemical Manufacturing,888737,United States,0100000US,325,1
+Basic chemical manufacturing,162840,United States,0100000US,3251,1
+Petrochemical Manufacturing,10829,United States,0100000US,32511,1
+Petrochemical Manufacturing,10829,United States,0100000US,325110,1
+Industrial Gas Manufacturing,14626,United States,0100000US,32512,1
+Industrial Gas Manufacturing,14626,United States,0100000US,325120,1
+Synthetic Dye and Pigment Manufacturing,8554,United States,0100000US,32513,1
+Synthetic Dye and Pigment Manufacturing,8554,United States,0100000US,325130,1
+Other Basic Inorganic Chemical Manufacturing,43595,United States,0100000US,32518,1
+Other Basic Inorganic Chemical Manufacturing,43595,United States,0100000US,325180,1
+Other Basic Organic Chemical Manufacturing,85236,United States,0100000US,32519,1
+Ethyl Alcohol Manufacturing,10761,United States,0100000US,325193,1
+"Cyclic Crude, Intermediate, and Gum and Wood Chemical Manufacturing",5701,United States,0100000US,325194,1
+All Other Basic Organic Chemical Manufacturing,68774,United States,0100000US,325199,1
+"Resin, Synthetic Rubber, and Artificial and Synthetic Fibers and Filaments Manufacturing",114605,United States,0100000US,3252,1
+Resin and Synthetic Rubber Manufacturing,101373,United States,0100000US,32521,1
+Plastics Material and Resin Manufacturing,90042,United States,0100000US,325211,1
+Synthetic Rubber Manufacturing,11331,United States,0100000US,325212,1
+Artificial and Synthetic Fibers and Filaments Manufacturing,13232,United States,0100000US,32522,1
+Artificial and Synthetic Fibers and Filaments Manufacturing,13232,United States,0100000US,325220,1
+"Pesticide, Fertilizer, and Other Agricultural Chemical Manufacturing",37282,United States,0100000US,3253,1
+Fertilizer and Compost Manufacturing,23676,United States,0100000US,32531,1
+Nitrogenous Fertilizer Manufacturing,6500,United States,0100000US,325311,1
+Phosphatic Fertilizer Manufacturing,6979,United States,0100000US,325312,1
+Fertilizer (Mixing Only) Manufacturing,8320,United States,0100000US,325314,1
+Compost Manufacturing,1877,United States,0100000US,325315,1
+Pesticide and Other Agricultural Chemical Manufacturing,13606,United States,0100000US,32532,1
+Pesticide and Other Agricultural Chemical Manufacturing,13606,United States,0100000US,325320,1
+Pharmaceutical and Medicine Manufacturing,304238,United States,0100000US,3254,1
+Pharmaceutical and medicine manufacturing,304238,United States,0100000US,32541,1
+Medicinal and Botanical Manufacturing,31151,United States,0100000US,325411,1
+Pharmaceutical Preparation Manufacturing,160901,United States,0100000US,325412,1
+In-Vitro Diagnostic Substance Manufacturing,41726,United States,0100000US,325413,1
+Biological Product (except Diagnostic) Manufacturing,70460,United States,0100000US,325414,1
+"Paint, Coating, and Adhesive Manufacturing",74669,United States,0100000US,3255,1
+Paint and Coating Manufacturing,42768,United States,0100000US,32551,1
+Paint and Coating Manufacturing,42768,United States,0100000US,325510,1
+Adhesive Manufacturing,31901,United States,0100000US,32552,1
+Adhesive Manufacturing,31901,United States,0100000US,325520,1
+"Soap, Cleaning Compound, and Toilet Preparation Manufacturing",108203,United States,0100000US,3256,1
+Soap and Cleaning Compound Manufacturing,57317,United States,0100000US,32561,1
+Soap and Other Detergent Manufacturing,34143,United States,0100000US,325611,1
+Polish and Other Sanitation Good Manufacturing,17075,United States,0100000US,325612,1
+Surface Active Agent Manufacturing,6099,United States,0100000US,325613,1
+Toilet Preparation Manufacturing,50886,United States,0100000US,32562,1
+Toilet Preparation Manufacturing,50886,United States,0100000US,325620,1
+Other chemical product and preparation manufacturing,86900,United States,0100000US,3259,1
+Printing Ink Manufacturing,8960,United States,0100000US,32591,1
+Printing Ink Manufacturing,8960,United States,0100000US,325910,1
+Explosives Manufacturing,8075,United States,0100000US,32592,1
+Explosives Manufacturing,8075,United States,0100000US,325920,1
+All Other Chemical Product and Preparation Manufacturing,69865,United States,0100000US,32599,1
+Custom Compounding of Purchased Resins,20586,United States,0100000US,325991,1
+"Photographic Film, Paper, Plate, Chemical, and Copy Toner Manufacturing",6800,United States,0100000US,325992,1
+All Other Miscellaneous Chemical Product and Preparation Manufacturing,42479,United States,0100000US,325998,1
+Plastics and Rubber Products Manufacturing,825424,United States,0100000US,326,1
+Plastics product manufacturing,683088,United States,0100000US,3261,1
+Plastics Packaging Materials and Unlaminated Film and Sheet Manufacturing,105570,United States,0100000US,32611,1
+Plastics Bag and Pouch Manufacturing,36211,United States,0100000US,326111,1
+Plastics Packaging Film and Sheet (including Laminated) Manufacturing,35416,United States,0100000US,326112,1
+Unlaminated Plastics Film and Sheet (except Packaging) Manufacturing,33943,United States,0100000US,326113,1
+"Plastics Pipe, Pipe Fitting, and Unlaminated Profile Shape Manufacturing",45502,United States,0100000US,32612,1
+Unlaminated Plastics Profile Shape Manufacturing,19097,United States,0100000US,326121,1
+Plastics Pipe and Pipe Fitting Manufacturing,26405,United States,0100000US,326122,1
+"Laminated Plastics Plate, Sheet (except Packaging), and Shape Manufacturing",12339,United States,0100000US,32613,1
+"Laminated Plastics Plate, Sheet (except Packaging), and Shape Manufacturing",12339,United States,0100000US,326130,1
+Polystyrene Foam Product Manufacturing,29075,United States,0100000US,32614,1
+Polystyrene Foam Product Manufacturing,29075,United States,0100000US,326140,1
+Urethane and Other Foam Product (except Polystyrene) Manufacturing,34328,United States,0100000US,32615,1
+Urethane and Other Foam Product (except Polystyrene) Manufacturing,34328,United States,0100000US,326150,1
+Plastics Bottle Manufacturing,38380,United States,0100000US,32616,1
+Plastics Bottle Manufacturing,38380,United States,0100000US,326160,1
+Other Plastics Product Manufacturing,417894,United States,0100000US,32619,1
+Plastics Plumbing Fixture Manufacturing,19316,United States,0100000US,326191,1
+All Other Plastics Product Manufacturing,398578,United States,0100000US,326199,1
+Rubber product manufacturing,142336,United States,0100000US,3262,1
+Tire Manufacturing,58994,United States,0100000US,32621,1
+Tire Manufacturing (except Retreading),52718,United States,0100000US,326211,1
+Tire Retreading,6276,United States,0100000US,326212,1
+Rubber and Plastics Hoses and Belting Manufacturing,19775,United States,0100000US,32622,1
+Rubber and Plastics Hoses and Belting Manufacturing,19775,United States,0100000US,326220,1
+Other Rubber Product Manufacturing,63567,United States,0100000US,32629,1
+Rubber Product Manufacturing for Mechanical Use,29451,United States,0100000US,326291,1
+All Other Rubber Product Manufacturing,34116,United States,0100000US,326299,1
+Nonmetallic Mineral Product Manufacturing,424459,United States,0100000US,327,1
+Clay Product and Refractory Manufacturing,36636,United States,0100000US,3271,1
+"Pottery, Ceramics, and Plumbing Fixture Manufacturing",12373,United States,0100000US,32711,1
+"Pottery, Ceramics, and Plumbing Fixture Manufacturing",12373,United States,0100000US,327110,1
+Clay Building Material and Refractories Manufacturing,24263,United States,0100000US,32712,1
+Clay Building Material and Refractories Manufacturing,24263,United States,0100000US,327120,1
+Glass and Glass Product Manufacturing,93436,United States,0100000US,3272,1
+Glass and Glass Product Manufacturing,93436,United States,0100000US,32721,1
+Flat Glass Manufacturing,14047,United States,0100000US,327211,1
+Other Pressed and Blown Glass and Glassware Manufacturing,11320,United States,0100000US,327212,1
+Glass Container Manufacturing,13675,United States,0100000US,327213,1
+Glass Product Manufacturing Made of Purchased Glass,54394,United States,0100000US,327215,1
+Cement and Concrete Product Manufacturing,191769,United States,0100000US,3273,1
+Cement Manufacturing,14510,United States,0100000US,32731,1
+Cement Manufacturing,14510,United States,0100000US,327310,1
+Ready-Mix Concrete Manufacturing,95538,United States,0100000US,32732,1
+Ready-Mix Concrete Manufacturing,95538,United States,0100000US,327320,1
+"Concrete Pipe, Brick, and Block Manufacturing",20979,United States,0100000US,32733,1
+Concrete block and brick manufacturing,15846,United States,0100000US,327331,1
+Concrete pipe manufacturing,5133,United States,0100000US,327332,1
+Other Concrete Product Manufacturing,60742,United States,0100000US,32739,1
+Other Concrete Product Manufacturing,60742,United States,0100000US,327390,1
+Lime and Gypsum Product Manufacturing,15614,United States,0100000US,3274,1
+Lime Manufacturing,3763,United States,0100000US,32741,1
+Lime Manufacturing,3763,United States,0100000US,327410,1
+Gypsum Product Manufacturing,11851,United States,0100000US,32742,1
+Gypsum Product Manufacturing,11851,United States,0100000US,327420,1
+Other Nonmetallic Mineral Product Manufacturing,87004,United States,0100000US,3279,1
+Abrasive Product Manufacturing,10772,United States,0100000US,32791,1
+Abrasive Product Manufacturing,10772,United States,0100000US,327910,1
+All Other Nonmetallic Mineral Product Manufacturing,76232,United States,0100000US,32799,1
+Cut Stone and Stone Product Manufacturing,39200,United States,0100000US,327991,1
+Ground or Treated Mineral and Earth Manufacturing,10534,United States,0100000US,327992,1
+Mineral Wool Manufacturing,15069,United States,0100000US,327993,1
+All Other Miscellaneous Nonmetallic Mineral Product Manufacturing,11429,United States,0100000US,327999,1
+Primary Metal Manufacturing,349156,United States,0100000US,331,1
+Iron and Steel Mills and Ferroalloy Manufacturing,75151,United States,0100000US,3311,1
+Iron and Steel Mills and Ferroalloy Manufacturing,75151,United States,0100000US,33111,1
+Iron and Steel Mills and Ferroalloy Manufacturing,75151,United States,0100000US,331110,1
+Steel product manufacturing from purchased steel,53303,United States,0100000US,3312,1
+Iron and Steel Pipe and Tube Manufacturing from Purchased Steel,25740,United States,0100000US,33121,1
+Iron and Steel Pipe and Tube Manufacturing from Purchased Steel,25740,United States,0100000US,331210,1
+Rolling and Drawing of Purchased Steel,27563,United States,0100000US,33122,1
+Rolled Steel Shape Manufacturing,13743,United States,0100000US,331221,1
+Steel Wire Drawing,13820,United States,0100000US,331222,1
+Alumina and Aluminum Production and Processing,58807,United States,0100000US,3313,1
+Alumina and Aluminum Production and Processing,58807,United States,0100000US,33131,1
+Alumina Refining and Primary Aluminum Production,3848,United States,0100000US,331313,1
+Secondary Smelting and Alloying of Aluminum,5531,United States,0100000US,331314,1
+"Aluminum Sheet, Plate, and Foil Manufacturing",19523,United States,0100000US,331315,1
+"Other Aluminum Rolling, Drawing, and Extruding",29905,United States,0100000US,331318,1
+Nonferrous Metal (except Aluminum) Production and Processing,54797,United States,0100000US,3314,1
+Nonferrous Metal (except Aluminum) Smelting and Refining,7920,United States,0100000US,33141,1
+Nonferrous Metal (except Aluminum) Smelting and Refining,7920,United States,0100000US,331410,1
+"Copper Rolling, Drawing, Extruding, and Alloying",25174,United States,0100000US,33142,1
+"Copper Rolling, Drawing, Extruding, and Alloying",25174,United States,0100000US,331420,1
+"Nonferrous Metal (except Copper and Aluminum) Rolling, Drawing, Extruding, and Alloying",21703,United States,0100000US,33149,1
+"Nonferrous Metal (except Copper and Aluminum) Rolling, Drawing, and Extruding",12610,United States,0100000US,331491,1
+"Secondary Smelting, Refining, and Alloying of Nonferrous Metal (except Copper and Aluminum)",9093,United States,0100000US,331492,1
+Foundries,107098,United States,0100000US,3315,1
+Ferrous Metal Foundries,56847,United States,0100000US,33151,1
+Iron Foundries,32389,United States,0100000US,331511,1
+Steel Investment Foundries,14303,United States,0100000US,331512,1
+Steel Foundries (except Investment),10155,United States,0100000US,331513,1
+Nonferrous Metal Foundries,50251,United States,0100000US,33152,1
+Nonferrous Metal Die-Casting Foundries,28636,United States,0100000US,331523,1
+Aluminum Foundries (except Die-Casting),12754,United States,0100000US,331524,1
+Other Nonferrous Metal Foundries (except Die-Casting),8861,United States,0100000US,331529,1
+Fabricated Metal Product Manufacturing,1424399,United States,0100000US,332,1
+Forging and Stamping,88851,United States,0100000US,3321,1
+Forging and Stamping,88851,United States,0100000US,33211,1
+Iron and Steel Forging,15339,United States,0100000US,332111,1
+Nonferrous Forging,5565,United States,0100000US,332112,1
+Custom Roll Forming,14408,United States,0100000US,332114,1
+Powder metallurgy part manufacturing,9411,United States,0100000US,332117,1
+"Metal Crown, Closure, and Other Metal Stamping (except Automotive)",44128,United States,0100000US,332119,1
+Cutlery and Handtool Manufacturing,30960,United States,0100000US,3322,1
+Cutlery and Handtool Manufacturing,30960,United States,0100000US,33221,1
+"Metal Kitchen Cookware, Utensil, Cutlery, and Flatware (except Precious) Manufacturing",6551,United States,0100000US,332215,1
+Saw Blade and Handtool Manufacturing,24409,United States,0100000US,332216,1
+Architectural and Structural Metals Manufacturing,424596,United States,0100000US,3323,1
+Plate Work and Fabricated Structural Product Manufacturing,190769,United States,0100000US,33231,1
+Prefabricated Metal Building and Component Manufacturing,30139,United States,0100000US,332311,1
+Fabricated Structural Metal Manufacturing,109255,United States,0100000US,332312,1
+Plate Work Manufacturing,51375,United States,0100000US,332313,1
+Ornamental and Architectural Metal Products Manufacturing,233827,United States,0100000US,33232,1
+Metal Window and Door Manufacturing,58572,United States,0100000US,332321,1
+Sheet Metal Work Manufacturing,132185,United States,0100000US,332322,1
+Ornamental and Architectural Metal Work Manufacturing,43070,United States,0100000US,332323,1
+"Boiler, Tank, and Shipping Container Manufacturing",81473,United States,0100000US,3324,1
+Power Boiler and Heat Exchanger Manufacturing,19854,United States,0100000US,33241,1
+Power Boiler and Heat Exchanger Manufacturing,19854,United States,0100000US,332410,1
+Metal Tank (Heavy Gauge) Manufacturing,30541,United States,0100000US,33242,1
+Metal Tank (Heavy Gauge) Manufacturing,30541,United States,0100000US,332420,1
+"Metal Can, Box, and Other Metal Container (Light Gauge) Manufacturing",31078,United States,0100000US,33243,1
+Metal Can Manufacturing,20604,United States,0100000US,332431,1
+Other Metal Container Manufacturing,10474,United States,0100000US,332439,1
+Hardware Manufacturing,28620,United States,0100000US,3325,1
+Hardware Manufacturing,28620,United States,0100000US,33251,1
+Hardware Manufacturing,28620,United States,0100000US,332510,1
+Spring and Wire Product Manufacturing,34777,United States,0100000US,3326,1
+Spring and Wire Product Manufacturing,34777,United States,0100000US,33261,1
+Spring Manufacturing,16398,United States,0100000US,332613,1
+Other Fabricated Wire Product Manufacturing,18379,United States,0100000US,332618,1
+"Machine Shops; Turned Product; and Screw, Nut, and Bolt Manufacturing",371460,United States,0100000US,3327,1
+Machine Shops,226604,United States,0100000US,33271,1
+Machine Shops,226604,United States,0100000US,332710,1
+"Turned Product and Screw, Nut, and Bolt Manufacturing",144856,United States,0100000US,33272,1
+Precision Turned Product Manufacturing,108020,United States,0100000US,332721,1
+"Bolt, Nut, Screw, Rivet, and Washer Manufacturing",36836,United States,0100000US,332722,1
+"Coating, Engraving, Heat Treating, and Allied Activities",116275,United States,0100000US,3328,1
+"Coating, Engraving, Heat Treating, and Allied Activities",116275,United States,0100000US,33281,1
+Metal Heat Treating,18174,United States,0100000US,332811,1
+"Metal Coating, Engraving (except Jewelry and Silverware), and Allied Services to Manufacturers",50737,United States,0100000US,332812,1
+"Electroplating, Plating, Polishing, Anodizing, and Coloring",47364,United States,0100000US,332813,1
+Other fabricated metal product manufacturing,247387,United States,0100000US,3329,1
+Metal Valve Manufacturing,85831,United States,0100000US,33291,1
+Industrial Valve Manufacturing,33193,United States,0100000US,332911,1
+Fluid Power Valve and Hose Fitting Manufacturing,30169,United States,0100000US,332912,1
+Plumbing Fixture Fitting and Trim Manufacturing,9702,United States,0100000US,332913,1
+Other Metal Valve and Pipe Fitting Manufacturing,12767,United States,0100000US,332919,1
+All Other Fabricated Metal Product Manufacturing,161556,United States,0100000US,33299,1
+Ball and Roller Bearing Manufacturing,18023,United States,0100000US,332991,1
+Small Arms Ammunition Manufacturing,13455,United States,0100000US,332992,1
+Ammunition (except Small Arms) Manufacturing,14700,United States,0100000US,332993,1
+"Small Arms, Ordnance, and Ordnance Accessories Manufacturing",24552,United States,0100000US,332994,1
+Fabricated Pipe and Pipe Fitting Manufacturing,27714,United States,0100000US,332996,1
+All Other Miscellaneous Fabricated Metal Product Manufacturing,63112,United States,0100000US,332999,1
+Machinery Manufacturing,1069526,United States,0100000US,333,1
+"Agriculture, Construction, and Mining Machinery Manufacturing",183535,United States,0100000US,3331,1
+Agricultural Implement Manufacturing,81276,United States,0100000US,33311,1
+Farm Machinery and Equipment Manufacturing,62909,United States,0100000US,333111,1
+Lawn and Garden Tractor and Home Lawn and Garden Equipment Manufacturing,18367,United States,0100000US,333112,1
+Construction Machinery Manufacturing,61468,United States,0100000US,33312,1
+Construction Machinery Manufacturing,61468,United States,0100000US,333120,1
+Mining and Oil and Gas Field Machinery Manufacturing,40791,United States,0100000US,33313,1
+Mining Machinery and Equipment Manufacturing,11149,United States,0100000US,333131,1
+Oil and Gas Field Machinery and Equipment Manufacturing,29642,United States,0100000US,333132,1
+Industrial Machinery Manufacturing,101850,United States,0100000US,3332,1
+Industrial Machinery Manufacturing,101850,United States,0100000US,33324,1
+Food Product Machinery Manufacturing,17243,United States,0100000US,333241,1
+Semiconductor Machinery Manufacturing,26067,United States,0100000US,333242,1
+"Sawmill, Woodworking, and Paper Machinery Manufacturing",11816,United States,0100000US,333243,1
+All Other Industrial Machinery Manufacturing,46724,United States,0100000US,333248,1
+Commercial and Service Industry Machinery Manufacturing,82115,United States,0100000US,3333,1
+Commercial and Service Industry Machinery Manufacturing,82115,United States,0100000US,33331,1
+Commercial and Service Industry Machinery Manufacturing,82115,United States,0100000US,333310,1
+"Ventilation, Heating, Air-Conditioning, and Commercial Refrigeration Equipment Manufacturing",152228,United States,0100000US,3334,1
+"Ventilation, Heating, Air-Conditioning, and Commercial Refrigeration Equipment Manufacturing",152228,United States,0100000US,33341,1
+Industrial and Commercial Fan and Blower and Air Purification Equipment Manufacturing,30758,United States,0100000US,333413,1
+Heating Equipment (except Warm Air Furnaces) Manufacturing,17456,United States,0100000US,333414,1
+Air-Conditioning and Warm Air Heating Equipment and Commercial and Industrial Refrigeration Equipment Manufacturing,104014,United States,0100000US,333415,1
+Metalworking Machinery Manufacturing,133974,United States,0100000US,3335,1
+Metalworking Machinery Manufacturing,133974,United States,0100000US,33351,1
+Industrial Mold Manufacturing,28682,United States,0100000US,333511,1
+"Special Die and Tool, Die Set, Jig, and Fixture Manufacturing",43736,United States,0100000US,333514,1
+Cutting Tool and Machine Tool Accessory Manufacturing,23919,United States,0100000US,333515,1
+Machine Tool Manufacturing,27956,United States,0100000US,333517,1
+Rolling Mill and Other Metalworking Machinery Manufacturing,9681,United States,0100000US,333519,1
+"Engine, Turbine, and Power Transmission Equipment Manufacturing",97681,United States,0100000US,3336,1
+"Engine, Turbine, and Power Transmission Equipment Manufacturing",97681,United States,0100000US,33361,1
+Turbine and Turbine Generator Set Units Manufacturing,30509,United States,0100000US,333611,1
+"Speed Changer, Industrial High-Speed Drive, and Gear Manufacturing",10922,United States,0100000US,333612,1
+Mechanical Power Transmission Equipment Manufacturing,16317,United States,0100000US,333613,1
+Other Engine Equipment Manufacturing,39933,United States,0100000US,333618,1
+Other General Purpose Machinery Manufacturing,318143,United States,0100000US,3339,1
+Pump and Compressor Manufacturing,56467,United States,0100000US,33391,1
+Air and Gas Compressor Manufacturing,20626,United States,0100000US,333912,1
+"Measuring, Dispensing, and Other Pumping Equipment Manufacturing",35841,United States,0100000US,333914,1
+Material Handling Equipment Manufacturing,105342,United States,0100000US,33392,1
+Elevator and Moving Stairway Manufacturing,10745,United States,0100000US,333921,1
+Conveyor and Conveying Equipment Manufacturing,44413,United States,0100000US,333922,1
+"Overhead Traveling Crane, Hoist, and Monorail System Manufacturing",20119,United States,0100000US,333923,1
+"Industrial Truck, Tractor, Trailer, and Stacker Machinery Manufacturing",30065,United States,0100000US,333924,1
+All Other General Purpose Machinery Manufacturing,156334,United States,0100000US,33399,1
+Power-Driven Handtool Manufacturing,6148,United States,0100000US,333991,1
+Welding and Soldering Equipment Manufacturing,15583,United States,0100000US,333992,1
+Packaging machinery manufacturing,26330,United States,0100000US,333993,1
+Industrial Process Furnace and Oven Manufacturing,11407,United States,0100000US,333994,1
+Fluid Power Cylinder and Actuator Manufacturing,19003,United States,0100000US,333995,1
+Fluid Power Pump and Motor Manufacturing,11402,United States,0100000US,333996,1
+All Other Miscellaneous General Purpose Machinery Manufacturing,66461,United States,0100000US,333998,1
+Computer and Electronic Product Manufacturing,819719,United States,0100000US,334,1
+Computer and Peripheral Equipment Manufacturing,30929,United States,0100000US,3341,1
+Computer and Peripheral Equipment Manufacturing,30929,United States,0100000US,33411,1
+Electronic Computer Manufacturing,13898,United States,0100000US,334111,1
+Computer Storage Device Manufacturing,8678,United States,0100000US,334112,1
+Computer Terminal and Other Computer Peripheral Equipment Manufacturing,8353,United States,0100000US,334118,1
+Communications Equipment Manufacturing,83558,United States,0100000US,3342,1
+Telephone Apparatus Manufacturing,8732,United States,0100000US,33421,1
+Telephone Apparatus Manufacturing,8732,United States,0100000US,334210,1
+Radio and Television Broadcasting and Wireless Communications Equipment Manufacturing,62091,United States,0100000US,33422,1
+Radio and Television Broadcasting and Wireless Communications Equipment Manufacturing,62091,United States,0100000US,334220,1
+Other Communications Equipment Manufacturing,12735,United States,0100000US,33429,1
+Other Communications Equipment Manufacturing,12735,United States,0100000US,334290,1
+Audio and Video Equipment Manufacturing,12808,United States,0100000US,3343,1
+Audio and Video Equipment Manufacturing,12808,United States,0100000US,33431,1
+Audio and Video Equipment Manufacturing,12808,United States,0100000US,334310,1
+Semiconductor and Other Electronic Component Manufacturing,270708,United States,0100000US,3344,1
+Semiconductor and Other Electronic Component Manufacturing,270708,United States,0100000US,33441,1
+Bare Printed Circuit Board Manufacturing,21123,United States,0100000US,334412,1
+Semiconductor and Related Device Manufacturing,106969,United States,0100000US,334413,1
+"Capacitor, Resistor, Coil, Transformer, and Other Inductor Manufacturing",14887,United States,0100000US,334416,1
+Electronic Connector Manufacturing,19599,United States,0100000US,334417,1
+Printed Circuit Assembly (Electronic Assembly) Manufacturing,54438,United States,0100000US,334418,1
+Other Electronic Component Manufacturing,53692,United States,0100000US,334419,1
+"Navigational, Measuring, Electromedical, and Control Instruments Manufacturing",416201,United States,0100000US,3345,1
+"Navigational, Measuring, Electromedical, and Control Instruments Manufacturing",416201,United States,0100000US,33451,1
+Electromedical and Electrotherapeutic Apparatus Manufacturing,94953,United States,0100000US,334510,1
+"Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing",123903,United States,0100000US,334511,1
+"Automatic Environmental Control Manufacturing for Residential, Commercial, and Appliance Use",11209,United States,0100000US,334512,1
+"Instruments and Related Products Manufacturing for Measuring, Displaying, and Controlling Industrial Process Variables",41518,United States,0100000US,334513,1
+Totalizing Fluid Meter and Counting Device Manufacturing,12787,United States,0100000US,334514,1
+Instrument Manufacturing for Measuring and Testing Electricity and Electrical Signals,27517,United States,0100000US,334515,1
+Analytical Laboratory Instrument Manufacturing,49746,United States,0100000US,334516,1
+Irradiation Apparatus Manufacturing,14254,United States,0100000US,334517,1
+Other Measuring and Controlling Device Manufacturing,40314,United States,0100000US,334519,1
+Manufacturing and Reproducing Magnetic and Optical Media,5515,United States,0100000US,3346,1
+Manufacturing and Reproducing Magnetic and Optical Media,5515,United States,0100000US,33461,1
+Manufacturing and Reproducing Magnetic and Optical Media,5515,United States,0100000US,334610,1
+"Electrical Equipment, Appliance, and Component Manufacturing",373387,United States,0100000US,335,1
+Electric Lighting Equipment Manufacturing,37699,United States,0100000US,3351,1
+Electric Lighting Equipment Manufacturing,37699,United States,0100000US,33513,1
+Residential Electric Lighting Fixture Manufacturing,6523,United States,0100000US,335131,1
+"Commercial, Industrial, and Institutional Electric Lighting Fixture Manufacturing",18614,United States,0100000US,335132,1
+Electric Lamp Bulb and Other Lighting Equipment Manufacturing,12562,United States,0100000US,335139,1
+Household Appliance Manufacturing,57642,United States,0100000US,3352,1
+Small Electrical Appliance Manufacturing,8544,United States,0100000US,33521,1
+Small Electrical Appliance Manufacturing,8544,United States,0100000US,335210,1
+Major Household Appliance Manufacturing,49098,United States,0100000US,33522,1
+Major Household Appliance Manufacturing,49098,United States,0100000US,335220,1
+Electrical Equipment Manufacturing,119871,United States,0100000US,3353,1
+Electrical Equipment Manufacturing,119871,United States,0100000US,33531,1
+"Power, Distribution, and Specialty Transformer Manufacturing",23996,United States,0100000US,335311,1
+Motor and Generator Manufacturing,28521,United States,0100000US,335312,1
+Switchgear and Switchboard Apparatus Manufacturing,35586,United States,0100000US,335313,1
+Relay and Industrial Control Manufacturing,31768,United States,0100000US,335314,1
+Other electrical equipment and component manufacturing,158175,United States,0100000US,3359,1
+Battery Manufacturing,48626,United States,0100000US,33591,1
+Battery Manufacturing,48626,United States,0100000US,335910,1
+Communication and Energy Wire and Cable Manufacturing,22071,United States,0100000US,33592,1
+Fiber Optic Cable Manufacturing,7206,United States,0100000US,335921,1
+Other Communication and Energy Wire Manufacturing,14865,United States,0100000US,335929,1
+Wiring Device Manufacturing,39550,United States,0100000US,33593,1
+Current-Carrying Wiring Device Manufacturing,24954,United States,0100000US,335931,1
+Noncurrent-Carrying Wiring Device Manufacturing,14596,United States,0100000US,335932,1
+All Other Electrical Equipment and Component Manufacturing,47928,United States,0100000US,33599,1
+Carbon and Graphite Product Manufacturing,9252,United States,0100000US,335991,1
+All Other Miscellaneous Electrical Equipment and Component Manufacturing,38676,United States,0100000US,335999,1
+Transportation Equipment Manufacturing,1636080,United States,0100000US,336,1
+Motor Vehicle Manufacturing,252000,United States,0100000US,3361,1
+Automobile and Light Duty Motor Vehicle Manufacturing,213363,United States,0100000US,33611,1
+Automobile and Light Duty Motor Vehicle Manufacturing,213363,United States,0100000US,336110,1
+Heavy Duty Truck Manufacturing,38637,United States,0100000US,33612,1
+Heavy Duty Truck Manufacturing,38637,United States,0100000US,336120,1
+Motor Vehicle Body and Trailer Manufacturing,177036,United States,0100000US,3362,1
+Motor Vehicle Body and Trailer Manufacturing,177036,United States,0100000US,33621,1
+Motor Vehicle Body Manufacturing,57659,United States,0100000US,336211,1
+Truck Trailer Manufacturing,45182,United States,0100000US,336212,1
+Motor Home Manufacturing,12643,United States,0100000US,336213,1
+Travel Trailer and Camper Manufacturing,61552,United States,0100000US,336214,1
+Motor Vehicle Parts Manufacturing,575338,United States,0100000US,3363,1
+Motor Vehicle Gasoline Engine and Engine Parts Manufacturing,59754,United States,0100000US,33631,1
+Motor Vehicle Gasoline Engine and Engine Parts Manufacturing,59754,United States,0100000US,336310,1
+Motor Vehicle Electrical and Electronic Equipment Manufacturing,59943,United States,0100000US,33632,1
+Motor Vehicle Electrical and Electronic Equipment Manufacturing,59943,United States,0100000US,336320,1
+Motor Vehicle Steering and Suspension Components (except Spring) Manufacturing,35440,United States,0100000US,33633,1
+Motor Vehicle Steering and Suspension Components (except Spring) Manufacturing,35440,United States,0100000US,336330,1
+Motor Vehicle Brake System Manufacturing,19809,United States,0100000US,33634,1
+Motor Vehicle Brake System Manufacturing,19809,United States,0100000US,336340,1
+Motor Vehicle Transmission and Power Train Parts Manufacturing,83333,United States,0100000US,33635,1
+Motor Vehicle Transmission and Power Train Parts Manufacturing,83333,United States,0100000US,336350,1
+Motor Vehicle Seating and Interior Trim Manufacturing,72280,United States,0100000US,33636,1
+Motor Vehicle Seating and Interior Trim Manufacturing,72280,United States,0100000US,336360,1
+Motor Vehicle Metal Stamping,103323,United States,0100000US,33637,1
+Motor Vehicle Metal Stamping,103323,United States,0100000US,336370,1
+Other Motor Vehicle Parts Manufacturing,141456,United States,0100000US,33639,1
+Other Motor Vehicle Parts Manufacturing,141456,United States,0100000US,336390,1
+Aerospace Product and Parts Manufacturing,416552,United States,0100000US,3364,1
+Aerospace Product and Parts Manufacturing,416552,United States,0100000US,33641,1
+Aircraft Manufacturing,178922,United States,0100000US,336411,1
+Aircraft Engine and Engine Parts Manufacturing,66672,United States,0100000US,336412,1
+Other Aircraft Parts and Auxiliary Equipment Manufacturing,101083,United States,0100000US,336413,1
+Guided Missile and Space Vehicle Manufacturing,25453,United States,0100000US,336414,1
+Guided Missile and Space Vehicle Propulsion Unit and Propulsion Unit Parts Manufacturing,37683,United States,0100000US,336415,1
+Other Guided Missile and Space Vehicle Parts and Auxiliary Equipment Manufacturing,6739,United States,0100000US,336419,1
+Railroad Rolling Stock Manufacturing,30031,United States,0100000US,3365,1
+Railroad Rolling Stock Manufacturing,30031,United States,0100000US,33651,1
+Railroad Rolling Stock Manufacturing,30031,United States,0100000US,336510,1
+Ship and Boat Building,148040,United States,0100000US,3366,1
+Ship and Boat Building,148040,United States,0100000US,33661,1
+Ship Building and Repairing,98695,United States,0100000US,336611,1
+Boat Building,49345,United States,0100000US,336612,1
+Other Transportation Equipment Manufacturing,37083,United States,0100000US,3369,1
+Other Transportation Equipment Manufacturing,37083,United States,0100000US,33699,1
+"Motorcycle, Bicycle, and Parts Manufacturing",9647,United States,0100000US,336991,1
+"Military Armored Vehicle, Tank, and Tank Component Manufacturing",11931,United States,0100000US,336992,1
+All Other Transportation Equipment Manufacturing,15505,United States,0100000US,336999,1
+Furniture and Related Product Manufacturing,378328,United States,0100000US,337,1
+Household and institutional furniture and kitchen cabinet manufacturing,235897,United States,0100000US,3371,1
+Wood Kitchen Cabinet and Countertop Manufacturing,106951,United States,0100000US,33711,1
+Wood Kitchen Cabinet and Countertop Manufacturing,106951,United States,0100000US,337110,1
+Household and Institutional Furniture Manufacturing,128946,United States,0100000US,33712,1
+Upholstered Household Furniture Manufacturing,71578,United States,0100000US,337121,1
+Nonupholstered Wood Household Furniture Manufacturing,21628,United States,0100000US,337122,1
+Household Furniture (except Wood and Upholstered) Manufacturing,12273,United States,0100000US,337126,1
+Institutional Furniture Manufacturing,23467,United States,0100000US,337127,1
+Office Furniture (including Fixtures) Manufacturing,108270,United States,0100000US,3372,1
+Office Furniture (including Fixtures) Manufacturing,108270,United States,0100000US,33721,1
+Wood office furniture manufacturing,13299,United States,0100000US,337211,1
+Custom Architectural Woodwork and Millwork Manufacturing,47896,United States,0100000US,337212,1
+Office Furniture (except Wood) Manufacturing,17518,United States,0100000US,337214,1
+"Showcase, Partition, Shelving, and Locker Manufacturing",29557,United States,0100000US,337215,1
+Other furniture related product manufacturing,34161,United States,0100000US,3379,1
+Mattress Manufacturing,22508,United States,0100000US,33791,1
+Mattress Manufacturing,22508,United States,0100000US,337910,1
+Blind and Shade Manufacturing,11653,United States,0100000US,33792,1
+Blind and Shade Manufacturing,11653,United States,0100000US,337920,1
+Miscellaneous Manufacturing,528700,United States,0100000US,339,1
+Medical Equipment and Supplies Manufacturing,289216,United States,0100000US,3391,1
+Medical Equipment and Supplies Manufacturing,289216,United States,0100000US,33911,1
+Surgical and Medical Instrument Manufacturing,121079,United States,0100000US,339112,1
+Surgical Appliance and Supplies Manufacturing,86017,United States,0100000US,339113,1
+Dental Equipment and Supplies Manufacturing,16408,United States,0100000US,339114,1
+Ophthalmic Goods Manufacturing,21438,United States,0100000US,339115,1
+Dental Laboratories,44274,United States,0100000US,339116,1
+Other Miscellaneous Manufacturing,239484,United States,0100000US,3399,1
+Jewelry and Silverware Manufacturing,18811,United States,0100000US,33991,1
+Jewelry and Silverware Manufacturing,18811,United States,0100000US,339910,1
+Sporting and Athletic Goods Manufacturing,37048,United States,0100000US,33992,1
+Sporting and Athletic Goods Manufacturing,37048,United States,0100000US,339920,1
+"Doll, Toy, and Game Manufacturing",5590,United States,0100000US,33993,1
+"Doll, Toy, and Game Manufacturing",5590,United States,0100000US,339930,1
+Office Supplies (except Paper) Manufacturing,8908,United States,0100000US,33994,1
+Office Supplies (except Paper) Manufacturing,8908,United States,0100000US,339940,1
+Sign Manufacturing,73566,United States,0100000US,33995,1
+Sign Manufacturing,73566,United States,0100000US,339950,1
+All Other Miscellaneous Manufacturing,95561,United States,0100000US,33999,1
+"Gasket, packing, and sealing device manufacturing",27038,United States,0100000US,339991,1
+Musical Instrument Manufacturing,11833,United States,0100000US,339992,1
+"Fastener, Button, Needle, and Pin Manufacturing",3772,United States,0100000US,339993,1
+"Broom, brush, and mop manufacturing",8657,United States,0100000US,339994,1
+Burial Casket Manufacturing,2770,United States,0100000US,339995,1
+All Other Miscellaneous Manufacturing,41491,United States,0100000US,339999,1
+Wholesale trade,6219107,United States,0100000US,42,1
+"Merchant Wholesalers, Durable Goods",3631054,United States,0100000US,423,1
+Motor Vehicle and Motor Vehicle Parts and Supplies Merchant Wholesalers,446624,United States,0100000US,4231,1
+Automobile and other motor vehicle merchant wholesalers,142401,United States,0100000US,42311,1
+Automobile and other motor vehicle merchant wholesalers,142401,United States,0100000US,423110,1
+Automobile and motorcycle merchant wholesalers,51502,United States,0100000US,4231101,1
+Bus and recreational vehicle merchant wholesalers,5653,United States,0100000US,4231102,1
+"Light truck and van (14,000 lb or less) merchant wholesalers",9075,United States,0100000US,4231103,1
+"Medium truck and tractor (14,001 lb to 33,000 lb) merchant wholesalers",7072,United States,0100000US,4231104,1
+"Heavy truck and tractor (over 33,000 lb) merchant wholesalers",69099,United States,0100000US,4231105,1
+Motor Vehicle Supplies and New Parts Merchant Wholesalers,225900,United States,0100000US,42312,1
+Motor Vehicle Supplies and New Parts Merchant Wholesalers,225900,United States,0100000US,423120,1
+Motor vehicle supplies and new parts merchant wholesalers- warehouse distributors,74878,United States,0100000US,4231201,1
+Motor vehicle supplies and new parts merchant wholesalers- jobbers,146903,United States,0100000US,4231202,1
+Petroleum products marketing equipment merchant wholesalers,4119,United States,0100000US,4231203,1
+Tire and Tube Merchant Wholesalers,51495,United States,0100000US,42313,1
+Tire and Tube Merchant Wholesalers,51495,United States,0100000US,423130,1
+Motor Vehicle Parts (Used) Merchant Wholesalers,26828,United States,0100000US,42314,1
+Motor Vehicle Parts (Used) Merchant Wholesalers,26828,United States,0100000US,423140,1
+Furniture and Home Furnishing Merchant Wholesalers,161209,United States,0100000US,4232,1
+Furniture Merchant Wholesalers,67247,United States,0100000US,42321,1
+Furniture Merchant Wholesalers,67247,United States,0100000US,423210,1
+Household and lawn furniture merchant wholesalers,28369,United States,0100000US,4232101,1
+Office and business furniture merchant wholesalers,38878,United States,0100000US,4232102,1
+Home Furnishing Merchant Wholesalers,93962,United States,0100000US,42322,1
+Home Furnishing Merchant Wholesalers,93962,United States,0100000US,423220,1
+"Household china, glassware, and crockery merchant wholesalers",4424,United States,0100000US,4232201,1
+"Linens, domestics, draperies, and curtains merchant wholesalers",16363,United States,0100000US,4232202,1
+Floor coverings merchant wholesalers,43480,United States,0100000US,4232203,1
+Other home furnishings merchant wholesalers,29695,United States,0100000US,4232204,1
+Lumber and Other Construction Materials Merchant Wholesalers,268570,United States,0100000US,4233,1
+"Lumber, Plywood, Millwork, and Wood Panel Merchant Wholesalers",131380,United States,0100000US,42331,1
+"Lumber, Plywood, Millwork, and Wood Panel Merchant Wholesalers",131380,United States,0100000US,423310,1
+Lumber without yard merchant wholesalers,16981,United States,0100000US,4233101,1
+Lumber with yard merchant wholesalers,34270,United States,0100000US,4233102,1
+"Plywood, veneer, millwork, and wood panel merchant wholesalers",80129,United States,0100000US,4233103,1
+"Brick, Stone, and Related Construction Material Merchant Wholesalers",36785,United States,0100000US,42332,1
+"Brick, Stone, and Related Construction Material Merchant Wholesalers",36785,United States,0100000US,423320,1
+"Brick, block, tile, clay/cement sewer pipe merchant wholesalers",16892,United States,0100000US,4233201,1
+"Sand, gravel, and stone merchant wholesalers",15802,United States,0100000US,4233202,1
+"Cement, lime, and related products merchant wholesalers",4091,United States,0100000US,4233203,1
+"Roofing, Siding, and Insulation Material Merchant Wholesalers",46539,United States,0100000US,42333,1
+"Roofing, Siding, and Insulation Material Merchant Wholesalers",46539,United States,0100000US,423330,1
+Other Construction Material Merchant Wholesalers,53866,United States,0100000US,42339,1
+Other Construction Material Merchant Wholesalers,53866,United States,0100000US,423390,1
+Flat glass and other construction glass merchant wholesalers,7695,United States,0100000US,4233901,1
+Other construction material merchant wholesalers,46171,United States,0100000US,4233902,1
+Professional and Commercial Equipment and Supplies Merchant Wholesalers,660524,United States,0100000US,4234,1
+Photographic Equipment and Supplies Merchant Wholesalers,9393,United States,0100000US,42341,1
+Photographic Equipment and Supplies Merchant Wholesalers,9393,United States,0100000US,423410,1
+Office Equipment Merchant Wholesalers,89608,United States,0100000US,42342,1
+Office Equipment Merchant Wholesalers,89608,United States,0100000US,423420,1
+Computer and Computer Peripheral Equipment and Software Merchant Wholesalers,196199,United States,0100000US,42343,1
+Computer and Computer Peripheral Equipment and Software Merchant Wholesalers,196199,United States,0100000US,423430,1
+Computer and computer peripheral equipment merchant wholesalers,178843,United States,0100000US,4234301,1
+Computer software (packaged) merchant wholesalers,17356,United States,0100000US,4234302,1
+Other Commercial Equipment Merchant Wholesalers,46791,United States,0100000US,42344,1
+Other Commercial Equipment Merchant Wholesalers,46791,United States,0100000US,423440,1
+Restaurant and hotel equipment and supplies merchant wholesalers,34268,United States,0100000US,4234401,1
+Store machines and equipment merchant wholesalers,12523,United States,0100000US,4234402,1
+"Medical, Dental, and Hospital Equipment and Supplies Merchant Wholesalers",251030,United States,0100000US,42345,1
+"Medical, Dental, and Hospital Equipment and Supplies Merchant Wholesalers",251030,United States,0100000US,423450,1
+"Surgical, medical, and hospital supplies merchant wholesalers",233126,United States,0100000US,4234501,1
+Dental equipment and supplies merchant wholesalers,17904,United States,0100000US,4234502,1
+Ophthalmic Goods Merchant Wholesalers,20785,United States,0100000US,42346,1
+Ophthalmic Goods Merchant Wholesalers,20785,United States,0100000US,423460,1
+Other Professional Equipment and Supplies Merchant Wholesalers,46718,United States,0100000US,42349,1
+Other Professional Equipment and Supplies Merchant Wholesalers,46718,United States,0100000US,423490,1
+Religious and school supplies merchant wholesalers,3897,United States,0100000US,4234901,1
+Other professional equipment and supplies merchant wholesalers,42821,United States,0100000US,4234902,1
+Metal and Mineral (except Petroleum) Merchant Wholesalers,141633,United States,0100000US,4235,1
+Metal Service Centers and Other Metal Merchant Wholesalers,139176,United States,0100000US,42351,1
+Metal Service Centers and Other Metal Merchant Wholesalers,139176,United States,0100000US,423510,1
+Ferrous metal service centers and sales offices merchant wholesalers,116782,United States,0100000US,4235101,1
+Nonferrous metal service centers and sales offices merchant wholesalers,22394,United States,0100000US,4235102,1
+Coal and Other Mineral and Ore Merchant Wholesalers,2457,United States,0100000US,42352,1
+Coal and Other Mineral and Ore Merchant Wholesalers,2457,United States,0100000US,423520,1
+Coal merchant wholesalers,1269,United States,0100000US,4235201,1
+Other mineral and ore merchant wholesalers,1188,United States,0100000US,4235202,1
+Household Appliances and Electrical and Electronic Goods Merchant Wholesalers,563675,United States,0100000US,4236,1
+"Electrical apparatus and equipment, wiring supplies, and related equipment merchant wholesalers",211317,United States,0100000US,42361,1
+"Electrical apparatus and equipment, wiring supplies, and related equipment merchant wholesalers",211317,United States,0100000US,423610,1
+"Household Appliances, Electric Housewares, and Consumer Electronics Merchant Wholesalers",56836,United States,0100000US,42362,1
+"Household Appliances, Electric Housewares, and Consumer Electronics Merchant Wholesalers",56836,United States,0100000US,423620,1
+Other Electronic Parts and Equipment Merchant Wholesalers,295522,United States,0100000US,42369,1
+Other Electronic Parts and Equipment Merchant Wholesalers,295522,United States,0100000US,423690,1
+Communications equipment and supplies merchant wholesalers,153117,United States,0100000US,4236901,1
+Electronic parts (except communications equipment) merchant wholesalers,142405,United States,0100000US,4236902,1
+"Hardware, and Plumbing and Heating Equipment and Supplies Merchant Wholesalers",282385,United States,0100000US,4237,1
+Hardware Merchant Wholesalers,98293,United States,0100000US,42371,1
+Hardware Merchant Wholesalers,98293,United States,0100000US,423710,1
+Plumbing and Heating Equipment and Supplies (Hydronics) Merchant Wholesalers,81233,United States,0100000US,42372,1
+Plumbing and Heating Equipment and Supplies (Hydronics) Merchant Wholesalers,81233,United States,0100000US,423720,1
+Warm Air Heating and Air-Conditioning Equipment and Supplies Merchant Wholesalers,90928,United States,0100000US,42373,1
+Warm Air Heating and Air-Conditioning Equipment and Supplies Merchant Wholesalers,90928,United States,0100000US,423730,1
+Refrigeration Equipment and Supplies Merchant Wholesalers,11931,United States,0100000US,42374,1
+Refrigeration Equipment and Supplies Merchant Wholesalers,11931,United States,0100000US,423740,1
+"Machinery, Equipment, and Supplies Merchant Wholesalers",767929,United States,0100000US,4238,1
+Construction and Mining (except Oil Well) Machinery and Equipment Merchant Wholesalers,100623,United States,0100000US,42381,1
+Construction and Mining (except Oil Well) Machinery and Equipment Merchant Wholesalers,100623,United States,0100000US,423810,1
+Farm and Garden Machinery and Equipment Merchant Wholesalers,109292,United States,0100000US,42382,1
+Farm and Garden Machinery and Equipment Merchant Wholesalers,109292,United States,0100000US,423820,1
+Farm machinery and equipment merchant wholesalers- farm dealers,70910,United States,0100000US,4238201,1
+Farm machinery and equipment merchant wholesalers- wholesale distributors,24915,United States,0100000US,4238202,1
+Lawn and garden machinery and equipment merchant wholesalers,13467,United States,0100000US,4238203,1
+Industrial Machinery and Equipment Merchant Wholesalers,356125,United States,0100000US,42383,1
+Industrial Machinery and Equipment Merchant Wholesalers,356125,United States,0100000US,423830,1
+Food-processing machinery and equipment merchant wholesalers,12178,United States,0100000US,4238301,1
+Hydraulic and pneumatic (fluid-power) machinery and equipment merchant wholesalers,37304,United States,0100000US,4238302,1
+General-purpose industrial machinery and equipment merchant wholesalers,106321,United States,0100000US,4238303,1
+Metalworking machinery and equipment merchant wholesalers,28389,United States,0100000US,4238304,1
+Materials handling equipment merchant wholesalers,85084,United States,0100000US,4238305,1
+"Oil well, oil refinery, and pipeline machinery, equipment, and supplies merchant wholesalers",34101,United States,0100000US,4238306,1
+Other industrial machinery and equipment merchant wholesalers,52748,United States,0100000US,4238307,1
+Industrial Supplies Merchant Wholesalers,107943,United States,0100000US,42384,1
+Industrial Supplies Merchant Wholesalers,107943,United States,0100000US,423840,1
+General-line industrial supplies merchant wholesalers,6986,United States,0100000US,4238401,1
+Mechanical power transmission supplies merchant wholesalers,15012,United States,0100000US,4238402,1
+Welding supplies merchant wholesalers,7730,United States,0100000US,4238403,1
+Industrial containers and supplies merchant wholesalers,20620,United States,0100000US,4238404,1
+Industrial valves and fittings (except fluid-power) merchant wholesalers,18218,United States,0100000US,4238405,1
+Other industrial supplies merchant wholesalers,39377,United States,0100000US,4238406,1
+Service Establishment Equipment and Supplies Merchant Wholesalers,58468,United States,0100000US,42385,1
+Service Establishment Equipment and Supplies Merchant Wholesalers,58468,United States,0100000US,423850,1
+Beauty and barber shop equipment and supplies merchant wholesalers,18396,United States,0100000US,4238501,1
+Custodial and janitors' equipment and supplies merchant wholesalers,14981,United States,0100000US,4238502,1
+Laundry and dry-cleaning equipment and supplies merchant wholesalers,4031,United States,0100000US,4238503,1
+Other service establishment equipment and supplies merchant wholesalers,21060,United States,0100000US,4238504,1
+Transportation Equipment and Supplies (except Motor Vehicle) Merchant Wholesalers,35478,United States,0100000US,42386,1
+Transportation Equipment and Supplies (except Motor Vehicle) Merchant Wholesalers,35478,United States,0100000US,423860,1
+Aircraft and aeronautical equipment and supplies merchant wholesalers,25155,United States,0100000US,4238601,1
+"Marine machinery, equipment, and supplies merchant wholesalers",5702,United States,0100000US,4238602,1
+Other transportation equipment and supplies merchant wholesalers,4621,United States,0100000US,4238603,1
+Miscellaneous Durable Goods Merchant Wholesalers,338505,United States,0100000US,4239,1
+Sporting and Recreational Goods and Supplies Merchant Wholesalers,73249,United States,0100000US,42391,1
+Sporting and Recreational Goods and Supplies Merchant Wholesalers,73249,United States,0100000US,423910,1
+Toy and hobby goods and supplies merchant wholesalers,35434,United States,0100000US,42392,1
+Toy and hobby goods and supplies merchant wholesalers,35434,United States,0100000US,423920,1
+Recyclable Material Merchant Wholesalers,105432,United States,0100000US,42393,1
+Recyclable Material Merchant Wholesalers,105432,United States,0100000US,423930,1
+Iron and steel scrap merchant wholesalers- processors and dealers,40993,United States,0100000US,4239301,1
+Recyclable paper and paperboard merchant wholesalers,9733,United States,0100000US,4239302,1
+Other recyclable material merchant wholesalers,54706,United States,0100000US,4239303,1
+"Jewelry, Watch, Precious Stone, and Precious Metal Merchant Wholesalers",40548,United States,0100000US,42394,1
+"Jewelry, Watch, Precious Stone, and Precious Metal Merchant Wholesalers",40548,United States,0100000US,423940,1
+"Jewelry, watch, precious stone, and silverware merchant wholesalers",37168,United States,0100000US,4239401,1
+Precious metal (except ore) merchant wholesalers,3380,United States,0100000US,4239402,1
+Other Miscellaneous Durable Goods Merchant Wholesalers,83842,United States,0100000US,42399,1
+Other Miscellaneous Durable Goods Merchant Wholesalers,83842,United States,0100000US,423990,1
+Musical instruments and supplies merchant wholesalers,4492,United States,0100000US,4239901,1
+Forest products (except lumber) merchant wholesalers,5297,United States,0100000US,4239902,1
+General merchandise (durable goods) merchant wholesalers,12863,United States,0100000US,4239903,1
+Prerecorded media merchant wholesalers,3203,United States,0100000US,4239904,1
+Fire extinguishers and fire safety equipment merchant wholesalers,17547,United States,0100000US,4239905,1
+Other durable goods merchant wholesalers,40440,United States,0100000US,4239906,1
+"Merchant Wholesalers, Nondurable Goods",2341928,United States,0100000US,424,1
+Paper and Paper Product Merchant Wholesalers,130309,United States,0100000US,4241,1
+Printing and Writing Paper Merchant Wholesalers,7861,United States,0100000US,42411,1
+Printing and Writing Paper Merchant Wholesalers,7861,United States,0100000US,424110,1
+Stationery and Office Supplies Merchant Wholesalers,57068,United States,0100000US,42412,1
+Stationery and Office Supplies Merchant Wholesalers,57068,United States,0100000US,424120,1
+Industrial and Personal Service Paper Merchant Wholesalers,65380,United States,0100000US,42413,1
+Industrial and Personal Service Paper Merchant Wholesalers,65380,United States,0100000US,424130,1
+Drugs and Druggists' Sundries Merchant Wholesalers,308065,United States,0100000US,4242,1
+Drugs and Druggists' Sundries Merchant Wholesalers,308065,United States,0100000US,42421,1
+Drugs and Druggists' Sundries Merchant Wholesalers,308065,United States,0100000US,424210,1
+"General-line drug wholesaler, including over the counter drugs and anitbiotics",120930,United States,0100000US,4242101,1
+"Specialty-line drugs, including those which require special handling, injectables, short shelf life, experimental and nuclear",105772,United States,0100000US,4242102,1
+"Health and beauty accessories, including cosmetics, toiletries, vitamins, and first-aid supplies",72428,United States,0100000US,4242103,1
+Veterinarians' medicines merchant wholesalers,8935,United States,0100000US,4242104,1
+"Apparel, Piece Goods, and Notions Merchant Wholesalers",180215,United States,0100000US,4243,1
+"Piece Goods, Notions, and Other Dry Goods Merchant Wholesalers",20874,United States,0100000US,42431,1
+"Piece Goods, Notions, and Other Dry Goods Merchant Wholesalers",20874,United States,0100000US,424310,1
+Piece goods merchant wholesalers- jobbers,18225,United States,0100000US,4243101,1
+Notions and other dry goods merchant wholesalers,2649,United States,0100000US,4243102,1
+Footwear Merchant Wholesalers,30543,United States,0100000US,42434,1
+Footwear Merchant Wholesalers,30543,United States,0100000US,424340,1
+Clothing and Clothing Accessories Merchant Wholesalers,128798,United States,0100000US,42435,1
+Clothing and Clothing Accessories Merchant Wholesalers,128798,United States,0100000US,424350,1
+Grocery and Related Product Merchant Wholesalers,838535,United States,0100000US,4244,1
+General Line Grocery Merchant Wholesalers,157421,United States,0100000US,42441,1
+General Line Grocery Merchant Wholesalers,157421,United States,0100000US,424410,1
+General line grocery merchant wholesalers- voluntary group,7595,United States,0100000US,4244101,1
+General line grocery merchant wholesalers- retail cooperative,13981,United States,0100000US,4244102,1
+Other general line grocery merchant wholesalers,135845,United States,0100000US,4244103,1
+Packaged Frozen Food Merchant Wholesalers,84967,United States,0100000US,42442,1
+Packaged Frozen Food Merchant Wholesalers,84967,United States,0100000US,424420,1
+Dairy Product (except Dried or Canned) Merchant Wholesalers,40616,United States,0100000US,42443,1
+Dairy Product (except Dried or Canned) Merchant Wholesalers,40616,United States,0100000US,424430,1
+Raw milk merchant wholesalers,2607,United States,0100000US,4244301,1
+Dairy product (except raw milk) merchant wholesalers,38009,United States,0100000US,4244302,1
+Poultry and Poultry Product Merchant Wholesalers,10380,United States,0100000US,42444,1
+Poultry and Poultry Product Merchant Wholesalers,10380,United States,0100000US,424440,1
+Live poultry merchant wholesalers,197,United States,0100000US,4244401,1
+Poultry and poultry product (except live) merchant wholesalers,10183,United States,0100000US,4244402,1
+Confectionery Merchant Wholesalers,42873,United States,0100000US,42445,1
+Confectionery Merchant Wholesalers,42873,United States,0100000US,424450,1
+Fish and Seafood Merchant Wholesalers,21689,United States,0100000US,42446,1
+Fish and Seafood Merchant Wholesalers,21689,United States,0100000US,424460,1
+Meat and Meat Product Merchant Wholesalers,51953,United States,0100000US,42447,1
+Meat and Meat Product Merchant Wholesalers,51953,United States,0100000US,424470,1
+Fresh fruit and vegetable merchant wholesalers,110634,United States,0100000US,42448,1
+Fresh fruit and vegetable merchant wholesalers,110634,United States,0100000US,424480,1
+Other Grocery and Related Products Merchant Wholesalers,318002,United States,0100000US,42449,1
+Other Grocery and Related Products Merchant Wholesalers,318002,United States,0100000US,424490,1
+"Coffee, tea, and powdered drink mix merchant wholesalers",18126,United States,0100000US,4244901,1
+Bread and baked goods merchant wholesalers,64172,United States,0100000US,4244902,1
+Soft drinks and bottled water merchant wholesalers,145557,United States,0100000US,4244903,1
+Nonperishable (canned) food merchant wholesalers,35517,United States,0100000US,4244904,1
+Food and beverage basic material merchant wholesalers,5651,United States,0100000US,4244905,1
+Other grocery specialties merchant wholesalers,48979,United States,0100000US,4244906,1
+Farm Product Raw Material Merchant Wholesalers,65703,United States,0100000US,4245,1
+Grain and Field Bean Merchant Wholesalers,46393,United States,0100000US,42451,1
+Grain and Field Bean Merchant Wholesalers,46393,United States,0100000US,424510,1
+Livestock Merchant Wholesalers,3959,United States,0100000US,42452,1
+Livestock Merchant Wholesalers,3959,United States,0100000US,424520,1
+Other Farm Product Raw Material Merchant Wholesalers,15351,United States,0100000US,42459,1
+Other Farm Product Raw Material Merchant Wholesalers,15351,United States,0100000US,424590,1
+"Hides, skins, and pelts merchant wholesalers",2202,United States,0100000US,4245901,1
+Leaf tobacco merchant wholesalers,479,United States,0100000US,4245902,1
+"Wool, wool tops, and mohair merchant wholesalers",67,United States,0100000US,4245903,1
+Cotton merchant wholesalers,1114,United States,0100000US,4245904,1
+Other farm product raw material merchant wholesalers,7303,United States,0100000US,4245905,1
+"Cannabis and marijuana, recreational or medical, merchant wholesalers",4186,United States,0100000US,4245906,1
+Chemical and Allied Products Merchant Wholesalers,167531,United States,0100000US,4246,1
+Plastics materials and basic forms and shapes merchant wholesalers,33667,United States,0100000US,42461,1
+Plastics materials and basic forms and shapes merchant wholesalers,33667,United States,0100000US,424610,1
+Other Chemical and Allied Products Merchant Wholesalers,133864,United States,0100000US,42469,1
+Other Chemical and Allied Products Merchant Wholesalers,133864,United States,0100000US,424690,1
+Industrial gases (except LP) merchant wholesalers,22753,United States,0100000US,4246901,1
+Other chemical and allied products merchant wholesalers,109451,United States,0100000US,4246902,1
+Cannabidiol (CBD oil) and other cannabis and hemp extracts and concentrates merchant wholesalers,1660,United States,0100000US,4246903,1
+Petroleum and Petroleum Products Merchant Wholesalers,98955,United States,0100000US,4247,1
+Petroleum Bulk Stations and Terminals,66609,United States,0100000US,42471,1
+Petroleum Bulk Stations and Terminals,66609,United States,0100000US,424710,1
+Petroleum bulk stations and terminals (except LP),64170,United States,0100000US,4247101,1
+Petroleum bulk stations (except LP),45876,United States,0100000US,42471011,1
+Petroleum bulk terminals (except LP),18294,United States,0100000US,42471012,1
+Liquefied petroleum bulk stations and terminals,2439,United States,0100000US,4247102,1
+Petroleum and Petroleum Products Merchant Wholesalers (except Bulk Stations and Terminals),32346,United States,0100000US,42472,1
+Petroleum and Petroleum Products Merchant Wholesalers (except Bulk Stations and Terminals),32346,United States,0100000US,424720,1
+"Beer, Wine, and Distilled Alcoholic Beverage Merchant Wholesalers",213961,United States,0100000US,4248,1
+Beer and ale merchant wholesalers,116506,United States,0100000US,42481,1
+Beer and ale merchant wholesalers,116506,United States,0100000US,424810,1
+Wine and distilled alcoholic beverage merchant wholesalers,97455,United States,0100000US,42482,1
+Wine and distilled alcoholic beverage merchant wholesalers,97455,United States,0100000US,424820,1
+Miscellaneous Nondurable Goods Merchant Wholesalers,338654,United States,0100000US,4249,1
+Farm Supplies Merchant Wholesalers,112005,United States,0100000US,42491,1
+Farm Supplies Merchant Wholesalers,112005,United States,0100000US,424910,1
+Farm supplies merchant wholesalers- farm dealers,77202,United States,0100000US,4249101,1
+Farm supplies merchant wholesalers- wholesale distributors,34803,United States,0100000US,4249102,1
+"Book, periodical, and newspaper merchant wholesalers",16515,United States,0100000US,42492,1
+"Book, periodical, and newspaper merchant wholesalers",16515,United States,0100000US,424920,1
+"Flower, Nursery Stock, and Florists' Supplies Merchant Wholesalers",54465,United States,0100000US,42493,1
+"Flower, Nursery Stock, and Florists' Supplies Merchant Wholesalers",54465,United States,0100000US,424930,1
+Tobacco Product and Electronic Cigarette Merchant Wholesalers,57729,United States,0100000US,42494,1
+Tobacco Product and Electronic Cigarette Merchant Wholesalers,57729,United States,0100000US,424940,1
+"Paint, Varnish, and Supplies Merchant Wholesalers",20465,United States,0100000US,42495,1
+"Paint, Varnish, and Supplies Merchant Wholesalers",20465,United States,0100000US,424950,1
+Other Miscellaneous Nondurable Goods Merchant Wholesalers,77475,United States,0100000US,42499,1
+Other Miscellaneous Nondurable Goods Merchant Wholesalers,77475,United States,0100000US,424990,1
+Art goods merchant wholesalers,17710,United States,0100000US,4249901,1
+General merchandise (nondurable goods) merchant wholesalers,7285,United States,0100000US,4249902,1
+"Textile bags, bagging, and burlap merchant wholesalers",2315,United States,0100000US,4249903,1
+Other nondurable goods merchant wholesalers,50165,United States,0100000US,4249904,1
+Wholesale Trade Agents and Brokers,246125,United States,0100000US,425,1
+Wholesale Trade Agents and Brokers,246125,United States,0100000US,4251,1
+Wholesale Trade Agents and Brokers,246125,United States,0100000US,42512,1
+Wholesale Trade Agents and Brokers,246125,United States,0100000US,425120,1
+"Wholesale trade agents and brokers, durable goods",127894,United States,0100000US,4251203,1
+Motor vehicle and motor vehicle parts and supplies agents and brokers,35996,United States,0100000US,42512031,1
+Furniture and home furnishings agents and brokers,6714,United States,0100000US,42512032,1
+Lumber and other construction materials agents and brokers,4018,United States,0100000US,42512033,1
+Professional and commercial equipment and supplies agents and brokers,16371,United States,0100000US,42512034,1
+Metal and mineral (except petroleum) agents and brokers,1519,United States,0100000US,42512035,1
+Electrical and electronic goods agents and brokers,25954,United States,0100000US,42512036,1
+"Hardware, plumbing, and heating equipment and supplies agents and brokers",8529,United States,0100000US,42512037,1
+"Machinery, equipment, and supplies agents and brokers",17171,United States,0100000US,42512038,1
+Miscellaneous durable goods agents and brokers,11622,United States,0100000US,42512039,1
+"Wholesale trade agents and brokers, nondurable goods",118231,United States,0100000US,4251204,1
+Paper and paper products agents and brokers,2542,United States,0100000US,42512041,1
+Drugs and druggists' sundries agents and brokers,2458,United States,0100000US,42512042,1
+"Apparel, piece goods, and notions agents and brokers",5019,United States,0100000US,42512043,1
+Grocery and related products agents and brokers,83639,United States,0100000US,42512044,1
+Farm product raw material agents and brokers,13530,United States,0100000US,42512045,1
+Chemical and allied products agents and brokers,1890,United States,0100000US,42512046,1
+Petroleum and petroleum products agents and brokers,368,United States,0100000US,42512047,1
+"Beer, wine, and distilled alcoholic beverages agents and brokers",1939,United States,0100000US,42512048,1
+Miscellaneous nondurable goods agents and brokers,6846,United States,0100000US,42512049,1
+Retail trade,17077240,United States,0100000US,44-45,1
+Motor Vehicle and Parts Dealers,2071126,United States,0100000US,441,1
+Automobile dealers,1332645,United States,0100000US,4411,1
+New Car Dealers,1150441,United States,0100000US,44111,1
+New Car Dealers,1150441,United States,0100000US,441110,1
+Used Car Dealers,182204,United States,0100000US,44112,1
+Used Car Dealers,182204,United States,0100000US,441120,1
+Other motor vehicle dealers,180855,United States,0100000US,4412,1
+Recreational Vehicle Dealers,60574,United States,0100000US,44121,1
+Recreational Vehicle Dealers,60574,United States,0100000US,441210,1
+"Motorcycle, Boat, and Other Motor Vehicle Dealers",120281,United States,0100000US,44122,1
+Boat Dealers,39292,United States,0100000US,441222,1
+"Motorcycle, ATV, and All Other Motor Vehicle Dealers",80989,United States,0100000US,441227,1
+"Automotive Parts, Accessories, and Tire Retailers",557626,United States,0100000US,4413,1
+Automotive Parts and Accessories Retailers,380720,United States,0100000US,44133,1
+Automotive Parts and Accessories Retailers,380720,United States,0100000US,441330,1
+Tire Dealers,176906,United States,0100000US,44134,1
+Tire Dealers,176906,United States,0100000US,441340,1
+Building Material and Garden Equipment and Supplies Dealers,1448952,United States,0100000US,444,1
+Building material and supplies dealers,1258887,United States,0100000US,4441,1
+Home Centers,748743,United States,0100000US,44411,1
+Home Centers,748743,United States,0100000US,444110,1
+Paint and Wallpaper Retailers,35648,United States,0100000US,44412,1
+Paint and Wallpaper Retailers,35648,United States,0100000US,444120,1
+Hardware Retailers,161686,United States,0100000US,44414,1
+Hardware Retailers,161686,United States,0100000US,444140,1
+Other Building Material Dealers,312810,United States,0100000US,44418,1
+Other Building Material Dealers,312810,United States,0100000US,444180,1
+Lawn and Garden Equipment and Supplies Retailers,190065,United States,0100000US,4442,1
+Outdoor Power Equipment Retailers,31822,United States,0100000US,44423,1
+Outdoor Power Equipment Retailers,31822,United States,0100000US,444230,1
+"Nursery, Garden Center, and Farm Supply Retailers",158243,United States,0100000US,44424,1
+"Nursery, Garden Center, and Farm Supply Retailers",158243,United States,0100000US,444240,1
+Food and Beverage Retailers,3463100,United States,0100000US,445,1
+Grocery and Convenience Retailers,3059550,United States,0100000US,4451,1
+Supermarkets and Other Grocery Retailers (except Convenience Retailers),2869313,United States,0100000US,44511,1
+Supermarkets and Other Grocery Retailers (except Convenience Retailers),2869313,United States,0100000US,445110,1
+Convenience Retailers and Vending Machine Operators,190237,United States,0100000US,44513,1
+Convenience Retailers,151339,United States,0100000US,445131,1
+Vending Machine Operators,38898,United States,0100000US,445132,1
+Specialty Food Retailers,204668,United States,0100000US,4452,1
+Fruit and Vegetable Retailers,19086,United States,0100000US,44523,1
+Fruit and Vegetable Retailers,19086,United States,0100000US,445230,1
+Meat Retailers,52407,United States,0100000US,44524,1
+Meat Retailers,52407,United States,0100000US,445240,1
+Fish and Seafood Retailers,14586,United States,0100000US,44525,1
+Fish and Seafood Retailers,14586,United States,0100000US,445250,1
+Other Specialty Food Retailers,118589,United States,0100000US,44529,1
+Baked Goods Retailers,17312,United States,0100000US,445291,1
+Confectionery and Nut Retailers,19595,United States,0100000US,445292,1
+All Other Specialty Food Retailers,81682,United States,0100000US,445298,1
+"Beer, Wine, and Liquor Retailers",198882,United States,0100000US,4453,1
+"Beer, Wine, and Liquor Retailers",198882,United States,0100000US,44532,1
+"Beer, Wine, and Liquor Retailers",198882,United States,0100000US,445320,1
+"Furniture, Home Furnishings, Electronics, and Appliance Retailers",768528,United States,0100000US,449,1
+Furniture and Home Furnishings Retailers,506767,United States,0100000US,4491,1
+Furniture Retailers,214081,United States,0100000US,44911,1
+Furniture Retailers,214081,United States,0100000US,449110,1
+Home Furnishings Retailers,292686,United States,0100000US,44912,1
+Floor Covering Retailers,74047,United States,0100000US,449121,1
+Window Treatment Retailers,14199,United States,0100000US,449122,1
+All Other Home Furnishings Retailers,204440,United States,0100000US,449129,1
+Electronics and Appliance Retailers,261761,United States,0100000US,4492,1
+Electronics and Appliance Retailers,261761,United States,0100000US,44921,1
+Electronics and Appliance Retailers,261761,United States,0100000US,449210,1
+General Merchandise Retailers,3975757,United States,0100000US,455,1
+Department Stores,266707,United States,0100000US,4551,1
+Department Stores,266707,United States,0100000US,45511,1
+Department Stores,266707,United States,0100000US,455110,1
+"Warehouse Clubs, Supercenters, and Other General Merchandise Retailers",3709050,United States,0100000US,4552,1
+"Warehouse Clubs, Supercenters, and Other General Merchandise Retailers",3709050,United States,0100000US,45521,1
+Warehouse Clubs and Supercenters,2076268,United States,0100000US,455211,1
+All Other General Merchandise Retailers,1632782,United States,0100000US,455219,1
+Health and Personal Care Retailers,1142380,United States,0100000US,456,1
+Health and Personal Care Retailers,1142380,United States,0100000US,4561,1
+Pharmacies and Drug Retailers,724538,United States,0100000US,45611,1
+Pharmacies and Drug Retailers,724538,United States,0100000US,456110,1
+"Cosmetics, Beauty Supplies, and Perfume Retailers",199173,United States,0100000US,45612,1
+"Cosmetics, Beauty Supplies, and Perfume Retailers",199173,United States,0100000US,456120,1
+Optical Goods Retailers,75167,United States,0100000US,45613,1
+Optical Goods Retailers,75167,United States,0100000US,456130,1
+Other Health and Personal Care Retailers,143502,United States,0100000US,45619,1
+Food (Health) Supplement Retailers,59346,United States,0100000US,456191,1
+All Other Health and Personal Care Retailers,84156,United States,0100000US,456199,1
+Gasoline Stations and Fuel Dealers,1101757,United States,0100000US,457,1
+Gasoline Stations,1028079,United States,0100000US,4571,1
+Gasoline Stations with Convenience Stores,858390,United States,0100000US,45711,1
+Gasoline Stations with Convenience Stores,858390,United States,0100000US,457110,1
+Other Gasoline Stations,169689,United States,0100000US,45712,1
+Other Gasoline Stations,169689,United States,0100000US,457120,1
+Fuel Dealers,73678,United States,0100000US,4572,1
+Fuel Dealers,73678,United States,0100000US,45721,1
+Fuel Dealers,73678,United States,0100000US,457210,1
+"Clothing, Clothing Accessories, Shoe, and Jewelry Retailers",1587861,United States,0100000US,458,1
+Clothing and Clothing Accessories Retailers,1226803,United States,0100000US,4581,1
+Clothing and Clothing Accessories Retailers,1226803,United States,0100000US,45811,1
+Clothing and Clothing Accessories Retailers,1226803,United States,0100000US,458110,1
+Shoe Retailers,235680,United States,0100000US,4582,1
+Shoe Retailers,235680,United States,0100000US,45821,1
+Shoe Retailers,235680,United States,0100000US,458210,1
+"Jewelry, Luggage, and Leather Goods Retailers",125378,United States,0100000US,4583,1
+Jewelry Retailers,117319,United States,0100000US,45831,1
+Jewelry Retailers,117319,United States,0100000US,458310,1
+Luggage and Leather Goods Retailers,8059,United States,0100000US,45832,1
+Luggage and Leather Goods Retailers,8059,United States,0100000US,458320,1
+"Sporting Goods, Hobby, Musical Instrument, Book, and Miscellaneous Retailers",1517779,United States,0100000US,459,1
+"Sporting Goods, Hobby, and Musical Instrument Retailers",481618,United States,0100000US,4591,1
+Sporting Goods Retailers,285167,United States,0100000US,45911,1
+Sporting Goods Retailers,285167,United States,0100000US,459110,1
+"Hobby, Toy, and Game Retailers",128182,United States,0100000US,45912,1
+"Hobby, Toy, and Game Retailers",128182,United States,0100000US,459120,1
+"Sewing, Needlework, and Piece Goods Retailers",36579,United States,0100000US,45913,1
+"Sewing, Needlework, and Piece Goods Retailers",36579,United States,0100000US,459130,1
+Musical Instrument and Supplies Retailers,31690,United States,0100000US,45914,1
+Musical Instrument and Supplies Retailers,31690,United States,0100000US,459140,1
+Book Retailers and News Dealers,64060,United States,0100000US,4592,1
+Book Retailers and News Dealers,64060,United States,0100000US,45921,1
+Book Retailers and News Dealers,64060,United States,0100000US,459210,1
+Florists,73535,United States,0100000US,4593,1
+Florists,73535,United States,0100000US,45931,1
+Florists,73535,United States,0100000US,459310,1
+"Office Supplies, Stationery, and Gift Retailers",204982,United States,0100000US,4594,1
+Office Supplies and Stationery Retailers,66519,United States,0100000US,45941,1
+Office Supplies and Stationery Retailers,66519,United States,0100000US,459410,1
+"Gift, Novelty, and Souvenir Retailers",138463,United States,0100000US,45942,1
+"Gift, Novelty, and Souvenir Retailers",138463,United States,0100000US,459420,1
+Used Merchandise Retailers,225968,United States,0100000US,4595,1
+Used Merchandise Retailers,225968,United States,0100000US,45951,1
+Used Merchandise Retailers,225968,United States,0100000US,459510,1
+Other Miscellaneous Retailers,467616,United States,0100000US,4599,1
+Pet and Pet Supplies Retailers,161934,United States,0100000US,45991,1
+Pet and Pet Supplies Retailers,161934,United States,0100000US,459910,1
+Art Dealers,19929,United States,0100000US,45992,1
+Art Dealers,19929,United States,0100000US,459920,1
+Manufactured (Mobile) Home Dealers,11942,United States,0100000US,45993,1
+Manufactured (Mobile) Home Dealers,11942,United States,0100000US,459930,1
+All Other Miscellaneous Retailers,273811,United States,0100000US,45999,1
+"Tobacco, Electronic Cigarette, and Other Smoking Supplies Retailers",118681,United States,0100000US,459991,1
+All Other Miscellaneous Retailers,155130,United States,0100000US,459999,1
+Transportation and warehousing,6031549,United States,0100000US,48-49,1
+Air Transportation,538009,United States,0100000US,481,1
+Scheduled Air Transportation,472096,United States,0100000US,4811,1
+Scheduled Air Transportation,472096,United States,0100000US,48111,1
+Scheduled Passenger Air Transportation,461514,United States,0100000US,481111,1
+Scheduled Freight Air Transportation,10582,United States,0100000US,481112,1
+Nonscheduled Air Transportation,65913,United States,0100000US,4812,1
+Nonscheduled Air Transportation,65913,United States,0100000US,48121,1
+Nonscheduled Chartered Passenger Air Transportation,38101,United States,0100000US,481211,1
+Nonscheduled Chartered Freight Air Transportation,21454,United States,0100000US,481212,1
+Other Nonscheduled Air Transportation,6358,United States,0100000US,481219,1
+Water Transportation,65602,United States,0100000US,483,1
+"Deep Sea, Coastal, and Great Lakes Water Transportation",46082,United States,0100000US,4831,1
+"Deep Sea, Coastal, and Great Lakes Water Transportation",46082,United States,0100000US,48311,1
+Deep Sea Freight Transportation,7869,United States,0100000US,483111,1
+Deep Sea Passenger Transportation,16347,United States,0100000US,483112,1
+Coastal and Great Lakes Freight Transportation,19279,United States,0100000US,483113,1
+Coastal and Great Lakes Passenger Transportation,2587,United States,0100000US,483114,1
+Inland Water Transportation,19520,United States,0100000US,4832,1
+Inland Water Transportation,19520,United States,0100000US,48321,1
+Inland Water Freight Transportation,16063,United States,0100000US,483211,1
+Inland Water Passenger Transportation,3457,United States,0100000US,483212,1
+Inland waterways ferry transportation,1954,United States,0100000US,4832121,1
+Other water passenger transportation (including water taxi),1503,United States,0100000US,4832122,1
+Truck Transportation,1683089,United States,0100000US,484,1
+General Freight Trucking,1157547,United States,0100000US,4841,1
+"General Freight Trucking, Local",262124,United States,0100000US,48411,1
+"General Freight Trucking, Local",262124,United States,0100000US,484110,1
+"General Freight Trucking, Long-Distance",895423,United States,0100000US,48412,1
+"General Freight Trucking, Long-Distance, Truckload",591417,United States,0100000US,484121,1
+"General Freight Trucking, Long-Distance, Less Than Truckload",304006,United States,0100000US,484122,1
+Specialized freight trucking,525542,United States,0100000US,4842,1
+Used household and office goods moving,108004,United States,0100000US,48421,1
+Used household and office goods moving,108004,United States,0100000US,484210,1
+"Local used household and office goods moving, without storage",35235,United States,0100000US,4842101,1
+Long-distance used household and office goods moving,44123,United States,0100000US,4842102,1
+"Local used household and office goods moving, with storage",28646,United States,0100000US,4842103,1
+"Specialized Freight (except Used Goods) Trucking, Local",239206,United States,0100000US,48422,1
+"Specialized Freight (except Used Goods) Trucking, Local",239206,United States,0100000US,484220,1
+Local hazardous materials trucking (except waste),32050,United States,0100000US,4842201,1
+Local agricultural products trucking without storage,48774,United States,0100000US,4842202,1
+Dump trucking,93661,United States,0100000US,4842203,1
+"Local specialized freight (except hazardous materials, agricultural products, and dump trucking)",59851,United States,0100000US,4842204,1
+"Local specialized freight (except hazardous materials, agricultural products, and dump trucking)",4870,United States,0100000US,4842205,1
+"Specialized Freight (except Used Goods) Trucking, Long-Distance",178332,United States,0100000US,48423,1
+"Specialized Freight (except Used Goods) Trucking, Long-Distance",178332,United States,0100000US,484230,1
+"Hazardous materials trucking (except waste), long-distance",30255,United States,0100000US,4842301,1
+"Agricultural products trucking, long-distance",23975,United States,0100000US,4842302,1
+"Other specialized trucking, long-distance",124102,United States,0100000US,4842303,1
+Transit and Ground Passenger Transportation,483167,United States,0100000US,485,1
+Urban Transit Systems,46145,United States,0100000US,4851,1
+Urban Transit Systems,46145,United States,0100000US,48511,1
+Mixed Mode Transit Systems,123,United States,0100000US,485111,1
+Commuter Rail Systems,4323,United States,0100000US,485112,1
+Bus and Other Motor Vehicle Transit Systems,40648,United States,0100000US,485113,1
+Other Urban Transit Systems,1051,United States,0100000US,485119,1
+Interurban and Rural Bus Transportation,19345,United States,0100000US,4852,1
+Interurban and Rural Bus Transportation,19345,United States,0100000US,48521,1
+Interurban and Rural Bus Transportation,19345,United States,0100000US,485210,1
+Taxi and Limousine Service,84711,United States,0100000US,4853,1
+Taxi and Ridesharing Services,57294,United States,0100000US,48531,1
+Taxi and Ridesharing Services,57294,United States,0100000US,485310,1
+Limousine Service,27417,United States,0100000US,48532,1
+Limousine Service,27417,United States,0100000US,485320,1
+School and Employee Bus Transportation,212429,United States,0100000US,4854,1
+School and Employee Bus Transportation,212429,United States,0100000US,48541,1
+School and Employee Bus Transportation,212429,United States,0100000US,485410,1
+Charter Bus Industry,38778,United States,0100000US,4855,1
+Charter Bus Industry,38778,United States,0100000US,48551,1
+Charter Bus Industry,38778,United States,0100000US,485510,1
+Other Transit and Ground Passenger Transportation,81759,United States,0100000US,4859,1
+Other Transit and Ground Passenger Transportation,81759,United States,0100000US,48599,1
+Special Needs Transportation,59334,United States,0100000US,485991,1
+All Other Transit and Ground Passenger Transportation,22425,United States,0100000US,485999,1
+Pipeline Transportation,48427,United States,0100000US,486,1
+Pipeline Transportation of Crude Oil,13697,United States,0100000US,4861,1
+Pipeline Transportation of Crude Oil,13697,United States,0100000US,48611,1
+Pipeline Transportation of Crude Oil,13697,United States,0100000US,486110,1
+Pipeline Transportation of Natural Gas,23674,United States,0100000US,4862,1
+Pipeline Transportation of Natural Gas,23674,United States,0100000US,48621,1
+Pipeline Transportation of Natural Gas,23674,United States,0100000US,486210,1
+Other pipeline transportation,11056,United States,0100000US,4869,1
+Pipeline transportation of refined petroleum products,10808,United States,0100000US,48691,1
+Pipeline transportation of refined petroleum products,10808,United States,0100000US,486910,1
+All Other Pipeline Transportation,248,United States,0100000US,48699,1
+All Other Pipeline Transportation,248,United States,0100000US,486990,1
+Scenic and Sightseeing Transportation,25666,United States,0100000US,487,1
+"Scenic and Sightseeing Transportation, Land",8212,United States,0100000US,4871,1
+"Scenic and Sightseeing Transportation, Land",8212,United States,0100000US,48711,1
+"Scenic and Sightseeing Transportation, Land",8212,United States,0100000US,487110,1
+"Scenic and Sightseeing Transportation, Water",14221,United States,0100000US,4872,1
+"Scenic and Sightseeing Transportation, Water",14221,United States,0100000US,48721,1
+"Scenic and Sightseeing Transportation, Water",14221,United States,0100000US,487210,1
+"Scenic and Sightseeing Transportation, Other",3233,United States,0100000US,4879,1
+"Scenic and Sightseeing Transportation, Other",3233,United States,0100000US,48799,1
+"Scenic and Sightseeing Transportation, Other",3233,United States,0100000US,487990,1
+Support Activities for Transportation,807481,United States,0100000US,488,1
+Support activities for air transportation,210071,United States,0100000US,4881,1
+Airport Operations,109566,United States,0100000US,48811,1
+Air Traffic Control,1457,United States,0100000US,488111,1
+Other Airport Operations,108109,United States,0100000US,488119,1
+Other Support Activities for Air Transportation,100505,United States,0100000US,48819,1
+Other Support Activities for Air Transportation,100505,United States,0100000US,488190,1
+Support Activities for Rail Transportation,42444,United States,0100000US,4882,1
+Support Activities for Rail Transportation,42444,United States,0100000US,48821,1
+Support Activities for Rail Transportation,42444,United States,0100000US,488210,1
+Support Activities for Water Transportation,76938,United States,0100000US,4883,1
+Port and Harbor Operations,13511,United States,0100000US,48831,1
+Port and Harbor Operations,13511,United States,0100000US,488310,1
+Marine Cargo Handling,42047,United States,0100000US,48832,1
+Marine Cargo Handling,42047,United States,0100000US,488320,1
+Navigational Services to Shipping,13708,United States,0100000US,48833,1
+Navigational Services to Shipping,13708,United States,0100000US,488330,1
+Other Support Activities for Water Transportation,7672,United States,0100000US,48839,1
+Other Support Activities for Water Transportation,7672,United States,0100000US,488390,1
+Support Activities for Road Transportation,105463,United States,0100000US,4884,1
+Motor Vehicle Towing,75295,United States,0100000US,48841,1
+Motor Vehicle Towing,75295,United States,0100000US,488410,1
+Other Support Activities for Road Transportation,30168,United States,0100000US,48849,1
+Other Support Activities for Road Transportation,30168,United States,0100000US,488490,1
+Freight Transportation Arrangement,354889,United States,0100000US,4885,1
+Freight Transportation Arrangement,354889,United States,0100000US,48851,1
+Freight Transportation Arrangement,354889,United States,0100000US,488510,1
+Other Support Activities for Transportation,17676,United States,0100000US,4889,1
+Other Support Activities for Transportation,17676,United States,0100000US,48899,1
+Packing and Crating,17194,United States,0100000US,488991,1
+All Other Support Activities for Transportation,482,United States,0100000US,488999,1
+Couriers and Messengers,1026939,United States,0100000US,492,1
+Couriers and Express Delivery Services,879668,United States,0100000US,4921,1
+Couriers and Express Delivery Services,879668,United States,0100000US,49211,1
+Couriers and Express Delivery Services,879668,United States,0100000US,492110,1
+Local Messengers and Local Delivery,147271,United States,0100000US,4922,1
+Local Messengers and Local Delivery,147271,United States,0100000US,49221,1
+Local Messengers and Local Delivery,147271,United States,0100000US,492210,1
+Warehousing and Storage,1353169,United States,0100000US,493,1
+Warehousing and Storage,1353169,United States,0100000US,4931,1
+General Warehousing and Storage,1226010,United States,0100000US,49311,1
+General Warehousing and Storage,1226010,United States,0100000US,493110,1
+Refrigerated Warehousing and Storage,56195,United States,0100000US,49312,1
+Refrigerated Warehousing and Storage,56195,United States,0100000US,493120,1
+Farm Product Warehousing and Storage,5838,United States,0100000US,49313,1
+Farm Product Warehousing and Storage,5838,United States,0100000US,493130,1
+Other Warehousing and Storage,65126,United States,0100000US,49319,1
+Other Warehousing and Storage,65126,United States,0100000US,493190,1
+Household goods warehousing and storage,20761,United States,0100000US,4931901,1
+Specialized goods warehousing and storage,44365,United States,0100000US,4931902,1
+Information,4040495,United States,0100000US,51,1
+Motion Picture and Sound Recording Industries,323223,United States,0100000US,512,1
+Motion picture and video industries,292422,United States,0100000US,5121,1
+Motion Picture and Video Production,148691,United States,0100000US,51211,1
+Motion Picture and Video Production,148691,United States,0100000US,512110,1
+Motion Picture and Video Distribution,2993,United States,0100000US,51212,1
+Motion Picture and Video Distribution,2993,United States,0100000US,512120,1
+Motion picture and video exhibition,113501,United States,0100000US,51213,1
+Motion picture theaters (except drive-ins),112488,United States,0100000US,512131,1
+Drive-in motion picture theaters,1013,United States,0100000US,512132,1
+Postproduction Services and Other Motion Picture and Video Industries,27237,United States,0100000US,51219,1
+Teleproduction and Other Postproduction Services,26331,United States,0100000US,512191,1
+Other Motion Picture and Video Industries,906,United States,0100000US,512199,1
+Sound Recording Industries,30801,United States,0100000US,5122,1
+Music Publishers,6411,United States,0100000US,51223,1
+Music Publishers,6411,United States,0100000US,512230,1
+Sound Recording Studios,7463,United States,0100000US,51224,1
+Sound Recording Studios,7463,United States,0100000US,512240,1
+Record Production and Distribution,13437,United States,0100000US,51225,1
+Record Production and Distribution,13437,United States,0100000US,512250,1
+Other Sound Recording Industries,3490,United States,0100000US,51229,1
+Other Sound Recording Industries,3490,United States,0100000US,512290,1
+Publishing Industries,1373872,United States,0100000US,513,1
+"Newspaper, Periodical, Book, and Directory Publishers",340567,United States,0100000US,5131,1
+Newspaper Publishers,122838,United States,0100000US,51311,1
+Newspaper Publishers,122838,United States,0100000US,513110,1
+Periodical Publishers,74926,United States,0100000US,51312,1
+Periodical Publishers,74926,United States,0100000US,513120,1
+Book Publishers,76153,United States,0100000US,51313,1
+Book Publishers,76153,United States,0100000US,513130,1
+Directory and Mailing List Publishers,15313,United States,0100000US,51314,1
+Directory and Mailing List Publishers,15313,United States,0100000US,513140,1
+Other Publishers,51337,United States,0100000US,51319,1
+Greeting Card Publishers,13165,United States,0100000US,513191,1
+All Other Publishers,38172,United States,0100000US,513199,1
+Software Publishers,1033305,United States,0100000US,5132,1
+Software Publishers,1033305,United States,0100000US,51321,1
+Software Publishers,1033305,United States,0100000US,513210,1
+Broadcasting and Content Providers,477002,United States,0100000US,516,1
+Radio and Television Broadcasting Stations,125229,United States,0100000US,5161,1
+Radio Broadcasting Stations,67123,United States,0100000US,51611,1
+Radio Broadcasting Stations,67123,United States,0100000US,516110,1
+Television Broadcasting Stations,58106,United States,0100000US,51612,1
+Television Broadcasting Stations,58106,United States,0100000US,516120,1
+"Media Streaming Distribution Services, Social Networks, and Other Media Networks and Content Providers",351773,United States,0100000US,5162,1
+"Media Streaming Distribution Services, Social Networks, and Other Media Networks and Content Providers",351773,United States,0100000US,51621,1
+"Media Streaming Distribution Services, Social Networks, and Other Media Networks and Content Providers",351773,United States,0100000US,516210,1
+Radio networks,11825,United States,0100000US,5162101,1
+Television networks,80132,United States,0100000US,5162102,1
+Cable and other subscription programming,57110,United States,0100000US,5162103,1
+News syndicates,5777,United States,0100000US,5162104,1
+Internet broadcasting,196929,United States,0100000US,5162105,1
+Telecommunications,1046697,United States,0100000US,517,1
+Wired and Wireless Telecommunications (except Satellite),1005112,United States,0100000US,5171,1
+Wired and Wireless Telecommunications Carriers (except Satellite),899131,United States,0100000US,51711,1
+Wired Telecommunications Carriers,633585,United States,0100000US,517111,1
+Wired telecommunications carriers,331234,United States,0100000US,5171111,1
+Cable and other program distribution,265636,United States,0100000US,5171112,1
+Internet service providers (broadband),36715,United States,0100000US,5171113,1
+Wireless Telecommunications Carriers (except Satellite),265546,United States,0100000US,517112,1
+Telecommunications Resellers and Agents for Wireless Telecommunication Services,105981,United States,0100000US,51712,1
+Telecommunications Resellers,22547,United States,0100000US,517121,1
+Agents for Wireless Telecommunications Services,83434,United States,0100000US,517122,1
+Satellite Telecommunications,9862,United States,0100000US,5174,1
+Satellite Telecommunications,9862,United States,0100000US,51741,1
+Satellite Telecommunications,9862,United States,0100000US,517410,1
+All Other Telecommunications,31723,United States,0100000US,5178,1
+All Other Telecommunications,31723,United States,0100000US,51781,1
+All Other Telecommunications,31723,United States,0100000US,517810,1
+Internet service providers (except broadband),3836,United States,0100000US,5178101,1
+Other telecommunications,27887,United States,0100000US,5178109,1
+"Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services",658341,United States,0100000US,518,1
+"Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services",658341,United States,0100000US,5182,1
+"Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services",658341,United States,0100000US,51821,1
+"Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services",658341,United States,0100000US,518210,1
+"Web Search Portals, Libraries, Archives, and Other Information Services",161360,United States,0100000US,519,1
+"Web Search Portals, Libraries, Archives, and Other Information Services",161360,United States,0100000US,5192,1
+Libraries and Archives,28301,United States,0100000US,51921,1
+Libraries and Archives,28301,United States,0100000US,519210,1
+Web Search Portals and All Other Information Services,133059,United States,0100000US,51929,1
+Web Search Portals and All Other Information Services,133059,United States,0100000US,519290,1
+Finance and insurance,7384808,United States,0100000US,52,1
+Monetary Authorities-Central Bank,20618,United States,0100000US,521,1
+Monetary Authorities-Central Bank,20618,United States,0100000US,5211,1
+Monetary Authorities-Central Bank,20618,United States,0100000US,52111,1
+Monetary Authorities-Central Bank,20618,United States,0100000US,521110,1
+Credit intermediation and related activities,3191877,United States,0100000US,522,1
+Depository credit intermediation,2043016,United States,0100000US,5221,1
+Commercial Banking,1613941,United States,0100000US,52211,1
+Commercial Banking,1613941,United States,0100000US,522110,1
+National commercial banks (banking),937813,United States,0100000US,5221101,1
+State commercial banks (banking),658660,United States,0100000US,5221102,1
+Credit unions,333082,United States,0100000US,52213,1
+Credit unions,333082,United States,0100000US,522130,1
+"Credit unions, federally chartered",164648,United States,0100000US,5221301,1
+"Credit unions, not federally chartered",168434,United States,0100000US,5221309,1
+Savings Institutions and Other Depository Credit Intermediation,95993,United States,0100000US,52218,1
+Savings Institutions and Other Depository Credit Intermediation,95993,United States,0100000US,522180,1
+"Savings institutions, federally chartered",0,United States,0100000US,5221801,1
+"Savings institutions, not federally chartered",46676,United States,0100000US,5221803,1
+Nondepository credit intermediation,757172,United States,0100000US,5222,1
+Credit Card Issuing,72871,United States,0100000US,52221,1
+Credit Card Issuing,72871,United States,0100000US,522210,1
+Sales Financing,102785,United States,0100000US,52222,1
+Sales Financing,102785,United States,0100000US,522220,1
+Other Nondepository Credit Intermediation,581516,United States,0100000US,52229,1
+Consumer Lending,125707,United States,0100000US,522291,1
+Real Estate Credit,366550,United States,0100000US,522292,1
+"International, Secondary Market, and All Other Nondepository Credit Intermediation",89259,United States,0100000US,522299,1
+Activities related to credit intermediation,391689,United States,0100000US,5223,1
+Mortgage and Nonmortgage Loan Brokers,75862,United States,0100000US,52231,1
+Mortgage and Nonmortgage Loan Brokers,75862,United States,0100000US,522310,1
+"Financial Transactions Processing, Reserve, and Clearinghouse Activities",198478,United States,0100000US,52232,1
+"Financial Transactions Processing, Reserve, and Clearinghouse Activities",198478,United States,0100000US,522320,1
+Other Activities Related to Credit Intermediation,117349,United States,0100000US,52239,1
+Other Activities Related to Credit Intermediation,117349,United States,0100000US,522390,1
+"Securities, commodity contracts, and other financial investments and related activities",1176109,United States,0100000US,523,1
+Securities and commodity contracts intermediation and brokerage,459866,United States,0100000US,5231,1
+Investment Banking and Securities Intermediation,435679,United States,0100000US,52315,1
+Investment Banking and Securities Intermediation,435679,United States,0100000US,523150,1
+Commodity Contracts Intermediation,24187,United States,0100000US,52316,1
+Commodity Contracts Intermediation,24187,United States,0100000US,523160,1
+Securities and Commodity Exchanges,7219,United States,0100000US,5232,1
+Securities and Commodity Exchanges,7219,United States,0100000US,52321,1
+Securities and Commodity Exchanges,7219,United States,0100000US,523210,1
+Other financial investment activities,709024,United States,0100000US,5239,1
+Miscellaneous Intermediation,68878,United States,0100000US,52391,1
+Miscellaneous Intermediation,68878,United States,0100000US,523910,1
+Portfolio Management and Investment Advice,573187,United States,0100000US,52394,1
+Portfolio Management and Investment Advice,573187,United States,0100000US,523940,1
+All Other Financial Investment Activities,66959,United States,0100000US,52399,1
+"Trust, Fiduciary, and Custody Activities",41287,United States,0100000US,523991,1
+Miscellaneous Financial Investment Activities,25672,United States,0100000US,523999,1
+Insurance Carriers and Related Activities,2996204,United States,0100000US,524,1
+Insurance Carriers,1641461,United States,0100000US,5241,1
+"Direct Life, Health, and Medical Insurance Carriers",887741,United States,0100000US,52411,1
+Direct Life Insurance Carriers,301104,United States,0100000US,524113,1
+Direct Health and Medical Insurance Carriers,586637,United States,0100000US,524114,1
+"Direct Insurance (except Life, Health, and Medical) Carriers",738330,United States,0100000US,52412,1
+Direct Property and Casualty Insurance Carriers,637410,United States,0100000US,524126,1
+Direct Title Insurance Carriers,64948,United States,0100000US,524127,1
+"Other Direct Insurance (except Life, Health, and Medical) Carriers",35972,United States,0100000US,524128,1
+Reinsurance Carriers,15390,United States,0100000US,52413,1
+Reinsurance Carriers,15390,United States,0100000US,524130,1
+"Agencies, brokerages, and other insurance related activities",1354743,United States,0100000US,5242,1
+Insurance Agencies and Brokerages,833835,United States,0100000US,52421,1
+Insurance Agencies and Brokerages,833835,United States,0100000US,524210,1
+Other Insurance Related Activities,520908,United States,0100000US,52429,1
+Claims Adjusting,40125,United States,0100000US,524291,1
+Pharmacy Benefit Management and Other Third Party Administration of Insurance and Pension Funds,442908,United States,0100000US,524292,1
+All Other Insurance Related Activities,37875,United States,0100000US,524298,1
+Real estate and rental and leasing,2522021,United States,0100000US,53,1
+Real Estate,1934763,United States,0100000US,531,1
+Lessors of Real Estate,686786,United States,0100000US,5311,1
+Lessors of Residential Buildings and Dwellings,388847,United States,0100000US,53111,1
+Lessors of Residential Buildings and Dwellings,388847,United States,0100000US,531110,1
+Lessors of Nonresidential Buildings (except Miniwarehouses),214848,United States,0100000US,53112,1
+Lessors of Nonresidential Buildings (except Miniwarehouses),214848,United States,0100000US,531120,1
+Lessors of Miniwarehouses and Self-Storage Units,47642,United States,0100000US,53113,1
+Lessors of Miniwarehouses and Self-Storage Units,47642,United States,0100000US,531130,1
+Lessors of Other Real Estate Property,35449,United States,0100000US,53119,1
+Lessors of Other Real Estate Property,35449,United States,0100000US,531190,1
+Offices of Real Estate Agents and Brokers,441369,United States,0100000US,5312,1
+Offices of Real Estate Agents and Brokers,441369,United States,0100000US,53121,1
+Offices of Real Estate Agents and Brokers,441369,United States,0100000US,531210,1
+Activities Related to Real Estate,806608,United States,0100000US,5313,1
+Real Estate Property Managers,684552,United States,0100000US,53131,1
+Residential Property Managers,518734,United States,0100000US,531311,1
+Nonresidential Property Managers,165818,United States,0100000US,531312,1
+Offices of real estate appraisers,41050,United States,0100000US,53132,1
+Offices of real estate appraisers,41050,United States,0100000US,531320,1
+Other Activities Related to Real Estate,81006,United States,0100000US,53139,1
+Other Activities Related to Real Estate,81006,United States,0100000US,531390,1
+Rental and Leasing Services,545053,United States,0100000US,532,1
+Automotive Equipment Rental and Leasing,176945,United States,0100000US,5321,1
+Passenger Car Rental and Leasing,91076,United States,0100000US,53211,1
+Passenger Car Rental,83005,United States,0100000US,532111,1
+Passenger Car Leasing,8071,United States,0100000US,532112,1
+"Truck, Utility Trailer, and RV (Recreational Vehicle) Rental and Leasing",85869,United States,0100000US,53212,1
+"Truck, Utility Trailer, and RV (Recreational Vehicle) Rental and Leasing",85869,United States,0100000US,532120,1
+Consumer Goods Rental,122898,United States,0100000US,5322,1
+Consumer Electronics and Appliances Rental,24608,United States,0100000US,53221,1
+Consumer Electronics and Appliances Rental,24608,United States,0100000US,532210,1
+Other Consumer Goods Rental,98290,United States,0100000US,53228,1
+Formal Wear and Costume Rental,4547,United States,0100000US,532281,1
+Video Tape and Disc Rental,4069,United States,0100000US,532282,1
+Home Health Equipment Rental,27041,United States,0100000US,532283,1
+Recreational Goods Rental,18227,United States,0100000US,532284,1
+All Other Consumer Goods Rental,44406,United States,0100000US,532289,1
+General Rental Centers,15325,United States,0100000US,5323,1
+General Rental Centers,15325,United States,0100000US,53231,1
+General Rental Centers,15325,United States,0100000US,532310,1
+Commercial and Industrial Machinery and Equipment Rental and Leasing,229885,United States,0100000US,5324,1
+"Construction, Transportation, Mining, and Forestry Machinery and Equipment Rental and Leasing",85008,United States,0100000US,53241,1
+"Commercial Air, Rail, and Water Transportation Equipment Rental and Leasing",5156,United States,0100000US,532411,1
+"Construction, Mining, and Forestry Machinery and Equipment Rental and Leasing",79852,United States,0100000US,532412,1
+Office Machinery and Equipment Rental and Leasing,7455,United States,0100000US,53242,1
+Office Machinery and Equipment Rental and Leasing,7455,United States,0100000US,532420,1
+Other Commercial and Industrial Machinery and Equipment Rental and Leasing,137422,United States,0100000US,53249,1
+Other Commercial and Industrial Machinery and Equipment Rental and Leasing,137422,United States,0100000US,532490,1
+Lessors of Nonfinancial Intangible Assets (except Copyrighted Works),42205,United States,0100000US,533,1
+Lessors of Nonfinancial Intangible Assets (except Copyrighted Works),42205,United States,0100000US,5331,1
+Lessors of Nonfinancial Intangible Assets (except Copyrighted Works),42205,United States,0100000US,53311,1
+Lessors of Nonfinancial Intangible Assets (except Copyrighted Works),42205,United States,0100000US,533110,1
+"Professional, scientific, and technical services",11185562,United States,0100000US,54,1
+"Professional, Scientific, and Technical Services",11185562,United States,0100000US,541,1
+Legal Services,1395948,United States,0100000US,5411,1
+Offices of Lawyers,1281880,United States,0100000US,54111,1
+Offices of Lawyers,1281880,United States,0100000US,541110,1
+Offices of lawyers,1238906,United States,0100000US,5411101,1
+Legal aid societies and similar legal services,42974,United States,0100000US,5411102,1
+Other Legal Services,114068,United States,0100000US,54119,1
+Title Abstract and Settlement Offices,81332,United States,0100000US,541191,1
+All Other Legal Services,32736,United States,0100000US,541199,1
+"Accounting, Tax Preparation, Bookkeeping, and Payroll Services",1313416,United States,0100000US,5412,1
+"Accounting, Tax Preparation, Bookkeeping, and Payroll Services",1313416,United States,0100000US,54121,1
+Offices of Certified Public Accountants,593830,United States,0100000US,541211,1
+Tax Preparation Services,132452,United States,0100000US,541213,1
+Payroll Services,296916,United States,0100000US,541214,1
+Other Accounting Services,290218,United States,0100000US,541219,1
+"Architectural, Engineering, and Related Services",1719500,United States,0100000US,5413,1
+Architectural Services,201146,United States,0100000US,54131,1
+Architectural Services,201146,United States,0100000US,541310,1
+Landscape Architectural Services,38201,United States,0100000US,54132,1
+Landscape Architectural Services,38201,United States,0100000US,541320,1
+Engineering Services,1188890,United States,0100000US,54133,1
+Engineering Services,1188890,United States,0100000US,541330,1
+Drafting services,13690,United States,0100000US,54134,1
+Drafting services,13690,United States,0100000US,541340,1
+Building Inspection Services,31488,United States,0100000US,54135,1
+Building Inspection Services,31488,United States,0100000US,541350,1
+Geophysical Surveying and Mapping Services,8576,United States,0100000US,54136,1
+Geophysical Surveying and Mapping Services,8576,United States,0100000US,541360,1
+Surveying and Mapping (except Geophysical) Services,72754,United States,0100000US,54137,1
+Surveying and Mapping (except Geophysical) Services,72754,United States,0100000US,541370,1
+Testing Laboratories and Services,164755,United States,0100000US,54138,1
+Testing Laboratories and Services,164755,United States,0100000US,541380,1
+Specialized design services,146373,United States,0100000US,5414,1
+Interior design services,61579,United States,0100000US,54141,1
+Interior design services,61579,United States,0100000US,541410,1
+Industrial Design Services,18453,United States,0100000US,54142,1
+Industrial Design Services,18453,United States,0100000US,541420,1
+Graphic Design Services,53691,United States,0100000US,54143,1
+Graphic Design Services,53691,United States,0100000US,541430,1
+Other Specialized Design Services,12650,United States,0100000US,54149,1
+Other Specialized Design Services,12650,United States,0100000US,541490,1
+Computer Systems Design and Related Services,2260211,United States,0100000US,5415,1
+Computer Systems Design and Related Services,2260211,United States,0100000US,54151,1
+Custom Computer Programming Services,1153016,United States,0100000US,541511,1
+Computer Systems Design Services,783311,United States,0100000US,541512,1
+Computer Facilities Management Services,114109,United States,0100000US,541513,1
+Other Computer Related Services,209775,United States,0100000US,541519,1
+"Management, Scientific, and Technical Consulting Services",1788068,United States,0100000US,5416,1
+Management Consulting Services,1516703,United States,0100000US,54161,1
+Administrative Management and General Management Consulting Services,885663,United States,0100000US,541611,1
+Human Resources Consulting Services,137778,United States,0100000US,541612,1
+Marketing Consulting Services,322274,United States,0100000US,541613,1
+"Process, Physical Distribution, and Logistics Consulting Services",103192,United States,0100000US,541614,1
+Other Management Consulting Services,67796,United States,0100000US,541618,1
+Environmental Consulting Services,99085,United States,0100000US,54162,1
+Environmental Consulting Services,99085,United States,0100000US,541620,1
+Other Scientific and Technical Consulting Services,172280,United States,0100000US,54169,1
+Other Scientific and Technical Consulting Services,172280,United States,0100000US,541690,1
+Scientific Research and Development Services,1173651,United States,0100000US,5417,1
+"Research and Development in the Physical, Engineering, and Life Sciences",1118487,United States,0100000US,54171,1
+Research and Development in Nanotechnology,207509,United States,0100000US,541713,1
+Research and development in nanobiotechnology,51307,United States,0100000US,5417131,1
+"Research and development in the physical and engineering sciences, nanotechnology",122579,United States,0100000US,5417132,1
+"Research and development in the life sciences, nanotechnology",33623,United States,0100000US,5417133,1
+Research and Development in Biotechnology (except Nanobiotechnology),241153,United States,0100000US,541714,1
+"Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",669825,United States,0100000US,541715,1
+"Research and development in the physical and engineering sciences, except nanotechnology",304619,United States,0100000US,5417151,1
+"Research and development in the life sciences, except nanotechnology",365206,United States,0100000US,5417152,1
+Research and Development in the Social Sciences and Humanities,55164,United States,0100000US,54172,1
+Research and Development in the Social Sciences and Humanities,55164,United States,0100000US,541720,1
+"Advertising, Public Relations, and Related Services",527028,United States,0100000US,5418,1
+Advertising Agencies,223922,United States,0100000US,54181,1
+Advertising Agencies,223922,United States,0100000US,541810,1
+Public relations agencies,65010,United States,0100000US,54182,1
+Public relations agencies,65010,United States,0100000US,541820,1
+Media Buying Agencies,22002,United States,0100000US,54183,1
+Media Buying Agencies,22002,United States,0100000US,541830,1
+Media Representatives,27637,United States,0100000US,54184,1
+Media Representatives,27637,United States,0100000US,541840,1
+Indoor and Outdoor Display Advertising,27361,United States,0100000US,54185,1
+Indoor and Outdoor Display Advertising,27361,United States,0100000US,541850,1
+Direct Mail Advertising,38011,United States,0100000US,54186,1
+Direct Mail Advertising,38011,United States,0100000US,541860,1
+Advertising Material Distribution Services,12983,United States,0100000US,54187,1
+Advertising Material Distribution Services,12983,United States,0100000US,541870,1
+Other Services Related to Advertising,110102,United States,0100000US,54189,1
+Other Services Related to Advertising,110102,United States,0100000US,541890,1
+"Other Professional, Scientific, and Technical Services",861367,United States,0100000US,5419,1
+Marketing Research and Public Opinion Polling,88069,United States,0100000US,54191,1
+Marketing Research and Public Opinion Polling,88069,United States,0100000US,541910,1
+Photographic Services,52134,United States,0100000US,54192,1
+"Photography Studios, Portrait",37701,United States,0100000US,541921,1
+Commercial Photography,14433,United States,0100000US,541922,1
+Translation and Interpretation Services,56576,United States,0100000US,54193,1
+Translation and Interpretation Services,56576,United States,0100000US,541930,1
+Veterinary Services,535783,United States,0100000US,54194,1
+Veterinary Services,535783,United States,0100000US,541940,1
+"All Other Professional, Scientific, and Technical Services",128805,United States,0100000US,54199,1
+"All Other Professional, Scientific, and Technical Services",128805,United States,0100000US,541990,1
+Management of companies and enterprises,4261826,United States,0100000US,55,1
+Management of Companies and Enterprises,4261826,United States,0100000US,551,1
+Management of Companies and Enterprises,4261826,United States,0100000US,5511,1
+Management of Companies and Enterprises,4261826,United States,0100000US,55111,1
+Offices of Bank Holding Companies,11917,United States,0100000US,551111,1
+Offices of Other Holding Companies,121257,United States,0100000US,551112,1
+"Corporate, Subsidiary, and Regional Managing Offices",4128652,United States,0100000US,551114,1
+Administrative and support and waste management and remediation services,13705316,United States,0100000US,56,1
+Administrative and Support Services,13180039,United States,0100000US,561,1
+Office Administrative Services,559313,United States,0100000US,5611,1
+Office Administrative Services,559313,United States,0100000US,56111,1
+Office Administrative Services,559313,United States,0100000US,561110,1
+Facilities Support Services,304020,United States,0100000US,5612,1
+Facilities Support Services,304020,United States,0100000US,56121,1
+Facilities Support Services,304020,United States,0100000US,561210,1
+Employment Services,7770894,United States,0100000US,5613,1
+Employment Placement Agencies and Executive Search Services,333047,United States,0100000US,56131,1
+Employment Placement Agencies,290172,United States,0100000US,561311,1
+Executive Search Services,42875,United States,0100000US,561312,1
+Temporary Help Services,4448710,United States,0100000US,56132,1
+Temporary Help Services,4448710,United States,0100000US,561320,1
+Professional Employer Organizations,2989137,United States,0100000US,56133,1
+Professional Employer Organizations,2989137,United States,0100000US,561330,1
+Business Support Services,744674,United States,0100000US,5614,1
+Document Preparation Services,39631,United States,0100000US,56141,1
+Document Preparation Services,39631,United States,0100000US,561410,1
+Telephone Call Centers,433717,United States,0100000US,56142,1
+Telephone Answering Services,31260,United States,0100000US,561421,1
+Telemarketing Bureaus and Other Contact Centers,402457,United States,0100000US,561422,1
+Business Service Centers,69314,United States,0100000US,56143,1
+Private Mail Centers,40061,United States,0100000US,561431,1
+Other Business Service Centers (including Copy Shops),29253,United States,0100000US,561439,1
+Collection Agencies,103609,United States,0100000US,56144,1
+Collection Agencies,103609,United States,0100000US,561440,1
+Credit Bureaus,24998,United States,0100000US,56145,1
+Credit Bureaus,24998,United States,0100000US,561450,1
+Other Business Support Services,73405,United States,0100000US,56149,1
+Repossession Services,6546,United States,0100000US,561491,1
+Court Reporting and Stenotype Services,12874,United States,0100000US,561492,1
+All Other Business Support Services,53985,United States,0100000US,561499,1
+Travel Arrangement and Reservation Services,190487,United States,0100000US,5615,1
+Travel Agencies,77533,United States,0100000US,56151,1
+Travel Agencies,77533,United States,0100000US,561510,1
+Tour Operators,28158,United States,0100000US,56152,1
+Tour Operators,28158,United States,0100000US,561520,1
+Other Travel Arrangement and Reservation Services,84796,United States,0100000US,56159,1
+Convention and Visitors Bureaus,7889,United States,0100000US,561591,1
+All Other Travel Arrangement and Reservation Services,76907,United States,0100000US,561599,1
+Investigation and Security Services,1051636,United States,0100000US,5616,1
+"Investigation, Guard, and Armored Car Services",893382,United States,0100000US,56161,1
+Investigation and Personal Background Check Services,45643,United States,0100000US,561611,1
+Security Guards and Patrol Services,819620,United States,0100000US,561612,1
+Armored car services,28119,United States,0100000US,561613,1
+Security Systems Services,158254,United States,0100000US,56162,1
+Security Systems Services (except Locksmiths),140876,United States,0100000US,561621,1
+Locksmiths,17378,United States,0100000US,561622,1
+Services to Buildings and Dwellings,2240906,United States,0100000US,5617,1
+Exterminating and Pest Control Services,147561,United States,0100000US,56171,1
+Exterminating and Pest Control Services,147561,United States,0100000US,561710,1
+Janitorial Services,1148248,United States,0100000US,56172,1
+Janitorial Services,1148248,United States,0100000US,561720,1
+Landscaping Services,808067,United States,0100000US,56173,1
+Landscaping Services,808067,United States,0100000US,561730,1
+Carpet and Upholstery Cleaning Services,42426,United States,0100000US,56174,1
+Carpet and Upholstery Cleaning Services,42426,United States,0100000US,561740,1
+Other Services to Buildings and Dwellings,94604,United States,0100000US,56179,1
+Other Services to Buildings and Dwellings,94604,United States,0100000US,561790,1
+Other support services,318109,United States,0100000US,5619,1
+Packaging and Labeling Services,64961,United States,0100000US,56191,1
+Packaging and Labeling Services,64961,United States,0100000US,561910,1
+Convention and Trade Show Organizers,74735,United States,0100000US,56192,1
+Convention and Trade Show Organizers,74735,United States,0100000US,561920,1
+All Other Support Services,178413,United States,0100000US,56199,1
+All Other Support Services,178413,United States,0100000US,561990,1
+Waste Management and Remediation Services,525277,United States,0100000US,562,1
+Waste Collection,270740,United States,0100000US,5621,1
+Waste Collection,270740,United States,0100000US,56211,1
+Solid Waste Collection,242654,United States,0100000US,562111,1
+Hazardous Waste Collection,10654,United States,0100000US,562112,1
+Other Waste Collection,17432,United States,0100000US,562119,1
+Waste Treatment and Disposal,67004,United States,0100000US,5622,1
+Waste Treatment and Disposal,67004,United States,0100000US,56221,1
+Hazardous Waste Treatment and Disposal,32084,United States,0100000US,562211,1
+Solid Waste Landfill,26551,United States,0100000US,562212,1
+Solid Waste Combustors and Incinerators,2651,United States,0100000US,562213,1
+Other Nonhazardous Waste Treatment and Disposal,5718,United States,0100000US,562219,1
+Remediation and other waste management services,187533,United States,0100000US,5629,1
+Remediation Services,97300,United States,0100000US,56291,1
+Remediation Services,97300,United States,0100000US,562910,1
+Materials Recovery Facilities,30216,United States,0100000US,56292,1
+Materials Recovery Facilities,30216,United States,0100000US,562920,1
+All Other Waste Management Services,60017,United States,0100000US,56299,1
+Septic Tank and Related Services,37308,United States,0100000US,562991,1
+All Other Miscellaneous Waste Management Services,22709,United States,0100000US,562998,1
+Educational services,838902,United States,0100000US,61,1
+Educational Services,838902,United States,0100000US,611,1
+Business Schools and Computer and Management Training,97991,United States,0100000US,6114,1
+Business and Secretarial Schools,1070,United States,0100000US,61141,1
+Business and Secretarial Schools,1070,United States,0100000US,611410,1
+Computer Training,29942,United States,0100000US,61142,1
+Computer Training,29942,United States,0100000US,611420,1
+Professional and Management Development Training,66979,United States,0100000US,61143,1
+Professional and Management Development Training,66979,United States,0100000US,611430,1
+Technical and Trade Schools,111977,United States,0100000US,6115,1
+Technical and Trade Schools,111977,United States,0100000US,61151,1
+Cosmetology and barber schools,18626,United States,0100000US,611511,1
+Flight Training,25464,United States,0100000US,611512,1
+Apprenticeship Training,16382,United States,0100000US,611513,1
+Other Technical and Trade Schools,51505,United States,0100000US,611519,1
+Other Schools and Instruction,498471,United States,0100000US,6116,1
+Fine Arts Schools,123298,United States,0100000US,61161,1
+Fine Arts Schools,123298,United States,0100000US,611610,1
+Sports and Recreation Instruction,172233,United States,0100000US,61162,1
+Sports and Recreation Instruction,172233,United States,0100000US,611620,1
+Language Schools,19314,United States,0100000US,61163,1
+Language Schools,19314,United States,0100000US,611630,1
+All Other Schools and Instruction,183626,United States,0100000US,61169,1
+Exam Preparation and Tutoring,111399,United States,0100000US,611691,1
+Automobile Driving Schools,17992,United States,0100000US,611692,1
+All Other Miscellaneous Schools and Instruction,54235,United States,0100000US,611699,1
+Educational Support Services,130463,United States,0100000US,6117,1
+Educational Support Services,130463,United States,0100000US,61171,1
+Educational Support Services,130463,United States,0100000US,611710,1
+Health care and social assistance,21801532,United States,0100000US,62,1
+Ambulatory health care services,8601571,United States,0100000US,621,1
+Offices of Physicians,2754124,United States,0100000US,6211,1
+Offices of Physicians,2754124,United States,0100000US,62111,1
+Offices of Physicians (except Mental Health Specialists),2696890,United States,0100000US,621111,1
+"Offices of Physicians, Mental Health Specialists",57234,United States,0100000US,621112,1
+Offices of Dentists,1058526,United States,0100000US,6212,1
+Offices of Dentists,1058526,United States,0100000US,62121,1
+Offices of Dentists,1058526,United States,0100000US,621210,1
+Offices of other health practitioners,1166955,United States,0100000US,6213,1
+Offices of chiropractors,148688,United States,0100000US,62131,1
+Offices of chiropractors,148688,United States,0100000US,621310,1
+Offices of Optometrists,148873,United States,0100000US,62132,1
+Offices of Optometrists,148873,United States,0100000US,621320,1
+Offices of Mental Health Practitioners (except Physicians),265052,United States,0100000US,62133,1
+Offices of Mental Health Practitioners (except Physicians),265052,United States,0100000US,621330,1
+"Offices of Physical, Occupational and Speech Therapists, and Audiologists",435957,United States,0100000US,62134,1
+"Offices of Physical, Occupational and Speech Therapists, and Audiologists",435957,United States,0100000US,621340,1
+Offices of All Other Health Practitioners,168385,United States,0100000US,62139,1
+Offices of Podiatrists,37049,United States,0100000US,621391,1
+Offices of All Other Miscellaneous Health Practitioners,131336,United States,0100000US,621399,1
+Outpatient Care Centers,1309884,United States,0100000US,6214,1
+Family Planning Centers,28787,United States,0100000US,62141,1
+Family Planning Centers,28787,United States,0100000US,621410,1
+Outpatient Mental Health and Substance Abuse Centers,304474,United States,0100000US,62142,1
+Outpatient Mental Health and Substance Abuse Centers,304474,United States,0100000US,621420,1
+Other Outpatient Care Centers,976623,United States,0100000US,62149,1
+HMO Medical Centers,188501,United States,0100000US,621491,1
+Kidney dialysis centers,142984,United States,0100000US,621492,1
+Freestanding Ambulatory Surgical and Emergency Centers,203175,United States,0100000US,621493,1
+All Other Outpatient Care Centers,441963,United States,0100000US,621498,1
+Medical and Diagnostic Laboratories,361538,United States,0100000US,6215,1
+Medical and Diagnostic Laboratories,361538,United States,0100000US,62151,1
+Medical Laboratories,252277,United States,0100000US,621511,1
+Diagnostic Imaging Centers,109261,United States,0100000US,621512,1
+Home Health Care Services,1560134,United States,0100000US,6216,1
+Home Health Care Services,1560134,United States,0100000US,62161,1
+Home Health Care Services,1560134,United States,0100000US,621610,1
+Other ambulatory health care services,390410,United States,0100000US,6219,1
+Ambulance Services,180767,United States,0100000US,62191,1
+Ambulance Services,180767,United States,0100000US,621910,1
+All Other Ambulatory Health Care Services,209643,United States,0100000US,62199,1
+Blood and Organ Banks,85744,United States,0100000US,621991,1
+All Other Miscellaneous Ambulatory Health Care Services,123899,United States,0100000US,621999,1
+Hospitals,6335841,United States,0100000US,622,1
+General Medical and Surgical Hospitals,5821696,United States,0100000US,6221,1
+General medical and surgical hospitals,5821696,United States,0100000US,62211,1
+General medical and surgical hospitals,5821696,United States,0100000US,622110,1
+"General medical and surgical hospitals, government",1320786,United States,0100000US,6221101,1
+"General medical and surgical hospitals, except government",4500910,United States,0100000US,6221102,1
+Psychiatric and Substance Abuse Hospitals,237295,United States,0100000US,6222,1
+Psychiatric and Substance Abuse Hospitals,237295,United States,0100000US,62221,1
+Psychiatric and Substance Abuse Hospitals,237295,United States,0100000US,622210,1
+"Psychiatric and substance abuse hospitals, government",119536,United States,0100000US,6222101,1
+"Psychiatric and substance abuse hospitals, except government",117759,United States,0100000US,6222102,1
+Specialty (except Psychiatric and Substance Abuse) Hospitals,276850,United States,0100000US,6223,1
+Specialty (except Psychiatric and Substance Abuse) Hospitals,276850,United States,0100000US,62231,1
+Specialty (except Psychiatric and Substance Abuse) Hospitals,276850,United States,0100000US,622310,1
+"Specialty (except psychiatric and substance abuse) hospitals, government",38602,United States,0100000US,6223101,1
+"Specialty (except psychiatric and substance abuse) hospitals, except government",238248,United States,0100000US,6223102,1
+Nursing and Residential Care Facilities,3175407,United States,0100000US,623,1
+Nursing Care Facilities (Skilled Nursing Facilities),1392818,United States,0100000US,6231,1
+Nursing Care Facilities (Skilled Nursing Facilities),1392818,United States,0100000US,62311,1
+Nursing Care Facilities (Skilled Nursing Facilities),1392818,United States,0100000US,623110,1
+"Residential intellectual and developmental disability, mental health, and substance abuse facilities",746502,United States,0100000US,6232,1
+Residential Intellectual and Developmental Disability Facilities,535514,United States,0100000US,62321,1
+Residential Intellectual and Developmental Disability Facilities,535514,United States,0100000US,623210,1
+Residential Mental Health and Substance Abuse Facilities,210988,United States,0100000US,62322,1
+Residential Mental Health and Substance Abuse Facilities,210988,United States,0100000US,623220,1
+Continuing Care Retirement Communities and Assisted Living Facilities for the Elderly,924449,United States,0100000US,6233,1
+Continuing Care Retirement Communities and Assisted Living Facilities for the Elderly,924449,United States,0100000US,62331,1
+Continuing Care Retirement Communities,439643,United States,0100000US,623311,1
+Assisted Living Facilities for the Elderly,484806,United States,0100000US,623312,1
+Other Residential Care Facilities,111638,United States,0100000US,6239,1
+Other Residential Care Facilities,111638,United States,0100000US,62399,1
+Other Residential Care Facilities,111638,United States,0100000US,623990,1
+Social Assistance,3688713,United States,0100000US,624,1
+Individual and Family Services,2240171,United States,0100000US,6241,1
+Child and Youth Services,238913,United States,0100000US,62411,1
+Child and Youth Services,238913,United States,0100000US,624110,1
+Services for the Elderly and Persons with Disabilities,1545401,United States,0100000US,62412,1
+Services for the Elderly and Persons with Disabilities,1545401,United States,0100000US,624120,1
+Other Individual and Family Services,455857,United States,0100000US,62419,1
+Other Individual and Family Services,455857,United States,0100000US,624190,1
+"Community Food and Housing, and Emergency and Other Relief Services",233941,United States,0100000US,6242,1
+Community Food Services,53158,United States,0100000US,62421,1
+Community Food Services,53158,United States,0100000US,624210,1
+Community Housing Services,149068,United States,0100000US,62422,1
+Temporary Shelters,88116,United States,0100000US,624221,1
+Other Community Housing Services,60952,United States,0100000US,624229,1
+Emergency and other relief services,31715,United States,0100000US,62423,1
+Emergency and other relief services,31715,United States,0100000US,624230,1
+Vocational Rehabilitation Services,211851,United States,0100000US,6243,1
+Vocational Rehabilitation Services,211851,United States,0100000US,62431,1
+Vocational Rehabilitation Services,211851,United States,0100000US,624310,1
+Child Care Services,1002750,United States,0100000US,6244,1
+Child Care Services,1002750,United States,0100000US,62441,1
+Child Care Services,1002750,United States,0100000US,624410,1
+"Arts, entertainment, and recreation",2513531,United States,0100000US,71,1
+"Performing Arts, Spectator Sports, and Related Industries",531396,United States,0100000US,711,1
+Performing arts companies,121756,United States,0100000US,7111,1
+Theater Companies and Dinner Theaters,66007,United States,0100000US,71111,1
+Theater Companies and Dinner Theaters,66007,United States,0100000US,711110,1
+Dance Companies,10249,United States,0100000US,71112,1
+Dance Companies,10249,United States,0100000US,711120,1
+Musical Groups and Artists,40317,United States,0100000US,71113,1
+Musical Groups and Artists,40317,United States,0100000US,711130,1
+Other Performing Arts Companies,5183,United States,0100000US,71119,1
+Other Performing Arts Companies,5183,United States,0100000US,711190,1
+Spectator Sports,123223,United States,0100000US,7112,1
+Spectator Sports,123223,United States,0100000US,71121,1
+Sports Teams and Clubs,76838,United States,0100000US,711211,1
+Racetracks,30019,United States,0100000US,711212,1
+Other Spectator Sports,16366,United States,0100000US,711219,1
+"Promoters of Performing Arts, Sports, and Similar Events",174845,United States,0100000US,7113,1
+"Promoters of Performing Arts, Sports, and Similar Events with Facilities",134982,United States,0100000US,71131,1
+"Promoters of Performing Arts, Sports, and Similar Events with Facilities",134982,United States,0100000US,711310,1
+"Promoters of Performing Arts, Sports, and Similar Events without Facilities",39863,United States,0100000US,71132,1
+"Promoters of Performing Arts, Sports, and Similar Events without Facilities",39863,United States,0100000US,711320,1
+"Agents and Managers for Artists, Athletes, Entertainers, and Other Public Figures",23684,United States,0100000US,7114,1
+"Agents and Managers for Artists, Athletes, Entertainers, and Other Public Figures",23684,United States,0100000US,71141,1
+"Agents and Managers for Artists, Athletes, Entertainers, and Other Public Figures",23684,United States,0100000US,711410,1
+"Independent Artists, Writers, and Performers",87888,United States,0100000US,7115,1
+"Independent Artists, Writers, and Performers",87888,United States,0100000US,71151,1
+"Independent Artists, Writers, and Performers",87888,United States,0100000US,711510,1
+"Museums, historical sites, and similar institutions",153464,United States,0100000US,712,1
+"Museums, Historical Sites, and Similar Institutions",153464,United States,0100000US,7121,1
+Museums,91249,United States,0100000US,71211,1
+Museums,91249,United States,0100000US,712110,1
+Historical sites,11790,United States,0100000US,71212,1
+Historical sites,11790,United States,0100000US,712120,1
+Zoos and Botanical Gardens,40700,United States,0100000US,71213,1
+Zoos and Botanical Gardens,40700,United States,0100000US,712130,1
+Nature Parks and Other Similar Institutions,9725,United States,0100000US,71219,1
+Nature Parks and Other Similar Institutions,9725,United States,0100000US,712190,1
+"Amusement, Gambling, and Recreation Industries",1828671,United States,0100000US,713,1
+Amusement parks and arcades,247509,United States,0100000US,7131,1
+Amusement and Theme Parks,169233,United States,0100000US,71311,1
+Amusement and Theme Parks,169233,United States,0100000US,713110,1
+Amusement Arcades,78276,United States,0100000US,71312,1
+Amusement Arcades,78276,United States,0100000US,713120,1
+Gambling Industries,135268,United States,0100000US,7132,1
+Casinos (except Casino Hotels),74035,United States,0100000US,71321,1
+Casinos (except Casino Hotels),74035,United States,0100000US,713210,1
+Other Gambling Industries,61233,United States,0100000US,71329,1
+Other Gambling Industries,61233,United States,0100000US,713290,1
+Other Amusement and Recreation Industries,1445894,United States,0100000US,7139,1
+Golf Courses and Country Clubs,316996,United States,0100000US,71391,1
+Golf Courses and Country Clubs,316996,United States,0100000US,713910,1
+Skiing Facilities,82419,United States,0100000US,71392,1
+Skiing Facilities,82419,United States,0100000US,713920,1
+Marinas,32077,United States,0100000US,71393,1
+Marinas,32077,United States,0100000US,713930,1
+Fitness and Recreational Sports Centers,694014,United States,0100000US,71394,1
+Fitness and Recreational Sports Centers,694014,United States,0100000US,713940,1
+Bowling centers,62325,United States,0100000US,71395,1
+Bowling centers,62325,United States,0100000US,713950,1
+All Other Amusement and Recreation Industries,258063,United States,0100000US,71399,1
+All Other Amusement and Recreation Industries,258063,United States,0100000US,713990,1
+Accommodation and food services,14027520,United States,0100000US,72,1
+Accommodation,1844723,United States,0100000US,721,1
+Traveler Accommodation,1790108,United States,0100000US,7211,1
+Hotels (except Casino Hotels) and Motels,1420127,United States,0100000US,72111,1
+Hotels (except Casino Hotels) and Motels,1420127,United States,0100000US,721110,1
+Casino Hotels,340481,United States,0100000US,72112,1
+Casino Hotels,340481,United States,0100000US,721120,1
+Other Traveler Accommodation,29500,United States,0100000US,72119,1
+Bed-and-breakfast inns,11952,United States,0100000US,721191,1
+All Other Traveler Accommodation,17548,United States,0100000US,721199,1
+RV (Recreational Vehicle) Parks and Recreational Camps,48157,United States,0100000US,7212,1
+RV (Recreational Vehicle) Parks and Recreational Camps,48157,United States,0100000US,72121,1
+RV (Recreational Vehicle) Parks and Campgrounds,25729,United States,0100000US,721211,1
+Recreational and Vacation Camps (except Campgrounds),22428,United States,0100000US,721214,1
+"Rooming and Boarding Houses, Dormitories, and Workers' Camps",6458,United States,0100000US,7213,1
+"Rooming and Boarding Houses, Dormitories, and Workers' Camps",6458,United States,0100000US,72131,1
+"Rooming and Boarding Houses, Dormitories, and Workers' Camps",6458,United States,0100000US,721310,1
+Food Services and Drinking Places,12182797,United States,0100000US,722,1
+Special food services,732570,United States,0100000US,7223,1
+Food Service Contractors,563588,United States,0100000US,72231,1
+Food Service Contractors,563588,United States,0100000US,722310,1
+Caterers,139813,United States,0100000US,72232,1
+Caterers,139813,United States,0100000US,722320,1
+Mobile Food Services,29169,United States,0100000US,72233,1
+Mobile Food Services,29169,United States,0100000US,722330,1
+Drinking Places (Alcoholic Beverages),441817,United States,0100000US,7224,1
+Drinking Places (Alcoholic Beverages),441817,United States,0100000US,72241,1
+Drinking Places (Alcoholic Beverages),441817,United States,0100000US,722410,1
+Restaurants and Other Eating Places,11008410,United States,0100000US,7225,1
+Restaurants and Other Eating Places,11008410,United States,0100000US,72251,1
+Full-Service Restaurants,5146760,United States,0100000US,722511,1
+Limited-Service Restaurants,4807245,United States,0100000US,722513,1
+"Cafeterias, Grill Buffets, and Buffets",72288,United States,0100000US,722514,1
+Snack and Nonalcoholic Beverage Bars,982117,United States,0100000US,722515,1
+Other services (except public administration),3867221,United States,0100000US,81,1
+Repair and Maintenance,1379132,United States,0100000US,811,1
+Automotive repair and maintenance,968602,United States,0100000US,8111,1
+Automotive Mechanical and Electrical Repair and Maintenance,422631,United States,0100000US,81111,1
+General Automotive Repair,388615,United States,0100000US,811111,1
+Specialized Automotive Repair,34016,United States,0100000US,811114,1
+"Automotive Body, Paint, Interior, and Glass Repair",275741,United States,0100000US,81112,1
+"Automotive Body, Paint, and Interior Repair and Maintenance",237346,United States,0100000US,811121,1
+Automotive Glass Replacement Shops,38395,United States,0100000US,811122,1
+Other Automotive Repair and Maintenance,270230,United States,0100000US,81119,1
+Automotive Oil Change and Lubrication Shops,79480,United States,0100000US,811191,1
+Car Washes,169609,United States,0100000US,811192,1
+All Other Automotive Repair and Maintenance,21141,United States,0100000US,811198,1
+Electronic and Precision Equipment Repair and Maintenance,96345,United States,0100000US,8112,1
+Electronic and Precision Equipment Repair and Maintenance,96345,United States,0100000US,81121,1
+Electronic and Precision Equipment Repair and Maintenance,96345,United States,0100000US,811210,1
+Commercial and Industrial Machinery and Equipment (except Automotive and Electronic) Repair and Maintenance,228701,United States,0100000US,8113,1
+Commercial and Industrial Machinery and Equipment (except Automotive and Electronic) Repair and Maintenance,228701,United States,0100000US,81131,1
+Commercial and Industrial Machinery and Equipment (except Automotive and Electronic) Repair and Maintenance,228701,United States,0100000US,811310,1
+Personal and Household Goods Repair and Maintenance,85484,United States,0100000US,8114,1
+Home and Garden Equipment and Appliance Repair and Maintenance,26202,United States,0100000US,81141,1
+Home and Garden Equipment Repair and Maintenance,4653,United States,0100000US,811411,1
+Appliance Repair and Maintenance,21549,United States,0100000US,811412,1
+Reupholstery and Furniture Repair,11885,United States,0100000US,81142,1
+Reupholstery and Furniture Repair,11885,United States,0100000US,811420,1
+Footwear and Leather Goods Repair,1988,United States,0100000US,81143,1
+Footwear and Leather Goods Repair,1988,United States,0100000US,811430,1
+Other Personal and Household Goods Repair and Maintenance,45409,United States,0100000US,81149,1
+Other Personal and Household Goods Repair and Maintenance,45409,United States,0100000US,811490,1
+Personal and Laundry Services,1555488,United States,0100000US,812,1
+Personal care services,762512,United States,0100000US,8121,1
+"Hair, Nail, and Skin Care Services",571482,United States,0100000US,81211,1
+Barber Shops,27231,United States,0100000US,812111,1
+Beauty Salons,389199,United States,0100000US,812112,1
+Nail salons,155052,United States,0100000US,812113,1
+Other Personal Care Services,191030,United States,0100000US,81219,1
+Diet and Weight Reducing Centers,13734,United States,0100000US,812191,1
+Other Personal Care Services,177296,United States,0100000US,812199,1
+Death Care Services,145391,United States,0100000US,8122,1
+Funeral Homes and Funeral Services,111605,United States,0100000US,81221,1
+Funeral Homes and Funeral Services,111605,United States,0100000US,812210,1
+Cemeteries and Crematories,33786,United States,0100000US,81222,1
+Cemeteries and Crematories,33786,United States,0100000US,812220,1
+Drycleaning and Laundry Services,253557,United States,0100000US,8123,1
+Coin-Operated Laundries and Drycleaners,43265,United States,0100000US,81231,1
+Coin-Operated Laundries and Drycleaners,43265,United States,0100000US,812310,1
+Drycleaning and Laundry Services (except Coin-Operated),93454,United States,0100000US,81232,1
+Drycleaning and Laundry Services (except Coin-Operated),93454,United States,0100000US,812320,1
+Linen and uniform supply,116838,United States,0100000US,81233,1
+Linen Supply,53133,United States,0100000US,812331,1
+Industrial Launderers,63705,United States,0100000US,812332,1
+Other personal services,394028,United States,0100000US,8129,1
+Pet Care (except Veterinary) Services,169960,United States,0100000US,81291,1
+Pet Care (except Veterinary) Services,169960,United States,0100000US,812910,1
+Photofinishing,4041,United States,0100000US,81292,1
+Photofinishing Laboratories (except One-Hour),3868,United States,0100000US,812921,1
+One-Hour Photofinishing,173,United States,0100000US,812922,1
+Parking Lots and Garages,122171,United States,0100000US,81293,1
+Parking Lots and Garages,122171,United States,0100000US,812930,1
+All Other Personal Services,97856,United States,0100000US,81299,1
+All Other Personal Services,97856,United States,0100000US,812990,1
+"Religious, Grantmaking, Civic, Professional, and Similar Organizations",932601,United States,0100000US,813,1
+Grantmaking and Giving Services,206020,United States,0100000US,8132,1
+Grantmaking and Giving Services,206020,United States,0100000US,81321,1
+Grantmaking Foundations,106754,United States,0100000US,813211,1
+Voluntary Health Organizations,58914,United States,0100000US,813212,1
+Other Grantmaking and Giving Services,40352,United States,0100000US,813219,1
+Social Advocacy Organizations,203792,United States,0100000US,8133,1
+Social Advocacy Organizations,203792,United States,0100000US,81331,1
+Human Rights Organizations,46974,United States,0100000US,813311,1
+"Environment, Conservation and Wildlife Organizations",87593,United States,0100000US,813312,1
+Other Social Advocacy Organizations,69225,United States,0100000US,813319,1
+Civic and Social Organizations,179690,United States,0100000US,8134,1
+Civic and Social Organizations,179690,United States,0100000US,81341,1
+Civic and Social Organizations,179690,United States,0100000US,813410,1
+"Business, professional, labor, political, and similar organizations",343099,United States,0100000US,8139,1
+Business Associations,111835,United States,0100000US,81391,1
+Business Associations,111835,United States,0100000US,813910,1
+Professional Organizations,85599,United States,0100000US,81392,1
+Professional Organizations,85599,United States,0100000US,813920,1
+"Other Similar Organizations (except Business, Professional, Labor, and Political Organizations)",145665,United States,0100000US,81399,1
+"Other Similar Organizations (except Business, Professional, Labor, and Political Organizations)",145665,United States,0100000US,813990,1
