@@ -1,0 +1,109 @@
+---
+title: "DATA 607 Assignment Week 7"
+author: "Catherine Dube"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+# Load required libraries
+library(rvest)    # for reading HTML tables
+library(xml2)     # for XML parsing
+library(dplyr)   
+library(tidyr)    
+library(jsonlite) # JSON parsing
+library(knitr)
+library(kableExtra)
+```
+
+## Intro
+In this assignment, I will practice working with some different data/file formats by using some of my favorite books. 
+
+* A Little Princess
+* Helter Skelter: The True Story of the Manson Murders
+* The Radium Girls: The Dark Story of America's Shining Women
+
+
+I have placed the given text file in my github repo. Exploring it below:
+```{r html} 
+# 1. Read HTML table
+html_df <- read_html("https://raw.githubusercontent.com/cdube89128/DATA-607/refs/heads/main/week-07/books.html") %>%
+  html_node("table") %>%
+  html_table(header = TRUE, fill = TRUE, trim = TRUE) %>%
+  as_tibble()
+
+# Normalize HTML authors/attributes into list-columns
+html_df <- html_df %>%
+  mutate(authors = strsplit(gsub(";\\s*", "; ", Authors), ";\\s*|;\\s*"),
+         attributes = purrr::pmap(list(`Attribute 1`, `Attribute 2`), function(a,b) c(a,b))) %>%
+  select(title = Title, authors, attributes)
+```
+ 
+```{r xml}
+# 2. Read XML
+xml_doc <- read_xml("https://raw.githubusercontent.com/cdube89128/DATA-607/refs/heads/main/week-07/books.xml")
+book_nodes <- xml_find_all(xml_doc, ".//book")
+xml_list <- lapply(book_nodes, function(b) {
+  title <- xml_text(xml_find_first(b, "./title"))
+  authors <- xml_text(xml_find_all(b, "./authors/author"))
+  attrs <- xml_text(xml_find_all(b, "./attributes/attribute"))
+  list(title = title, authors = authors, attributes = attrs)
+})
+xml_df <- tibble::tibble(
+  title = vapply(xml_list, function(x) x$title, FUN.VALUE = character(1)),
+  authors = lapply(xml_list, function(x) x$authors),
+  attributes = lapply(xml_list, function(x) x$attributes)
+)
+```
+
+ 
+```{r json}
+# 3. Read JSON
+json_df_raw <- fromJSON("https://raw.githubusercontent.com/cdube89128/DATA-607/refs/heads/main/week-07/books.json", simplifyDataFrame = FALSE)
+json_df <- tibble::tibble(
+  title = vapply(json_df_raw, function(x) x$title, FUN.VALUE = character(1)),
+  authors = lapply(json_df_raw, function(x) x$authors),
+  attributes = lapply(json_df_raw, function(x) x$attributes)
+)
+```
+
+## Comparing the data from the different sources
+```{r looking-at-data}
+flatten <- function(df) {
+  df %>% 
+    mutate(
+      authors_flat = vapply(authors, function(x) paste(x, collapse = "<br>"), FUN.VALUE = character(1)),
+      attributes_flat = vapply(attributes, function(x) paste(x, collapse = "<br>"), FUN.VALUE = character(1))
+    ) %>%
+    select(title, authors_flat, attributes_flat)
+}
+
+# Flatten the data so that it all prints out
+html_flat <- flatten(html_df)
+xml_flat  <- flatten(xml_df)
+json_flat <- flatten(json_df)
+
+# Looking at the data
+kable(html_flat, format = "html", escape = FALSE, caption = "HTML Data Frame") %>%
+  kable_styling(full_width = FALSE)
+
+kable(xml_flat, format = "html", escape = FALSE, caption = "XML Data Frame") %>%
+  kable_styling(full_width = FALSE)
+
+kable(json_flat, format = "html", escape = FALSE, caption = "JSON Data Frame") %>%
+  kable_styling(full_width = FALSE)
+ 
+```
+
+## Checking if these are identical
+```{r final-selection}
+h <- flatten(html_df)
+x <- flatten(xml_df)
+j <- flatten(json_df)
+
+cat("Are HTML and XML identical? ", identical(h, x), "\\n")
+cat("Are HTML and JSON identical? ", identical(h, j), "\\n")
+cat("Are XML and JSON identical? ", identical(x, j), "\\n")
+
+```
+
+## Conclusion
