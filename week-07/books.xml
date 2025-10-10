@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+  <book>
+    <title>A Little Princess</title>
+    <authors>
+      <author>Frances Hodgson Burnett</author>
+    </authors>
+    <attributes>
+      <attribute>The book is an expansion of the short story "Sara Crewe: or, What Happened at Miss Minchin's".</attribute>
+      <attribute>Children's literature / classic</attribute>
+    </attributes>
+  </book>
+  <book>
+    <title>Helter Skelter: The True Story of the Manson Murders</title>
+    <authors>
+      <author>Vincent Bugliosi</author>
+      <author>Curt Gentry</author>
+    </authors>
+    <attributes>
+      <attribute>Vincent Bugliosi was the prosecutor on the Charles Manson case.</attribute>
+      <attribute>True crime / historical account</attribute>
+    </attributes>
+  </book>
+  <book>
+    <title>The Radium Girls: The Dark Story of America's Shining Women</title>
+    <authors>
+      <author>Kate Moore</author>
+    </authors>
+    <attributes>
+      <attribute>Kate Moore did extensive research for the book, visiting the homes and graves of some of the women affected.</attribute>
+      <attribute>Social history / labor &amp; public health</attribute>
+    </attributes>
+  </book>
+</books>
