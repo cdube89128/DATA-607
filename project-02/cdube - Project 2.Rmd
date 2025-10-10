@@ -1,0 +1,317 @@
+---
+title: "DATA 607 Project 2"
+author: "Catherine Dube"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+# Load required libraries
+library(DBI)
+library(tidyverse)
+library(knitr)
+
+# URL + reading from api handling
+library(readr) 
+library(utils)  
+library(jsonlite)
+library(rstudioapi)
+library(httr)
+
+library(zoo)
+library(scales)
+```
+
+## Intro
+(1) Choose any three of the “wide” datasets identified in the Week 6 Discussion items.  (You may 
+use your own dataset; please don’t use my Sample Post dataset, since that was used in your 
+Week 6 assignment!)  For each of the three chosen datasets: 
+
+* Create a .CSV file (or optionally, a MySQL database!) that includes all of the information 
+included in the dataset.  You’re encouraged to use a “wide” structure similar to how the 
+information appears in the discussion item, so that you can practice tidying and 
+transformations as described below. 
+* Read the information from your .CSV file into R, and use tidyr and dplyr as needed to 
+tidy and transform your data.  [Most of your grade will be based on this step!] 
+* Perform the analysis requested in the discussion item. 
+* Your code should be in an R Markdown file, posted to rpubs.com, and should include 
+narrative descriptions of your data cleanup work, analysis, and conclusions.   
+(2) Please include in your homework submission, for each of the three chosen datasets: 
+*  The URL to the .Rmd file in your GitHub repository, and  
+* The URL for your rpubs.com web page.
+
+
+In this project, I am practicing preparing wide and untidy data sets. I will be looking at MTA subway rider data, united states census data, and education ~ wages data over time in the United States.
+
+## Dataset 1: MTA Subway Hourly Ridership in Manhattan, 2024 {.tabset}
+### Goal
+I want to see if there is any significant difference in the number of MTA riders during the holiday season.
+
+### Read In MTA Data
+```{r read-in-mta-data}
+projPath <- dirname(file.path(getSourceEditorContext()$path))
+read_new_MTA <- FALSE
+
+if(read_new_MTA == TRUE) {
+  base_url <- "https://data.ny.gov/resource/wujg-7c2s.csv"
+  rows_per_request <- 50000
+  offset <- 0
+  all_data <- list()
+  i <- 1
+  
+  # There are around 8 million lines of data judging from the website
+  # Fetching via api limits to 50,000 rows per fetch 
+  repeat {
+    query <- paste0(
+      "$where=borough='Manhattan' AND date_extract_y(transit_timestamp)=2024",
+      "&$limit=", rows_per_request,
+      "&$offset=", format(offset, scientific = FALSE)
+    )
+    
+    url <- paste0(base_url, "?", URLencode(query))
+    message("Fetching rows ", offset + 1, " to ", offset + rows_per_request, " ...")
+    
+    dat <- read_csv(url, show_col_types = FALSE)
+    
+    if (nrow(dat) == 0) {
+      break
+    }
+    
+    all_data[[i]] <- dat
+    offset <- offset + rows_per_request
+    i <- i + 1
+  }
+  
+  mta_2024 <- all_data %>%
+    lapply(function(df) mutate(df, across(everything(), as.character))) %>%
+    bind_rows() %>%
+    type_convert()
+  
+  # Saving the RData as this took a very long time to read in
+  save.image(file = file.path(projPath, "mta_2024_data.RData"))
+} else {
+  load(file.path(projPath, "mta_2024_data.RData"))
+}
+
+nrow(mta_2024)
+summary(mta_2024)
+
+```
+
+### CSV
+```{r mta-csv}
+# There are over 8 million lines of this data, 
+# so I have written read it in from api, and written it to a csv as part of this project due to the csv requirement
+# In practice, I would keep this as a .RData file
+# also due to the file size *not* committing to github
+
+# Save CSV as Needed
+mta_csv_file <- normalizePath(file.path(projPath, "mta_2024.csv"), mustWork = FALSE)
+
+# Save CSV only if it doesn't exist
+if (!file.exists(mta_csv_file)) {
+  write_csv(mta_2024, mta_csv_file)
+  message("File created: ", mta_csv_file)
+} else {
+  message("File already exists: ", mta_csv_file)
+}
+
+# Load in from local CSV
+mta_2024 <- read_csv(mta_csv_file, show_col_types = FALSE)
+```
+
+### Tidy + Visualize MTA Data
+```{r tidy-mta-data}
+# I don't need datetime for my purposes, only date
+mta_2024_cleaned <- mta_2024 
+
+mta_2024_cleaned <- mta_2024 %>%
+  mutate(date = as_date(transit_timestamp))
+
+# Aggregating for daily ridership
+# including 7 day rolling mean to smooth out the oscillating numbers of riders bw weekdays and weekends
+daily_ridership <- mta_2024_cleaned %>%
+  group_by(date) %>%
+  summarise(total_riders = sum(ridership, na.rm = TRUE)) %>%
+  arrange(date) %>%
+  mutate(
+    day_type = if_else(wday(date) %in% c(1, 7), "Weekend", "Weekday")  ,
+    riders_7day_avg = rollmean(total_riders, k = 7, fill = NA, align = "right")
+  )
+
+# Daily Ridership Trends 
+ggplot(daily_ridership, aes(x = date)) +
+  geom_line(aes(y = total_riders), color = "gray80") +
+  geom_line(aes(y = riders_7day_avg), color = "steelblue", linewidth = 1) +
+  scale_x_date(
+    date_breaks = "1 month",        # one tick per month
+    date_labels = "%b %Y",          # format as "Jan 2024", "Feb 2024", etc.
+    limits = c(as.Date("2024-01-01"), as.Date("2024-12-31"))  # restrict to 2024 only
+  ) +
+  labs(
+    title = "Trend of MTA Daily Ridership in Manhattan (2024)",
+    x = "Month",
+    y = "Total Daily Riders (with rolling 7 day average)"
+  ) +
+  scale_y_continuous(labels = scales::comma) +
+  theme_minimal(base_size = 14) +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1)  # rotate so month year fits on axis
+  )
+
+
+```
+
+### Conclusion
+The total daily riders is considerably higher on non-holiday workdays than it is on weekends, leading to the oscillating pattern we see int eh visualization. By adding the smoothed 7-day average on top of this, we are able to see that there is a considerable jump in the total daily riders at Christmas-time in 2024. It is the highest number of the year by at least 200,000 riders.
+
+## Dataset 2: United States Census, 2022 {.tabset}
+### Goal
+I want to see what industries are responsible for the most jobs in the united States.
+
+### CSV
+```{r get-census-data, echo = FALSE, eval = FALSE}
+# Get the Census API key from environment (I used this to keep it more private)
+api_key <- Sys.getenv("CENSUS_KEY")
+
+# Define Census API endpoint
+base_url <- "https://api.census.gov/data/2022/ecnbasic"
+
+# Define parameters
+params <- list(
+  get = "NAICS2022_LABEL,EMP,NAME,GEO_ID,NAICS2022",
+  `for` = "us",
+  key = api_key
+)
+
+# Make API call
+response <- GET(base_url, query = params)
+
+# Parse and clean data
+if (status_code(response) == 200) {
+  txt <- content(response, "text", encoding = "UTF-8")
+  data <- fromJSON(txt)
+  
+  # Convert to data frame and set column names
+  econ_data <- as.data.frame(data[-1, , drop = FALSE], stringsAsFactors = FALSE)
+  colnames(econ_data) <- unlist(data[1, ])
+  
+  # Convert numeric columns if applicable
+  econ_data <- econ_data %>%
+    mutate(EMP = as.numeric(EMP))
+  
+  print(head(econ_data))  # preview the first few rows
+  cat("\nRows returned:", nrow(econ_data), "\n")
+  
+} else {
+  cat("API request failed with status code:", status_code(response))
+}
+
+write_csv(econ_data, normalizePath(file.path(projPath, "econ_data.csv")))
+print("This line will not be printed.")
+```
+
+```{r census-csv}
+econ_data <- read_csv("https://raw.githubusercontent.com/cdube89128/DATA-607/refs/heads/main/project-02/econ_data.csv"
+                      , show_col_types = FALSE)
+```
+
+### Tidy + Visualize Census Data
+```{r tidy-census data}
+# Helper function for succinct label text (right of bars)
+label_km <- function(x) {
+  case_when(
+    x >= 1e6 ~ paste0(round(x / 1e6, 1), "M"),
+    x >= 1e3 ~ paste0(round(x / 1e3, 1), "K"),
+    TRUE ~ as.character(x)
+  )
+}
+
+# Summarize total employment by industry
+top_industries <- econ_data %>%
+  group_by(NAICS2022_LABEL) %>%
+  summarize(total_employment = sum(EMP, na.rm = TRUE)) %>%
+  arrange(desc(total_employment)) %>%
+  slice_head(n = 20)
+
+# Plot with fixes
+ggplot(top_industries, aes(
+  x = reorder(NAICS2022_LABEL, total_employment),
+  y = total_employment
+)) +
+  geom_col(fill = "#2a9d8f") +
+  geom_text(
+    aes(label = label_km(total_employment)),
+    hjust = -0.1,                    # slightly left of bar end
+    size = 3.5
+  ) +
+  coord_flip(clip = "off") +
+  scale_y_continuous(
+    labels = label_number(scale_cut = cut_short_scale()),
+    expand = expansion(mult = c(0, 0.15))  # more space on right
+  ) +
+  labs(
+    title = "Top 20 U.S. Industries by Employment",
+    x = NULL,
+    y = "Total Employment"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    plot.title = element_text(face = "bold", size = 14, hjust = 1.4),
+    axis.text.y = element_text(size = 10),
+    axis.text.x = element_text(size = 9),
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor.y = element_blank(),
+    plot.margin = margin(t = 20, r = 20, b = 20, l = 20)
+  )
+
+```
+
+### Conclusion
+Restaurants and other eating, as well as health care and social assistance, drove the largest proportion of U.S. jobs in 2022. Each of them made up around 22M of U.S. jobs at the time. This is a relatively steep jump up from the 17M jobs from Retail.
+
+## Dataset 3: Wages by Education {.tabset}
+### Goal
+I want to see if there are any significant trends between education level and wages, and if those have changed over the years.
+
+### Read in CSV of Wages by Education Data
+```{r wages-csv}
+wages_by_education <- read_csv("https://raw.githubusercontent.com/cdube89128/DATA-607/refs/heads/main/project-02/wages_by_education.csv"
+                      , show_col_types = FALSE)
+```
+
+### Tidy + Visualize Wages by Education Data
+```{r tidy-wages data}
+# Select only relevant columns
+education_cols <- c("less_than_hs", "high_school", "some_college", "bachelors_degree", "advanced_degree")
+
+tidy_wages <- wages_by_education %>%
+  select(year, all_of(education_cols)) %>%  # keep only year and education wages
+  pivot_longer(
+    cols = -year,
+    names_to = "education_level",
+    values_to = "income"
+  ) %>%
+  mutate(
+    education_level = factor(education_level, 
+                             levels = c("less_than_hs", "high_school", "some_college", 
+                                        "bachelors_degree", "advanced_degree"))
+  )
+
+# Inspect the tidied data
+head(tidy_wages)
+
+# Visual
+ggplot(tidy_wages, aes(x = year, y = income, color = education_level)) +
+  geom_line(linewidth = 1.2) +
+  geom_point() +
+  labs(title = "Average Income by Education Level Over Time",
+       x = "Year",
+       y = "Income (thousands USD)",
+       color = "Education Level") +
+  theme_minimal()
+
+```
+
+
+### Conclusion
+Higher education levels have a clear correlation with higher average incomes. Over the last 40 years, the relative difference in income for higher educated persons in the United States (having completed bachelor's degrees or higher) has increased compared to the average income for those who have not completed that level of education.
