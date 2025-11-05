@@ -1,0 +1,219 @@
+---
+title: "DATA 607 Assignment 10B"
+author: "Catherine Dube"
+output: 
+  html_document: 
+    code_folding: hide
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+if(!require(pacman)) install.packages("pacman")
+pacman::p_load(tidyverse,
+               httr,
+               jsonlite,
+               scales
+               )
+```
+
+## Intro
+
+We are prompted to work with JSON data available through the [Nobel Prize](https://www.nobelprize.org/about/developer-zone-2) API.
+
+We are answering the questions:
+
+1. Which country “lost” the most nobel laureates (who were born there but received their Nobel prize in a different country)?
+2. Which country "gained" the most nobel laureates (who were *not* born there but received their Nobel prize there)?
+3. How has the distribution of gender of Nobel laureates changed over time?
+4. Which countries have the highest number of laureates by field?
+
+## Get Data
+
+```{r prizes}
+#Pull prizes
+prizes_url <- "https://api.nobelprize.org/2.1/nobelPrizes?limit=1000"
+
+prizes_json <- read_json(prizes_url) # , simplifyVector = TRUE
+prizes <- tibble(prizes_json$nobelPrizes)
+prizes <- prizes %>%
+  unnest_wider("prizes_json$nobelPrizes") %>%
+  unnest_wider("category", names_sep = "_") %>%
+  unnest_wider("categoryFullName", names_sep = "_") %>% 
+  unnest_longer("laureates") %>% 
+  unnest_wider("laureates", names_sep = "_") %>%
+  select(awardYear, category_en, categoryFullName_en, dateAwarded, prizeAmount, prizeAmountAdjusted,
+         laureates_id, laureates_knownName, laureates_fullName, laureates_portion, laureates_sortOrder, laureates_portion)
+```
+
+```{r laureates}
+#Pull Laureates
+laureates_url <- "https://api.nobelprize.org/2.1/laureates?limit=1000"
+
+laureates_json <- read_json(laureates_url) # , simplifyVector = TRUE
+laureates <- tibble(laureates_json$laureates)
+laureates <- laureates %>%
+  unnest_wider("laureates_json$laureates") %>%
+  unnest_wider("knownName", names_sep = "_") %>%
+  unnest_wider("givenName", names_sep = "_") %>%
+  unnest_wider("fullName", names_sep = "_") %>%
+  unnest_wider("birth", names_sep = "_") %>%
+  unnest_wider("birth_place", names_sep = "_") %>%
+  unnest_wider("birth_place_city", names_sep = "_") %>%
+  unnest_wider("birth_place_country", names_sep = "_") %>%
+  unnest_wider("birth_place_continent", names_sep = "_") %>%
+  unnest_wider("death", names_sep = "_")%>%
+  unnest_wider("death_place", names_sep = "_") %>%
+  unnest_wider("death_place_city", names_sep = "_") %>%
+  unnest_wider("death_place_country", names_sep = "_") %>%
+  unnest_wider("death_place_continent", names_sep = "_") %>%
+  unnest_longer("nobelPrizes") %>%
+  unnest_wider("nobelPrizes", names_sep = "_") %>%              
+  unnest_longer("nobelPrizes_affiliations") %>%  # expand affiliations (if any)
+  unnest_wider("nobelPrizes_affiliations", names_sep = "_") %>% 
+  unnest_wider("nobelPrizes_affiliations_city", names_sep = "_") %>% 
+  unnest_wider("nobelPrizes_affiliations_country", names_sep = "_") %>% 
+  unnest_wider("nobelPrizes_affiliations_continent", names_sep = "_") %>% 
+  unnest_wider("nobelPrizes_affiliations_name", names_sep = "_") %>% 
+  unnest_wider("nobelPrizes_category", names_sep = "_") %>% 
+  select(id, knownName_en, givenName_en, fullName_en, gender,
+         birth_date, birth_place_city_en, birth_place_country_en, birth_place_continent_en,
+         death_date, death_place_city_en, death_place_country_en, death_place_continent_en,
+         nobelPrizes_awardYear, nobelPrizes_category_en, nobelPrizes_sortOrder, nobelPrizes_portion,
+         nobelPrizes_dateAwarded, nobelPrizes_prizeStatus, nobelPrizes_prizeAmount, 
+         nobelPrizes_affiliations_name_en, 
+         nobelPrizes_affiliations_city_en, nobelPrizes_affiliations_country_en, nobelPrizes_affiliations_continent_en
+         )
+```
+
+## Question 1
+
+Which country “lost” the most nobel laureates (who were born there but received their Nobel prize in a different country)? (This was a suggested question.)
+
+```{r q-1}
+lost_laureates <- laureates %>%
+  filter(!is.na(birth_place_country_en),
+         !is.na(nobelPrizes_affiliations_country_en),
+         birth_place_country_en != nobelPrizes_affiliations_country_en)
+
+lost_counts <- lost_laureates %>%
+  count(birth_place_country_en, sort = TRUE)
+
+head(lost_counts, 10)
+```
+
+From this I see that Germany has lost the most Nobel laureates — people born in Germany, but who were affiliated with another country when receiving their Nobel Prize.
+
+## Question 2
+
+Which country "gained" the most nobel laureates (who were *not* born there but received their Nobel prize there)?
+
+```{r q-2}
+gained_counts <- lost_laureates %>%
+  count(nobelPrizes_affiliations_country_en, sort = TRUE)
+
+head(gained_counts, 10)
+```
+
+By far, the USA "gained" the most nobel laureates.
+
+
+## Question 3
+
+How has the distribution of gender of Nobel laureates changed over time?
+
+```{r q-3} 
+gender_by_year <- laureates %>%
+  filter(!is.na(gender), !is.na(nobelPrizes_awardYear)) %>%
+  mutate(year = as.numeric(nobelPrizes_awardYear)) %>%
+
+  # had to deal with the duplicates from multiple awards per person
+  group_by(id, year) %>%
+  summarise(gender = first(gender), .groups = "drop") %>%
+
+  # Business as usual
+  count(year, gender, name = "n_laureates") %>%
+  group_by(year) %>%
+  mutate(share = n_laureates / sum(n_laureates)) %>%
+  ungroup()
+
+# Plot - opted for stacked bar
+# Need summary by decade
+gender_decade <- gender_by_year %>%
+  mutate(decade = floor(year / 10) * 10) %>%                  # collapse to decades
+  filter(gender %in% c("male", "female")) %>%                 # exclude orgs for clarity
+  group_by(decade, gender) %>%
+  summarise(avg_share = mean(share, na.rm = TRUE), .groups = "drop") %>%
+  group_by(decade) %>%
+  mutate(total = sum(avg_share),
+         prop = avg_share / total)                            # ensure normalized shares per decade
+
+# the ral plot
+ggplot(gender_decade, aes(x = factor(decade), y = prop, fill = gender)) +
+  geom_col(position = "stack") +
+  scale_y_continuous(labels = percent_format(accuracy = 1), limits = c(0, 1)) +
+  scale_fill_manual(values = c("male" = "#1f77b4", "female" = "#e377c2")) +
+  labs(
+    title = "Distribution of Nobel Laureates by Gender Over Time",
+    x = "Decade",
+    y = "Share of Laureates",
+    fill = "Gender"
+  ) +
+  theme_minimal(base_size = 13) +
+  theme(
+    plot.title = element_text(face = "bold", size = 14),
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  )
+
+
+```
+
+Clearly, women have only made up a small fraction of nobel laureate winners regardless of the decade. in the 1900s and 1950s, they made up no fraction at all.
+
+
+## Question 4
+
+Which countries have the highest number of laureates by field?
+
+```{r ans-4}
+# Grouping the data
+country_field <- laureates %>%
+  filter(!is.na(nobelPrizes_affiliations_country_en),
+         !is.na(nobelPrizes_category_en)) %>%
+  mutate(country = nobelPrizes_affiliations_country_en,
+         field = nobelPrizes_category_en) %>%
+  distinct(id, field, country, nobelPrizes_awardYear) %>%
+  count(country, field, name = "n_laureates") %>%
+  arrange(desc(n_laureates))
+
+# top countries
+top_countries <- country_field %>%
+  group_by(country) %>%
+  summarise(total = sum(n_laureates)) %>%
+  slice_max(total, n = 10) %>%
+  pull(country)
+
+# Plot sticking with stacked bars
+country_field %>%
+  filter(country %in% top_countries) %>%
+  ggplot(aes(x = reorder(country, n_laureates), y = n_laureates, fill = field)) +
+  geom_col(position = "stack") +
+  coord_flip() +
+  labs(
+    title = "Top 10 Countries by Number of Nobel Laureates (by Field)",
+    x = "Country of Affiliation at Award",
+    y = "Number of Laureates",
+    fill = "Nobel Category"
+  ) +
+  theme_minimal(base_size = 13) +
+  theme(
+    plot.title = element_text(face = "bold", size = 14),
+    axis.text.x = element_text(size = 10),
+    legend.position = "bottom"
+  )
+
+
+
+```
+
+The U.S. is leading by a substantial margin in each field.
