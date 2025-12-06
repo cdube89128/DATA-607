@@ -1,0 +1,806 @@
+---
+title: "DATA 607 Final Project: The Hemline Theory"
+author: "Catherine Dube"
+output:  
+  html_document:
+    number_sections: true
+    toc: true
+    toc_float:
+      collapsed: true 
+      smooth_scroll: true  
+  #pdf_document:
+    #toc: true
+    #number_sections: true
+    #df_print: paged
+---
+
+```{r setup, include=FALSE}
+if(!require(pacman)) install.packages("pacman")
+pacman::p_load(tidyverse,
+               knitr, 
+               kableExtra, 
+               rvest, 
+               xml2, 
+               jsonlite, 
+               scales, # for graphs 
+               rstudioapi, # Using to get the current file location
+               DiagrammeR, # ER diagram
+               gtrendsR, # for google trends
+               fredr, 
+               lubridate,
+               car
+               )
+```
+ 
+# Introduction
+
+The hemline theory is the theory that women's skirt hemlines rise and fall with the economy (i.e. short skirts being more popular during a boom, and longer skirts being more popular in a downturn). I've see miscellaneous references to this older (about 100ish years old) theory resurfacing recently in social media, questioning if trending maxi skirts are a recession indicator. 
+
+The below image visually describes the Hemline Theory, and was referenced in a [LinkedIn post](https://www.linkedin.com/posts/magesstudio_fashiontrends-hemlineindex-datavisualization-activity-7323927087134728193-uG8M?utm_source=share&utm_medium=member_desktop&rcm=ACoAACO84PEB4yaLIj0GGQo0rl66sYHL74_iXQE) this past year (2025).
+
+![The Hemline Theory. Source: Mages Studio Private Limited](https://media.licdn.com/dms/image/v2/D5622AQENSCSjbTtVaQ/feedshare-shrink_800/B56ZaPQ3IOHsAg-/0/1746160287917?e=1765411200&v=beta&t=C4iLMjGkf_idtwxw5Qq4xQrFPSrU8EHRPLNDWqcnSfs)
+
+[TikTok](https://www.tiktok.com/discover/hemline-index-theory) has a whole slew of posts on it casually discussing the hemline theory. [Blogs](https://monevator.com/the-hemline-index/) have tried to tackle the index theory.
+
+I'm skeptical, so my goal is to analyze if the hemline theory is true or not.
+
+## Research Question
+
+Do changes in skirt-length fashion interest (measured by Google searches for mini, midi or maxi skirts) correspond with changes in U.S. economic conditions? Specifically, do these fashion-trend signals relate to quarterly GDP growth and to consumer spending on clothing and apparel?
+
+# Reproducability Requirements
+
+* To reproduce this code, ideally one would need FRED API key stored using REnviron, referred to as "FRED_API_KEY". However, for the ease of reproducability, I have stored the api pull results as csvs which can be referenced instead.
+
+# Data Acquisition 
+
+For this analysis, I have gathered data from the following sources:
+
+* Google Trends: gtrendsR package (https://cran.r-project.org/package=gtrendsR)
+* Census.gov: Monthly Retail Clothing Trade (US) data is available for download as a csv.(https://www.census.gov/econ/currentdata/)
+* FRED real GDP: fredr package (https://fred.stlouisfed.org/series/GDPC1)
+
+```{r housekeeping} 
+# File Path
+if (interactive()) {
+  projPath <- dirname(file.path(getSourceEditorContext()$path))   # getting where .Rmd is located
+} else {
+  projPath <- "."  # default for knitting
+}
+
+# FRED API Key
+fred_api_key <- Sys.getenv("FRED_API_KEY")
+fredr_set_key(fred_api_key)
+```
+
+### Google Trends Skirt + Clothing Data: API
+
+From Google Trends, I am obtaining data from 2004 to start of 2025 on how often "mini skirt", "midi skirt" and "maxi skirt" trended in searches. I'm doing this relative to overall searches for "clothing" in order to properly assess skirt length sentiment while controlling for waxing/waning overall clothing interest.
+
+```{r skirt-setup-google-trends}
+# set google searches of interest
+keywords <- c("mini skirt", "midi skirt", "maxi skirt", "clothing")
+
+# google api call 
+# added logic here to pull the data from csv if knitting. This is due to a gtrends api error where sometimes it errors out on a new session, and I don't want to risk knitting failures. 
+if (interactive()) {
+  # Live API call
+  gtr <- gtrends(
+    keyword = keywords,
+    geo = "US",
+    time = "2004-01-01 2025-01-01",
+    gprop = "web",
+    hl = "en-US"
+  )
+  
+  trend_df <- gtr$interest_over_time %>% 
+    select(date, keyword, hits)
+
+  write_csv(trend_df, file.path(projPath, "trend_data_with_clothing_2004.csv"))
+  
+} else {
+  # KNITTING → read cached version
+  # trend_df <- read_csv("file.path(projPath, "trend_data_with_clothing_2004.csv")) # reading from local saved from interactive session
+  trend_df <- read_csv("https://raw.githubusercontent.com/cdube89128/DATA-607/refs/heads/main/Final_Project/trend_data_with_clothing_2004.csv") # reading from github
+} 
+```
+
+### Census.gov Monthly Retail Clothing Trade (US) Data: CSV
+
+From census.gov, I am obtaining data from 1992 to 2025 on retail clothing sales in the US. 
+
+* Source: https://www.census.gov/econ/currentdata/ 
+* Downloaded as 2 csvs and stored on Github
+
+```{r retail-clothing-data}
+# URLS
+url_nsa <- "https://raw.githubusercontent.com/cdube89128/DATA-607/refs/heads/main/Final_Project/Not%20Seasonally%20Adjusted%20Clothing%20Sales.csv"
+url_sa  <- "https://raw.githubusercontent.com/cdube89128/DATA-607/refs/heads/main/Final_Project/Seasonally%20Adjusted%20Clothing%20Sales.csv"
+
+# Read in Retail Clothing Trade data
+clothing_nsa <- read_csv(url_nsa, skip = 7, show_col_types = FALSE)
+clothing_sa  <- read_csv(url_sa,  skip = 7, show_col_types = FALSE) 
+```
+
+### Economic data from FRED: API
+
+From the FRED API, I am getting Gross Domestic Product data from 2004 to start of 2025.
+
+```{r economic-data}
+if (interactive() & Sys.getenv("FRED_API_KEY") != "" ) {
+  # Using real GDP (series “GDPC1”) = Real Gross Domestic Product, 
+  gdp <- fredr(
+    series_id = "GDPC1",
+    observation_start = as.Date("2004-01-01"),
+    observation_end = as.Date("2025-01-01"),
+    frequency = "q"  # quarterly
+  )
+  # get quarter over quarter growth rate
+  gdp <- gdp %>%
+    arrange(date) %>%
+    mutate(
+      gdp_growth = (value / lag(value) - 1) * 100
+    ) %>%
+    filter(!is.na(gdp_growth))
+  
+  write_csv(gdp, file.path(projPath, "gdp_data_2004_2025.csv"))
+  
+} else {
+  gdp <- read_csv("https://raw.githubusercontent.com/cdube89128/DATA-607/refs/heads/main/Final_Project/gdp_data_2004_2025.csv") 
+} 
+```
+
+# Data Wrangling and Transformations
+
+* Enriching, grouping, cleaning up date formatting to allow all data to be incorporated together
+* GDP data is quarterly, so all of the data will need to be changed to the same quarterly time periods
+
+### Cleaning and Transformation: Retail Data 
+
+* Clean data formatting to read dates
+* Convert from monthly to quarterly
+
+```{r}
+# Retail data
+# Convert monthly to quarterly
+# Clean data formatting
+
+# Convert NSA dataset
+clothing_nsa_clean <- clothing_nsa %>%
+  mutate( 
+    date = parse_date_time(Period, orders = c("b-y", "b-Y")),
+    sales_nsa = as.numeric(Value)
+  ) %>%
+  select(date, sales_nsa)
+
+# Convert SA dataset
+clothing_sa_clean <- clothing_sa %>%
+  mutate(
+    date = parse_date_time(Period, orders = c("b-y", "b-Y")),
+    sales_sa = as.numeric(Value)
+  ) %>%
+  select(date, sales_sa)
+
+# Aggregate nsa to quarterly
+clothing_nsa_quarterly <- clothing_nsa_clean %>%
+  mutate(
+    year = year(date),
+    quarter = quarter(date)
+  ) %>%
+  group_by(year, quarter) %>%
+  summarise(
+    clothing_sales_nsa = mean(sales_nsa, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+# Aggregate sa to quarterly
+clothing_sa_quarterly <- clothing_sa_clean %>%
+  mutate(
+    year = year(date),
+    quarter = quarter(date)
+  ) %>%
+  group_by(year, quarter) %>%
+  summarise(
+    clothing_sales_sa = mean(sales_sa, na.rm = TRUE),
+    .groups = "drop"
+  )
+```
+
+### Cleaning and Tranformation: Google Trends Data
+
+* Make the Google trends data wider instead of long
+* Treat Google Trends data where search hits are "<1" to be handled numerically
+* Convert from monthly to quarterly
+* Create important clothing-normalized variables to represent search interest for skirts and skirt lengths relative to overall clothing interest
+* Create important variable **hemline_index** as a numeric value ranging 1:3. 
+  * Closer to 1 = preferred mini skirts in Google data
+  * Closer to 3 = preferred maxi skirts in Google data
+
+```{r google-trends-clean}
+trend_df <- trend_df %>%
+  mutate(
+    hits = case_when(
+      hits == "<1" ~ 0.49,
+      .default  = as.numeric(hits)
+    )
+  )
+```
+
+```{r manipulate-g-trends}
+# Make the google trends data wider 
+trend_wide <- trend_df %>%
+  mutate(
+    keyword = case_when(
+      keyword == "mini skirt" ~ "mini",
+      keyword == "midi skirt" ~ "midi",
+      keyword == "maxi skirt" ~ "maxi",
+      keyword == "clothing"   ~ "clothing",
+      TRUE ~ keyword
+    )
+  ) %>%
+  pivot_wider(names_from = keyword, values_from = hits) %>%
+  mutate(
+    total_skirt = mini + midi + maxi,
+
+    # clothing normalization
+    mini_to_clothing = mini / clothing,
+    midi_to_clothing = midi / clothing,
+    maxi_to_clothing = maxi / clothing,
+    skirt_to_clothing = total_skirt / clothing
+  )
+
+```
+
+```{r google-re-agg}
+# Quarterly Google Trends Dataset
+# because gdp is quarterly
+
+trend_quarterly <- trend_wide %>%
+  mutate(
+    year = year(date),
+    quarter = quarter(date)
+  ) %>%
+  group_by(year, quarter) %>%
+  summarise(
+    
+    # clothing-normalized variables
+    mini_to_clothing = mean(mini_to_clothing, na.rm = TRUE),
+    midi_to_clothing = mean(midi_to_clothing, na.rm = TRUE),
+    maxi_to_clothing = mean(maxi_to_clothing, na.rm = TRUE),
+    skirt_to_clothing = mean(skirt_to_clothing, na.rm = TRUE),
+    
+    # pure hits data
+    mini     = mean(mini, na.rm = TRUE),
+    midi     = mean(midi, na.rm = TRUE),
+    maxi     = mean(maxi, na.rm = TRUE),
+    clothing = mean(clothing, na.rm = TRUE),
+    
+    # hemline index
+    hemline_index = (1*mini + 2*midi + 3*maxi) / (mini + midi + maxi),
+    
+    .groups = "drop"
+  ) %>%
+  mutate(
+    date = as_date(paste(year, (quarter - 1) * 3 + 1, "01", sep = "-"))
+  )
+
+```
+
+### Merging Data
+
+* Merge the 3 datasets into 1 clean data set
+
+```{r merge-data}
+# Merging All Quarterly Datasets
+
+# GDP is already quarterly, just selecting the columns I want
+gdp_quarterly <- gdp %>%
+  mutate(
+    gdp_value  = value, 
+    year = year(date),
+    quarter = quarter(date)
+  ) %>%
+  select(date, gdp_value, gdp_growth, year, quarter)
+
+# Merge everything
+df_full <- gdp_quarterly %>%
+  inner_join(trend_quarterly, by = c("year", "quarter")) %>%
+  left_join(clothing_sa_quarterly,  by = c("year", "quarter")) %>%
+  left_join(clothing_nsa_quarterly, by = c("year", "quarter"))
+
+# Clean the duplicate date column
+df_full <- df_full %>%
+  rename(date = date.x) %>%
+  select(-date.y)
+```
+
+```{r peak-clean-data} 
+df_full %>%
+  head(10) %>%
+  kable(format = "html", caption = "Preview of Merged Quarterly Dataset (df_full)") %>%
+  kable_styling(full_width = FALSE, bootstrap_options = c("striped", "hover"))
+```
+
+# Exploratory Data Analysis 
+
+* Exploring the data to gauge what form the final analysis should take.
+
+## Time-Series Plots
+
+Beginning EDA with time-series plots of a number of variables of interest.
+
+```{r time-series}
+# GDP Growth over Time
+ggplot(df_full, aes(x = date, y = gdp_growth)) +
+  geom_line(color = "steelblue", linewidth = 1) +
+  labs(
+    title = "Quarterly U.S. GDP Growth (2015–2025)",
+    x = "Quarter",
+    y = "GDP Growth (%)"
+  ) +
+  theme_minimal()
+
+# GDP Value over Time
+ggplot(df_full, aes(x = date, y = gdp_value)) +
+  geom_line(color = "darkblue", linewidth = 1) +
+  labs(
+    title = "Quarterly U.S. GDP Value (2015–2025)",
+    x = "Quarter",
+    y = "GDP Value"
+  ) +
+  theme_minimal()
+
+# Retail Sales over Time (adjusted)
+ggplot(df_full, aes(x = date, y = clothing_sales_sa)) +
+  geom_line(color = "darkgreen", linewidth = 1) +
+  labs(
+    title = "Quarterly U.S. Clothing Retail Sales (Seasonally Adjusted)",
+    x = "Quarter",
+    y = "Sales (Millions USD)"
+  ) +
+  theme_minimal()
+
+# Clothing Sales & Google Search Interest over Time 
+ggplot(df_full, aes(x = date)) +
+  # For legend purposes: mapping each line to color group
+  geom_line(aes(y = clothing_sales_nsa, color = "Clothing Sales (NSA)"), linewidth = 1) +
+  geom_line(aes(y = clothing * 200, color = "Clothing Search Interest"), linewidth = 1) +
+  # legend
+  scale_color_manual(values = c(
+    "Clothing Sales (NSA)" = "darkgreen",
+    "Clothing Search Interest" = "violet"
+  )) +
+  scale_y_continuous(
+    name = "Clothing Sales (Millions USD)",
+    sec.axis = sec_axis(~ . / 200,
+                        name = "Clothing Search Interest")
+  ) +
+  labs(
+    title = "Clothing Sales vs Google Search Interest",
+    x = "Quarter",
+    color = "Legend"
+  ) +
+  theme_minimal()
+
+ 
+# Skirt to Clothing Ratio of Interest over Time
+ggplot(df_full, aes(x = date, y = skirt_to_clothing)) +
+  geom_line(color = "purple", linewidth = 1) +
+  labs(
+    title = "Relative Search Interest: Skirt Searches vs. Clothing Searches",
+    x = "Quarter",
+    y = "Skirt-to-Clothing Ratio"
+  ) +
+  theme_minimal()
+
+# Skirt Length Interest Relative to Clothing Over Time
+df_long_norm <- df_full %>%
+  select(date, mini_to_clothing, midi_to_clothing, maxi_to_clothing) %>%
+  pivot_longer(-date, names_to = "variable", values_to = "value")
+
+ggplot(df_long_norm, aes(x = date, y = value, color = variable)) +
+  geom_line(linewidth = 1) +
+  scale_color_manual(values = c("mini_to_clothing" = "hotpink",
+                                "midi_to_clothing" = "forestgreen",
+                                "maxi_to_clothing" = "navy")) +
+  labs(
+    title = "Mini vs Midi vs Maxi Skirt Search Interest (Relative to Clothing)",
+    x = "Quarter",
+    y = "Normalized Search Interest",
+    color = "Trend"
+  ) +
+  theme_minimal()
+
+# Search Interst (Raw values) Over Time
+df_long_raw <- df_full %>%
+  select(date, mini, midi, maxi) %>%
+  pivot_longer(-date, names_to = "variable", values_to = "value")
+
+ggplot(df_long_raw, aes(x = date, y = value, color = variable)) +
+  geom_line(linewidth = 1) +
+  scale_color_manual(
+    values = c(
+      mini = "hotpink",
+      midi = "forestgreen",
+      maxi = "navy"
+    )
+  ) +
+  labs(
+    title = "Raw Google Search Interest: Clothing vs Skirt Types",
+    x = "Quarter",
+    y = "Search Index",
+    color = "Search Term"
+  ) +
+  theme_minimal()
+
+# Hemline Index over Time
+ggplot(df_full, aes(x = date, y = hemline_index)) +
+  geom_line(color = "pink", linewidth = 1) +
+  labs(
+    title = "Hemline Index over Time",
+    subtitle = "(1:3 where 1 is the most mini and 3 is the most maxi)",
+    x = "Quarter",
+    y = "Hemline Index "
+  ) +
+  theme_minimal()
+```
+
+So far, I can see that:
+ 
+* GDP value, GDP growth and retail sales were heavily impacted by COVID.
+* Among Google searches for skirts, mini skirts dominated in 2005, starting losing out to maxi skirts around 2013, then start taking back popularity share in 2023.
+* In general, searches for skirts had local peaks around 2014, and going into 2025 (and potentially still climbing)
+
+### COVID flag
+
+Based on the EDA so far, adding in this flag to indicate where COVID happenings heavily impacted the data. This way, COVID impacted data can be filtered out.
+
+```{r covid-flag}
+df_full <- df_full %>%
+  mutate(
+    covid_disrupted = case_when(
+      # COVID disruption period
+      (year == 2020 & quarter %in% c(1, 2, 3, 4)) |
+      (year == 2021 & quarter %in% c(1, 2)) ~ 1,
+      
+      TRUE ~ 0
+    )
+  )
+```
+
+## Scatter Plots
+
+Continuing EDA with a number of scatterplots of key relationships. If the Hemline Theory is true, some relationships should be visible here between hemline and economic markers.
+
+```{r scatter-plots}
+# Helper function for consistent formatting
+plot_scatter <- function(df, xvar, yvar, xlab, ylab, title) {
+  ggplot(df, aes(x = .data[[xvar]], y = .data[[yvar]])) +
+    geom_point(color = "darkgray", alpha = 0.8, size = 2) +
+    geom_smooth(method = "loess", color = "steelblue", linewidth = 1.1, se = FALSE) +
+    theme_minimal() +
+    labs(title = title, x = xlab, y = ylab)
+}
+
+
+# 1. Skirt-to-Clothing vs GDP Growth
+plot_scatter(
+  df_full %>% filter(covid_disrupted == 0),
+  "skirt_to_clothing", "gdp_growth",
+  "Skirt-to-Clothing Ratio",
+  "GDP Growth (%)",
+  "GDP Growth vs Skirt-to-Clothing Search Interest"
+)
+
+# 2. Mini-to-Clothing vs GDP Growth
+plot_scatter(
+  df_full %>% filter(covid_disrupted == 0),
+  "mini_to_clothing", "gdp_growth",
+  "Mini-to-Clothing Search Ratio",
+  "GDP Growth (%)",
+  "GDP Growth vs Mini Skirt Search Interest"
+)
+
+# 3. Maxi-to-Clothing vs GDP Growth
+plot_scatter(
+  df_full %>% filter(covid_disrupted == 0),
+  "maxi_to_clothing", "gdp_growth",
+  "Maxi-to-Clothing Search Ratio",
+  "GDP Growth (%)",
+  "GDP Growth vs Maxi Skirt Search Interest"
+)
+
+# 4. Clothing Sales vs GDP Growth
+plot_scatter(
+  df_full %>% filter(covid_disrupted == 0),
+  "clothing_sales_sa", "gdp_growth",
+  "Clothing Retail Sales (SA, millions USD)",
+  "GDP Growth (%)",
+  "GDP Growth vs Clothing Retail Sales"
+)
+
+# 5. Clothing Sales vs Skirt-to-Clothing
+plot_scatter(
+  df_full %>% filter(covid_disrupted == 0),
+  "clothing_sales_nsa", "skirt_to_clothing",
+  "Clothing Retail Sales (SA, millions USD)",
+  "Skirt-to-Clothing Ratio",
+  "Skirt Interest vs Clothing Retail Sales"
+)
+
+# 6. Hemline Index vs GDP Growth
+plot_scatter(
+  df_full %>% filter(covid_disrupted == 0),
+  "hemline_index", "gdp_growth",
+  "Hemline Index",
+  "GDP Growth (%)",
+  "GDP Growth vs hemline Index"
+)
+
+# 7. Hemline Index vs Clothing Sales (not seasonally normalized)
+plot_scatter(
+  df_full %>% filter(covid_disrupted == 0),
+  "hemline_index", "clothing_sales_nsa",
+  "Hemline Index",
+  "Clothing Retail Sales (SA, millions USD)",
+  "Hemline Index vs Clothing Retail Sales"
+)
+
+```
+
+So far, this is not looking good for the Hemline Theory. There are no strong visible trends between hemline and any economic markers in any of the above scatter plots. Skirt Interest vs Clothing retail sales is the only scatter plot which shows a clear trend - which is moreso a dummy check and looks exactly as expected.
+
+## Correlation Heatmap: not covered in 607
+
+Final aspect of EDA here are correlation matrices.
+
+```{r corr-heat} 
+# Adding in some lagged data first
+df_full <- df_full %>%
+  mutate(
+    gdp_growth_lead1 = lead(gdp_growth, 1),
+    gdp_value_lead1  = lead(gdp_value, 1)
+  )
+
+# Select only continuous numeric variables for correlation
+corr_vars <- df_full %>%
+  select(
+    gdp_growth,
+    gdp_growth_lead1,
+    gdp_value,
+    gdp_value_lead1,
+    clothing_sales_sa,
+    clothing_sales_nsa,
+    mini_to_clothing,
+    midi_to_clothing,
+    maxi_to_clothing,
+    skirt_to_clothing,
+    mini,
+    midi,
+    maxi,
+    clothing,
+    hemline_index
+  )
+
+# Correlation matrix
+corr_matrix <- cor(corr_vars, use = "pairwise.complete.obs")
+
+# Convert to long format for ggplot heatmap shtuffs
+corr_long <- as.data.frame(as.table(corr_matrix))
+colnames(corr_long) <- c("Var1", "Var2", "Correlation")
+
+# Heatmap visual for correlation plot
+ggplot(corr_long, aes(x = Var1, y = Var2, fill = Correlation)) +
+  geom_tile(color = "white") +
+  geom_text(aes(label = sprintf("%.2f", Correlation)), size = 3) +
+  scale_fill_gradient2(
+    low = "navy",
+    mid = "white",
+    high = "darkred",
+    midpoint = 0,
+    limits = c(-1, 1)
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    panel.grid = element_blank()
+  ) +
+  labs(
+    title = "Correlation Heatmap of Key Variables",
+    fill = "Correlation"
+  )
+
+```
+
+```{r other-heat-no-covid}
+## Same ish thing but without the outlier covid data 
+
+# Filter out COVID-disrupted quarters
+df_no_covid <- df_full %>% 
+  filter(covid_disrupted == 0)
+
+# Select numeric variables
+corr_vars_nc <- df_no_covid %>%
+  select(
+    gdp_growth,
+    gdp_growth_lead1,
+    gdp_value,
+    gdp_value_lead1,
+    clothing_sales_sa,
+    clothing_sales_nsa,
+    mini_to_clothing,
+    midi_to_clothing,
+    maxi_to_clothing,
+    skirt_to_clothing,
+    mini,
+    midi,
+    maxi,
+    clothing,
+    hemline_index
+  )
+
+# correlation matrix
+corr_matrix_nc <- cor(corr_vars_nc, use = "pairwise.complete.obs")
+
+# Convert to long format for ggplot
+corr_long_nc <- as.data.frame(as.table(corr_matrix_nc))
+colnames(corr_long_nc) <- c("Var1", "Var2", "Correlation")
+
+# Heatmap visual
+ggplot(corr_long_nc, aes(x = Var1, y = Var2, fill = Correlation)) +
+  geom_tile(color = "white") +
+  geom_text(aes(label = sprintf("%.2f", Correlation)), size = 3) +
+  scale_fill_gradient2(
+    low = "navy", mid = "white", high = "darkred",
+    midpoint = 0, limits = c(-1, 1)
+  ) +
+  labs(
+    title = "Correlation Heatmap (COVID-Free Quarters Only)",
+    fill = "Correlation"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    panel.grid = element_blank()
+  )
+
+```
+
+The correlation matrices double down on this not looking good for the hemline theory. When performed both with and without COVID era data included, `gdp_growth` has no significant correlations with any other variables. The measure of `gdp_value` does show positive correlation with other variables, but based on what has been seen so far, this is more likely due to the nature of gdp, as something that will drift up in value over time, and many other measures such as the number of searches for skirts have also drifted up over time. A notable contrast to this is the `clothing` variable, which actually did drift down over time (as seen earlier in the EDA section).
+ 
+# Data (Statistical) Analysis
+
+I am opting to try two models here, one linear regression, and one multiple regression, to see if hemline interest is able to predict any trend in the economy.
+
+Null Hypothesis (H₀):There is no relationship between `hemline_index` and GDP growth.
+
+Alternative Hypothesis (Hₐ): There is a relationship between `hemline_index` and GDP growth. 
+
+## Model 1: Linear Regression
+
+First, I am fitting a simple linear regression to evaluate the direct relationship between hemline interest and GDP growth. This establishes a baseline test of the core hemline theory.
+
+Formally: the dependent variable is quarterly `gdp_growth`, and the independent variable is the `hemline_index`.
+
+```{r linear-regression}
+# Filter to non-COVID periods
+df_nc <- df_full %>% filter(covid_disrupted == 0)
+
+# Fit simple regression
+model1 <- lm(gdp_growth ~ hemline_index, data = df_nc)
+
+# Print regression summary
+summary(model1)
+
+# Visualization: Regression line + residual cloud
+ggplot(df_nc, aes(x = hemline_index, y = gdp_growth)) +
+  geom_point(alpha = 0.7, color = "gray40") +
+  geom_smooth(method = "lm", color = "darkred", se = TRUE, linewidth = 1.1) +
+  theme_minimal() +
+  labs(
+    title = "Model 1: GDP Growth vs Hemline Index",
+    x = "Hemline Index",
+    y = "GDP Growth (%)"
+  )
+
+# Diagnostic Visual
+par(mfrow=c(2,2))
+plot(model1) # found out I can just plot the model like this instad of manually making each diagnostic plot 
+```
+
+Model 1: GDP Growth ~ Hemline Index
+
+Looking at this first model:
+
+* p = `r round(summary(model1)$coefficients["hemline_index", "Pr(>|t|)"], 2)` (not significant)
+* R² = `r round(summary(model1)$r.squared, 2)` (`r round(summary(model1)$r.squared, 2)*100.0`% of variance explained)
+* Slope = `r round(summary(model1)$coefficients["hemline_index", "Estimate"], 2)` (When hemline index increases by 1 (e.g., shift toward maxi skirts), GDP growth increases by only `r round(summary(model1)$coefficients["hemline_index", "Estimate"], 2)` percentage points.)
+
+Looking at the Diagnostic Plots:
+
+* The residuals versus fitted values plot appears like a random cloud; it's good that we have constant variance.
+* The Q-Q plot shows the points falling along the line, with only a bit of a tail at the top and bottom, also good and indicating constant variance of the residuals.
+* The scale-location plot looks pretty much like a random cloud, again an indicator of constant variance of residuals.
+* The residuals versus leverage plot doesn't show anything with high values, so there is no data point that is overly influencing the model.
+* The fitted range is pretty narrow [0.45, 0.57]. This means that predicted values barely change (they stay between 0.45 and 0.57). The model is only predicting a tiny difference in GDP growth
+
+Thoughts:
+
+While the diagnostic plots come back pretty clean , this model barely predicts any variance. Good diagnostic plots don't save a model that cannot predict anything. I fail to reject the null hypothesis that there is no relationship between hemline_index and GDP growth.
+
+## Model 2: Multiple Regression 
+
+Second, I'm fitting multiple regression to assess whether hemline interest predicts GDP growth after accounting for broader consumer spending patterns. This allows me to test whether any hemline effect is present once the key economic control variable of clothing sales is included.
+
+Formally: the dependent variable is quarterly `gdp_growth`, and the independent variables are the `hemline_index` and `clothing_sales_nsa`.
+
+```{r multiple-regression}
+# Fit regression with clothing sales as control
+model2 <- lm(gdp_growth ~ hemline_index + clothing_sales_nsa, data = df_nc)
+
+# Print summary
+summary(model2)
+
+# Visualization: Partial effect of hemline_index (added-variable plot)
+avPlots(model2, id = FALSE)
+
+# Partial-regression-plot
+df_nc <- df_full %>% filter(covid_disrupted == 0)
+
+# Residuals of GDP growth after controlling for clothing_sales_nsa
+resid_gdp <- resid(lm(gdp_growth ~ clothing_sales_nsa, data = df_nc))
+
+# Residuals of hemline_index after controlling for clothing_sales_nsa
+resid_hem <- resid(lm(hemline_index ~ clothing_sales_nsa, data = df_nc))
+
+# dataframe for ggplot
+partial_df <- tibble(
+  resid_gdp = resid_gdp,
+  resid_hem = resid_hem
+)
+
+# Plot
+ggplot(partial_df, aes(x = resid_hem, y = resid_gdp)) +
+  geom_point(alpha = 0.7, color = "gray40") +
+  geom_smooth(method = "lm", se = TRUE, color = "darkred", linewidth = 1.1) +
+  theme_minimal() +
+  labs(
+    title = "Partial Regression Plot: Hemline Index Effect\n(Controlling for Clothing Sales)",
+    x = "Residual Hemline Index\n(after removing clothing_sales_sa effect)",
+    y = "Residual GDP Growth (%)\n(after removing clothing_sales_sa effect)"
+  )
+
+
+# Diagnostic Visual
+par(mfrow=c(2,2))
+plot(model2)
+```
+
+Model 2: GDP Growth ~ Hemline Index + Clothing Sales (NSA)
+
+Looking at this first model:
+
+* p = `r round(summary(model2)$coefficients["hemline_index", "Pr(>|t|)"], 2)` (not significant)
+* Adj. R² = `r round(summary(model1)$adj.r.squared, 2)` (`r round(summary(model1)$adj.r.squared, 2)*100.0`% of variance explained) 
+
+Looking at the Diagnostic Plots (this is almost the same as the first model):
+
+* The residuals versus fitted values plot appears like a random cloud; it's good that we have constant variance.
+* The Q-Q plot shows the points falling along the line, with only a bit of a tail at the bottom, also good and indicating constant variance of the residuals.
+* The scale-location plot looks pretty much like a random cloud, again an indicator of constant variance of residuals.
+* The residuals versus leverage plot doesn't show anything with high values, so there is no data point that is overly influencing the model.
+* The fitted range is pretty narrow [0.3, 0.8]. This means that predicted values barely change (they stay between 0.3 and 0.8). The model is only predicting a tiny difference in GDP growth
+
+Thoughts:
+
+Adding clothing sales doesn’t strengthen the model. The Hemline index still shows no predictive value, even after controlling for spending. I fail to reject the null hypothesis that there is no relationship between hemline_index and GDP growth.
+
+# Conclusions
+
+After going through the full analysis of exploratory data analysis, correlation checks, and two regression models, it’s clear that the hemline theory does not hold up in this dataset. While skirt-length search trends do fluctuate over time and show meaningful shifts in popularity (mini vs. maxi cycles are very visible in the early and late 2010s), none of these fashion signals show any connection to actual economic performance. GDP growth has no measurable relationship with skirt interest, whether examined directly or after controlling for broader retail consumption patterns.  
+
+Both regression models produced extremely low R² values, nonsignificant coefficients, and very narrow fitted ranges, meaning the models barely changed their predictions regardless of what the hemline index is doing. The diagnostic plots looked clean, so the issue wasn't with model assumptions. It’s simply that the predictors offer no explanatory power. Even the correlation heatmaps reinforced this, with GDP growth essentially uncorrelated with all skirt-related variables.
+
+In short, based on 20 years of search trends and economic data, there is no evidence that skirt lengths move with the economy. Fashion may respond to cultural cycles, aesthetics, or social trends, but it does not appear to function as an economic indicator. The hemline theory, at least amidst the modern Google-Trends-era of assessing interest, does not hold up.
+
+
